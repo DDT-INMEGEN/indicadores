@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import argparse
 import sys, os
 from jinja2 import Environment, FileSystemLoader
