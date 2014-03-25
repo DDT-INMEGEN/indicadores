@@ -11,6 +11,11 @@ reportes = [
     { 'reporte': 'rspi_recursos_destino.html', 'template': 'dashboard_investigacion.html' },
     { 'reporte': 'rspi_recursos_origen.html', 'template': 'dashboard_investigacion.html' },
     { 'reporte': 'rspi_status.html',  'template': 'dashboard_investigacion.html' },
+
+    { 'reporte': "tg_categorias.html", 'template': 'dashboard_tg.html' },
+    { 'reporte': "tg_estados.html", 'template': 'dashboard_tg.html' },
+    { 'reporte': "tg_internos_externos.html", 'template': 'dashboard_tg.html' },
+    { 'reporte': "tg_tiempo.html", 'template': 'dashboard_tg.html' },
 ]
 
 
