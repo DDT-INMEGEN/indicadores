@@ -1,0 +1,45 @@
+{% extends "dashboard_investigacion.html" %}
+
+{% block extrahead %}
+
+    <style>
+
+      a {
+      color: #0039A6;
+      text-decoration: none;
+      }
+
+      a:hover {
+      color: #69BE28;
+      }
+
+      .node {
+      stroke: #a6a;
+      fill: #dd6;
+      stroke-width: 1.9px;
+      }
+
+      .link {
+      stroke: #999;
+      stroke-opacity: 0.3;
+      }
+
+      #chart {
+      border: 0px solid #aaa;
+      width: 800px;
+      height: 800px;
+      background-color: #Fff;
+      }
+    </style>
+
+
+{% endblock %}
+
+{% block main %}
+{{ html }}
+{% endblock %}
+
+
+{% block tailscripts %}
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+{% endblock %}
