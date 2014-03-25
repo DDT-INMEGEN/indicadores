@@ -4,6 +4,10 @@ import argparse
 import sys, os
 from jinja2 import Environment, FileSystemLoader
 
+
+reload(sys)
+sys.setdefaultencoding('utf-8')
+
 parser = argparse.ArgumentParser(description="Render html into a jinja2 template")
 parser.add_argument('--template', required=True, type=argparse.FileType('r'),
                     help='path to jinja2 template')
