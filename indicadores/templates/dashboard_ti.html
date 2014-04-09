@@ -1,0 +1,29 @@
+{% extends "dashboard_base.html" %}
+{% block sidebar %}
+          <ul class="nav nav-sidebar">
+            <li><a href="ti_tipos.html">Tipos</a></li>
+            <li><a href="tg_estados.html">Estados</a></li>
+            <li><a href="tg_internos_externos.html">Internos vs. Externos</a></li>
+            <li><a href="tg_tiempo.html">Dinámica</a></li>
+          </ul>
+{% endblock %}
+
+{% block main %}
+{{ html }}
+{% endblock %}
+
+
+
+{% block tailscripts %}
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/javascript"
+	    src="htraf/htraf.js"
+	    data-htsql-version="2"
+	    data-htsql-prefix="/heskdbapi">
+    </script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="bower_components/bootstrap/assets/js/docs.min.js"></script>
+
+{% endblock %}
