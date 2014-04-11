@@ -1,0 +1,1922 @@
+{
+    "name": "proyectos", 
+    "children": [
+        {
+            "name": "aprobado", 
+            "children": [
+                {
+                    "name": "Gen\u00f3mica Funcional del C\u00e1ncer", 
+                    "children": [
+                        {
+                            "name": "Genoma del C\u00e1ncer. Cap\u00edtulo M\u00e9xico", 
+                            "children": [
+                                {
+                                    "name": "Gastos de env\u00edo", 
+                                    "size": 168000.0
+                                }, 
+                                {
+                                    "name": "Gastos del trabajo de campo", 
+                                    "size": 4116000.0
+                                }, 
+                                {
+                                    "name": "Material de consumo de uso directo", 
+                                    "size": 5254000.0
+                                }, 
+                                {
+                                    "name": "Equipo de Laboratorios", 
+                                    "size": 570000.0
+                                }
+                            ]
+                        }, 
+                        {
+                            "name": "Genoma del C\u00e1ncer de P\u00e1ncreas", 
+                            "children": [
+                                {
+                                    "name": "Material de consumo de uso directo", 
+                                    "size": 1800000.0
+                                }
+                            ]
+                        }, 
+                        {
+                            "name": "Participaci\u00f3n de SFRP1 en estroma y su efecto par\u00e1crino en c\u00e9lulas epiteliales de c\u00e1ncer de pr\u00f3stata", 
+                            "children": [
+                                {
+                                    "name": "Material de consumo de uso directo", 
+                                    "size": 312000.0
+                                }, 
+                                {
+                                    "name": "Uso de UATs en el INMEGEN", 
+                                    "size": 149224.0
+                                }
+                            ]
+                        }, 
+                        {
+                            "name": "IDENTIFICACI\u00d3N DE CINASAS DE PROTE\u00cdNA QUE PARTICIPAN EN LA RESISTENCIA DE LAS C\u00c9LULAS DE C\u00c1NCER A LA QUIMIOTERAPIA MEDIANTE ARN DE INTERFERENCIA", 
+                            "children": [
+                                {
+                                    "name": "Vi\u00e1ticos y Pasajes", 
+                                    "size": 60000.0
+                                }, 
+                                {
+                                    "name": "Software especializados", 
+                                    "size": 50000.0
+                                }, 
+                                {
+                                    "name": "Equipo de c\u00f3mputo", 
+                                    "size": 35000.0
+                                }, 
+                                {
+                                    "name": "Material de consumo de uso directo", 
+                                    "size": 2500000.0
+                                }
+                            ]
+                        }, 
+                        {
+                            "name": "Detecci\u00f3n de c\u00e9lulas troncales tumorales circulantes para el Diagn\u00f3stico y pron\u00f3stico de C\u00e1ncer de Mama", 
+                            "children": [
+                                {
+                                    "name": "Material de consumo de uso directo", 
+                                    "size": 490000.0
+                                }
+                            ]
+                        }, 
+                        {
+                            "name": "An\u00e1lisis gen\u00f3mico de la interacci\u00f3n entre c\u00e9lulas troncales de tejido adiposo ADSC y c\u00e9lulas tumorales de mama.", 
+                            "children": [
+                                {
+                                    "name": "Gastos de capacitaci\u00f3n y entrenamiento", 
+                                    "size": 1229000.0
+                                }
+                            ]
+                        }, 
+                        {
+                            "name": "Aislamiento y caracterizaci\u00f3n de una genoteca de LincRNA asociados con resistencia antineopl\u00e1sicas en esferoides tumorales.", 
+                            "children": [
+                                {
+                                    "name": "Vi\u00e1ticos y Pasajes", 
+                                    "size": 60000.0
+                                }, 
+                                {
+                                    "name": "Software especializados", 
+                                    "size": 20000.0
+                                }, 
+                                {
+                                    "name": "Material de consumo de uso directo", 
+                                    "size": 1200000.0
+                                }, 
+                                {
+                                    "name": "Equipo de Laboratorios", 
+                                    "size": 50000.0
+                                }
+                            ]
+                        }, 
+                        {
+                            "name": "Preparaci\u00f3n y an\u00e1lisis de una genoteca de LncRNA en c\u00e9lulas troncales de c\u00e1ncer de mama.", 
+                            "children": [
+                                {
+                                    "name": "Material de consumo de uso directo", 
+                                    "size": 1500000.0
+                                }
+                            ]
+                        }
+                    ]
+                }, 
+                {
+                    "name": "Gen\u00f3mica de Poblaciones", 
+                    "children": [
+                        {
+                            "name": "Estudio de Diversidad Gen\u00f3mica en Poblaciones Nativas Mexicanas: Secuenciaci\u00f3n Completa del Genoma como un Recurso de Investigaci\u00f3n para Estudios Evolutivos y Aplicados a la Salud", 
+                            "children": [
+                                {
+                                    "name": "Vi\u00e1ticos y Pasajes", 
+                                    "size": 25000.0
+                                }, 
+                                {
+                                    "name": "Material de consumo de uso directo", 
+                                    "size": 1000000.0
+                                }
+                            ]
+                        }, 
+                        {
+                            "name": "An\u00e1lisis de Variabilidad Gen\u00f3mica y Composici\u00f3n \u00c9tnica en Pacientes Mexicanos con Esclerosis M\u00faltiple", 
+                            "children": [
+                                {
+                                    "name": "Material de consumo de uso directo", 
+                                    "size": 228240.0
+                                }
+                            ]
+                        }
+                    ]
+                }, 
+                {
+                    "name": "Gen\u00f3mica de enfermedades cardiovasculares", 
+                    "children": [
+                        {
+                            "name": "EVALUACI\u00d3N DEL EFECTO DEL POLIMORFISMO R230C/ABCA1 EN LA FUNCI\u00d3N ANTI-INFLAMATORIA Y EN LA MIGRACION DE MACROFAGOS ", 
+                            "children": [
+                                {
+                                    "name": "Vi\u00e1ticos y Pasajes", 
+                                    "size": 75000.0
+                                }, 
+                                {
+                                    "name": "Gastos de capacitaci\u00f3n y entrenamiento", 
+                                    "size": 85000.0
+                                }, 
+                                {
+                                    "name": "Software especializados", 
+                                    "size": 30000.0
+                                }, 
+                                {
+                                    "name": "Material de consumo de uso directo", 
+                                    "size": 610000.0
+                                }
+                            ]
+                        }, 
+                        {
+                            "name": "VARIACI\u00d3N GEN\u00c9TICA COM\u00daN ASOCIADA A ENFERMEDAD ARTERIAL CORONARIA PREMATURA EN POBLACI\u00d3N MEXICANA Y AN\u00c1LISIS DE INTERACCIONES GEN AMBIENTE", 
+                            "children": [
+                                {
+                                    "name": "Material de consumo de uso directo", 
+                                    "size": 1425000.0
+                                }
+                            ]
+                        }, 
+                        {
+                            "name": "Identificaci\u00f3n de genes diferencialmente metilados en individuos con enferemedad arterial coronaria prematura, aterosclerosis subcl\u00ednica y controles sanos", 
+                            "children": [
+                                {
+                                    "name": "Material de consumo de uso directo", 
+                                    "size": 1100000.0
+                                }
+                            ]
+                        }, 
+                        {
+                            "name": "Identificaci\u00f3n y caracterizaci\u00f3n cl\u00ednica y molecular de la Cardiomiopat\u00eda Dilatada Familiar en pacientes mexicanos", 
+                            "children": [
+                                {
+                                    "name": "Secuenciaci\u00f3n", 
+                                    "size": 780000.0
+                                }, 
+                                {
+                                    "name": "Material de consumo de uso directo", 
+                                    "size": 110000.0
+                                }
+                            ]
+                        }
+                    ]
+                }, 
+                {
+                    "name": "Desarrollo de tecnolog\u00edas gen\u00f3micas", 
+                    "children": [
+                        {
+                            "name": "Desarrollo de tecnolog\u00edas gen\u00f3micas para la Secuenciaci\u00f3n de alta cobertura de Microbiomas Humanos", 
+                            "children": [
+                                {
+                                    "name": "Insumos de laboratorio", 
+                                    "size": 110400.0
+                                }, 
+                                {
+                                    "name": "Servicios experimentales en las Unidades de Alta Tecnolog\u00eda", 
+                                    "size": 609800.0
+                                }
+                            ]
+                        }
+                    ]
+                }, 
+                {
+                    "name": "Estructura de Prote\u00ednas", 
+                    "children": [
+                        {
+                            "name": "DESCIFRANDO LAS BASES ESTRUCTURALES DE LA AGREGACI\u00d3N AMILOIDE DE LAS CADENAS LIGERAS  ", 
+                            "children": [
+                                {
+                                    "name": "Vi\u00e1ticos y Pasajes", 
+                                    "size": 50000.0
+                                }, 
+                                {
+                                    "name": "Material de consumo de uso directo", 
+                                    "size": 490000.0
+                                }, 
+                                {
+                                    "name": "Equipo de Laboratorios", 
+                                    "size": 800000.0
+                                }
+                            ]
+                        }, 
+                        {
+                            "name": "Caracterizaci\u00f3n del perfil prote\u00f3mico y de citocinas en sueros de pacientes infectados con el virus de la influenza AH1N1 pand\u00e9mica", 
+                            "children": [
+                                {
+                                    "name": "insumos de laboratorio", 
+                                    "size": 92000.0
+                                }, 
+                                {
+                                    "name": "Uso de las UATs", 
+                                    "size": 368000.0
+                                }
+                            ]
+                        }, 
+                        {
+                            "name": "IDENTIFICACI\u00d3N DE DETERMINANTES ESTRUCTURALES  DE LA AGREGACI\u00d3N AMILOIDE DE LAS PROTE\u00cdNAS. ", 
+                            "children": [
+                                {
+                                    "name": "Vi\u00e1ticos y Pasajes", 
+                                    "size": 50000.0
+                                }, 
+                                {
+                                    "name": "Servicios en las Unidades de Alta Tecnolog\u00eda", 
+                                    "size": 450000.0
+                                }, 
+                                {
+                                    "name": "Gastos de publicaci\u00f3n", 
+                                    "size": 40000.0
+                                }, 
+                                {
+                                    "name": "Material de consumo de uso directo", 
+                                    "size": 230000.0
+                                }, 
+                                {
+                                    "name": "Equipo de Laboratorios", 
+                                    "size": 130000.0
+                                }
+                            ]
+                        }
+                    ]
+                }, 
+                {
+                    "name": "Gen\u00f3mica del parto prematuro", 
+                    "children": [
+                        {
+                            "name": "Caracterizaci\u00f3n de cambios en mediadores inflamatorios asociados a modificaciones en la microbiota cervicovaginal a lo largo del embarazo y su relaci\u00f3n con el nacimiento pret\u00e9rmino.", 
+                            "children": [
+                                {
+                                    "name": "Vi\u00e1ticos y Pasajes", 
+                                    "size": 40000.0
+                                }, 
+                                {
+                                    "name": "Software especializados", 
+                                    "size": 20000.0
+                                }, 
+                                {
+                                    "name": "Material de consumo de uso directo", 
+                                    "size": 5500000.0
+                                }, 
+                                {
+                                    "name": "Equipo de Laboratorios", 
+                                    "size": 200000.0
+                                }
+                            ]
+                        }
+                    ]
+                }, 
+                {
+                    "name": "Prote\u00f3mica", 
+                    "children": [
+                        {
+                            "name": "Herramientas OMICAS para el estudio de sistemas ateroscler\u00f3ticos", 
+                            "children": [
+                                {
+                                    "name": "Insumos de laboratorio", 
+                                    "size": 191064.0
+                                }, 
+                                {
+                                    "name": "Uso de las UATs", 
+                                    "size": 758936.0
+                                }
+                            ]
+                        }
+                    ]
+                }, 
+                {
+                    "name": "Oncogen\u00f3mica", 
+                    "children": [
+                        {
+                            "name": "Perfil de expresi\u00f3n diferencial de genes durante la transdiferenciaci\u00f3n al fenotipo NE a partir de c\u00e9lulas de C\u00e1ncer de Pr\u00f3stata", 
+                            "children": [
+                                {
+                                    "name": "Vi\u00e1ticos y Pasajes", 
+                                    "size": 23600.0
+                                }, 
+                                {
+                                    "name": "Material de consumo de uso directo", 
+                                    "size": 96400.0
+                                }, 
+                                {
+                                    "name": "Uso de UATs en el INMEGEN", 
+                                    "size": 370000.0
+                                }
+                            ]
+                        }, 
+                        {
+                            "name": "\u201cANALISIS GEN\u00d3MICO DE LAS VARIANTES RELACIONADAS A RESISTENCIA A ANTINEOPLASICOS PARA EL TRATAMIENTO DE C\u00c1NCER DE MAMA", 
+                            "children": [
+                                {
+                                    "name": "Vi\u00e1ticos y Pasajes", 
+                                    "size": 60000.0
+                                }, 
+                                {
+                                    "name": "Gastos de capacitaci\u00f3n y entrenamiento", 
+                                    "size": 30000.0
+                                }, 
+                                {
+                                    "name": "Software especializados", 
+                                    "size": 200000.0
+                                }, 
+                                {
+                                    "name": "Material de consumo de uso directo", 
+                                    "size": 700000.0
+                                }
+                            ]
+                        }, 
+                        {
+                            "name": "Fenotipos asociados al S\u00edndrome de Werner", 
+                            "children": [
+                                {
+                                    "name": "Vi\u00e1ticos y Pasajes", 
+                                    "size": 100000.0
+                                }, 
+                                {
+                                    "name": "Salarios", 
+                                    "size": 1000000.0
+                                }, 
+                                {
+                                    "name": "Material de consumo de uso directo", 
+                                    "size": 850000.0
+                                }, 
+                                {
+                                    "name": "Gastos del trabajo de campo", 
+                                    "size": 50000.0
+                                }
+                            ]
+                        }, 
+                        {
+                            "name": "Cambios en el metiloma y miRNA/oma en esferoides tumorales de c\u00e1ncer de mama.", 
+                            "children": [
+                                {
+                                    "name": "Material de consumo de uso directo", 
+                                    "size": 389000.0
+                                }
+                            ]
+                        }, 
+                        {
+                            "name": "DETERMINACI\u00d3N DE LA PREVALENCIA DE SUBTIPOS MOLECULARES EN TUMORES DE MAMA Y DEFINICI\u00d3N DEL ESPECTRO DE MUTACIONES EN LOS GENES BRCA1 Y BRCA2: GEN\u00d3MICA TRADUCCIONAL EN C\u00c1NCER DE MAMA.", 
+                            "children": [
+                                {
+                                    "name": "Material de consumo de uso directo", 
+                                    "size": 1600000.0
+                                }
+                            ]
+                        }, 
+                        {
+                            "name": "An\u00e1lisis de la participaci\u00f3n de microRNAs en el proceso de met\u00e1stasis en tumores de la gl\u00e1ndula mamaria", 
+                            "children": [
+                                {
+                                    "name": "Material de consumo de uso directo", 
+                                    "size": 953637.0
+                                }
+                            ]
+                        }, 
+                        {
+                            "name": "Identificaci\u00f3n de biomarcadores de adenocarcinoma pulmonar en el proteoma de saliva", 
+                            "children": [
+                                {
+                                    "name": "Vi\u00e1ticos y Pasajes", 
+                                    "size": 65000.0
+                                }, 
+                                {
+                                    "name": "Equipo de c\u00f3mputo", 
+                                    "size": 25000.0
+                                }, 
+                                {
+                                    "name": "Apoyo para formacion de recursos humano", 
+                                    "size": 54000.0
+                                }, 
+                                {
+                                    "name": "Material de consumo de uso directo", 
+                                    "size": 945000.0
+                                }, 
+                                {
+                                    "name": "Publicaciones, ediciones e impresiones", 
+                                    "size": 15000.0
+                                }
+                            ]
+                        }, 
+                        {
+                            "name": "Asociaci\u00f3n de un perfil de expresi\u00f3n gen\u00e9tica de c\u00e9lulas de tumor primario con el desarrollo de met\u00e1stasis a SNC en pacientes con C\u00e1 de Pulm\u00f3n c\u00e9lulas no peque\u00f1as                ", 
+                            "children": [
+                                {
+                                    "name": "Material de consumo de uso directo", 
+                                    "size": 700000.0
+                                }, 
+                                {
+                                    "name": "Equipo de Laboratorios", 
+                                    "size": 800000.0
+                                }
+                            ]
+                        }, 
+                        {
+                            "name": "Efecto de quimiopreventores en la desregulaci\u00f3n epigen\u00f3mica del proceso de transformaci\u00f3n celular inducido por ars\u00e9nico", 
+                            "children": [
+                                {
+                                    "name": "Material de consumo de uso directo", 
+                                    "size": 809277.37
+                                }
+                            ]
+                        }, 
+                        {
+                            "name": "An\u00e1lisis de la prevalencia de mutaciones asociadas a la selecci\u00f3n y  respuesta al tratamiento en tumores de mama, colorrectales y de pulm\u00f3n mediante secuenciaci\u00f3n masiva en paralelo de un panel de 137 genes.", 
+                            "children": [
+                                {
+                                    "name": "Equipo de c\u00f3mputo", 
+                                    "size": 200000.0
+                                }, 
+                                {
+                                    "name": "Material de consumo de uso directo", 
+                                    "size": 800000.0
+                                }
+                            ]
+                        }
+                    ]
+                }, 
+                {
+                    "name": "Gen\u00f3mica de las enfermedades autoinmunes", 
+                    "children": [
+                        {
+                            "name": "Evaluaci\u00f3n de los factores gen\u00e9ticos que predisponen al desarrollo de lupus eritematoso sist\u00e9mico en ni\u00f1os y adultos en poblaci\u00f3n mestiza mexicana", 
+                            "children": [
+                                {
+                                    "name": "Vi\u00e1ticos y Pasajes", 
+                                    "size": 50000.0
+                                }, 
+                                {
+                                    "name": "Material de consumo de uso directo", 
+                                    "size": 2000000.0
+                                }
+                            ]
+                        }, 
+                        {
+                            "name": "Polimorfismos funcionales en la v\u00eda del interfer\u00f3n alfa y su asociaci\u00f3n con el desarrollo de lupus eritematoso sist\u00e9mico pedi\u00e1trico", 
+                            "children": [
+                                {
+                                    "name": "Vi\u00e1ticos y Pasajes", 
+                                    "size": 110000.0
+                                }, 
+                                {
+                                    "name": "Gastos de capacitaci\u00f3n y entrenamiento", 
+                                    "size": 50000.0
+                                }, 
+                                {
+                                    "name": "Software especializados", 
+                                    "size": 60000.0
+                                }, 
+                                {
+                                    "name": "Material de consumo de uso directo", 
+                                    "size": 1080000.0
+                                }, 
+                                {
+                                    "name": "Equipo de Laboratorios", 
+                                    "size": 50000.0
+                                }
+                            ]
+                        }
+                    ]
+                }, 
+                {
+                    "name": "Gen\u00f3mica Computacional y An\u00e1lisis de Expresi\u00f3n", 
+                    "children": [
+                        {
+                            "name": "Secuenciaci\u00f3n, armado y an\u00e1lisis del genoma, transcriptoma y proteoma del par\u00e1sito humano Taenia solium", 
+                            "children": [
+                                {
+                                    "name": "Software especializados", 
+                                    "size": 50000.0
+                                }
+                            ]
+                        }, 
+                        {
+                            "name": "Termodin\u00e1mica fuera de equilibrio y an\u00e1lisis de redes complejas en la regulaci\u00f3n gen\u00e9tica mediada por factores de transcripci\u00f3n maestros", 
+                            "children": [
+                                {
+                                    "name": "Vi\u00e1ticos y Pasajes", 
+                                    "size": 100000.0
+                                }, 
+                                {
+                                    "name": "Gastos de capacitaci\u00f3n y entrenamiento", 
+                                    "size": 356877.6
+                                }, 
+                                {
+                                    "name": "Equipo de c\u00f3mputo", 
+                                    "size": 408000.0
+                                }, 
+                                {
+                                    "name": "Material de consumo de uso directo", 
+                                    "size": 346325.68
+                                }, 
+                                {
+                                    "name": "Gastos del trabajo de campo", 
+                                    "size": 43000.72
+                                }
+                            ]
+                        }
+                    ]
+                }, 
+                {
+                    "name": "Implicaciones \u00c9ticas, Jur\u00eddicas y Soc de la Gen\u00f3mica", 
+                    "children": [
+                        {
+                            "name": "Estudio sobre la disposici\u00f3n y la percepci\u00f3n de la poblaci\u00f3n a donar  muestras biol\u00f3gicas para su almacenamiento e investigaci\u00f3n en gen\u00e9tica humana y medicina gen\u00f3mica. \u00bfQu\u00e9 piensan los potenciales donadores mexicanos?", 
+                            "children": [
+                                {
+                                    "name": "Vi\u00e1ticos y Pasajes", 
+                                    "size": 3000.0
+                                }
+                            ]
+                        }, 
+                        {
+                            "name": "Diagn\u00f3stico de la educaci\u00f3n en gen\u00e9tica y gen\u00f3mica en las Escuelas y Facultades de Medicina en M\u00e9xico.", 
+                            "children": [
+                                {
+                                    "name": "Software especializados", 
+                                    "size": 0.1
+                                }
+                            ]
+                        }
+                    ]
+                }, 
+                {
+                    "name": "Gen\u00f3mica de enfermedades metab\u00f3licas", 
+                    "children": [
+                        {
+                            "name": "Impacto de factores gen\u00e9ticos y ambientales en la Susceptibilidad a Enfermedad Hep\u00e1tica en una cohorte de adultos mexicanos", 
+                            "children": [
+                                {
+                                    "name": "UATs", 
+                                    "size": 821500.0
+                                }, 
+                                {
+                                    "name": "Material de consumo de uso directo", 
+                                    "size": 265500.0
+                                }
+                            ]
+                        }, 
+                        {
+                            "name": "DIVERSIDAD GEN\u00d3MICA  Y VARIANTES RARAS QUE CONTRIBUYEN AL DESARROLLO DE LAS ENFERMEDADES CR\u00d3NICO-DEGENERATIVAS EN LOS GRUPOS IND\u00cdGENAS DEL TERRITORIO MEXICANO", 
+                            "children": [
+                                {
+                                    "name": "Vi\u00e1ticos y Pasajes", 
+                                    "size": 650000.0
+                                }, 
+                                {
+                                    "name": "Material de consumo de uso directo", 
+                                    "size": 5800000.0
+                                }
+                            ]
+                        }, 
+                        {
+                            "name": "ESTRUCTURA DEL GENOMA MITOCONDRIAL EN POBLACIONES AMERINDIAS DE M\u00c9XICO: IDENTIFICACION DE HAPLOGRUPOS ASOCIADOS A ENFERMEDADES COMUNES", 
+                            "children": [
+                                {
+                                    "name": "UAT-USIP", 
+                                    "size": 1610000.0
+                                }, 
+                                {
+                                    "name": "Material de consumo de uso directo", 
+                                    "size": 390000.0
+                                }
+                            ]
+                        }, 
+                        {
+                            "name": "IDENTIFICACI\u00d3N DE BIOMARCADORES DE SUSCEPTIBILIDAD PARA DIABETES MELLITUS TIPO 2  Y OBESIDAD, MEDIANTE LA CARACTERIZACI\u00d3N DE PERFILES DE EXPRESI\u00d3N,  EPIGEN\u00d3MICOS  Y METABOL\u00d3MICOS. ", 
+                            "children": [
+                                {
+                                    "name": "Material de consumo de uso directo", 
+                                    "size": 1396697.5
+                                }
+                            ]
+                        }, 
+                        {
+                            "name": "An\u00e1lisis de Haplotipos y prevalencia de la mutaci\u00f3n c.1987delC en el Gen GAA causante de la enfermedad de Pompe en individuos de comunidades en aislamiento gen\u00e9tico en la Zona Huasteca de San Luis Potos\u00ed", 
+                            "children": [
+                                {
+                                    "name": "Material de consumo de uso directo", 
+                                    "size": 350000.0
+                                }, 
+                                {
+                                    "name": "Equipo de Laboratorios", 
+                                    "size": 400000.0
+                                }
+                            ]
+                        }, 
+                        {
+                            "name": "Estudio de la expresi\u00f3n g\u00e9nica en el eje hipot\u00e1lamo-tejido adiposo en un modelo de ratas con s\u00edndrome metab\u00f3lico.", 
+                            "children": [
+                                {
+                                    "name": "GASTOS DE UNIDADES DEL INMEGEN", 
+                                    "size": 356364.9
+                                }, 
+                                {
+                                    "name": "Material de consumo de uso directo", 
+                                    "size": 133784.34
+                                }
+                            ]
+                        }, 
+                        {
+                            "name": "B\u00fasqueda de biomarcadores tempranos de nefropat\u00eda diab\u00e9tica", 
+                            "children": [
+                                {
+                                    "name": "Material de consumo de uso directo", 
+                                    "size": 200000.0
+                                }
+                            ]
+                        }, 
+                        {
+                            "name": "\u201cComponentes del s\u00edndrome metab\u00f3lico en familias Mexicanas asociados al grado de heredabilidad: Reestructuraci\u00f3n de los criterios", 
+                            "children": [
+                                {
+                                    "name": "Material de consumo de uso directo", 
+                                    "size": 460942.0
+                                }
+                            ]
+                        }, 
+                        {
+                            "name": "Comparaci\u00f3n de los niveles circulantes de Irisina antes y despu\u00e9s del ejercicio en sujetos con diferentes IMC", 
+                            "children": [
+                                {
+                                    "name": "Material de consumo de uso directo", 
+                                    "size": 774000.0
+                                }, 
+                                {
+                                    "name": "Equipo de Laboratorios", 
+                                    "size": 60000.0
+                                }
+                            ]
+                        }
+                    ]
+                }, 
+                {
+                    "name": "Gen\u00f3mica de enfermedades at\u00f3picas", 
+                    "children": [
+                        {
+                            "name": "BUSQUEDA DE CNVs EN INDIVIDUOS CON TRISOM\u00cdA 21 Y MONOSOMIA X", 
+                            "children": [
+                                {
+                                    "name": "Material de consumo de uso directo", 
+                                    "size": 1533984.0
+                                }
+                            ]
+                        }, 
+                        {
+                            "name": "Evaluaci\u00f3n del transcriptoma de las fases de trofozo\u00edto y quiste del par\u00e1sito Entamoeba histolytica, agente causal de la amibiasis en humanos", 
+                            "children": [
+                                {
+                                    "name": "Material de consumo de uso directo", 
+                                    "size": 325000.0
+                                }
+                            ]
+                        }, 
+                        {
+                            "name": "ESTUDIO DE ASOCIACI\u00d3N ENTRE POLIMORFISMOS EN LOS GENES DE LOS RECEPTORES TIPO TOLL (TLR) Y ASMA EN POBLACI\u00d3N INFANTIL MEXICANA.", 
+                            "children": [
+                                {
+                                    "name": "Vi\u00e1ticos y Pasajes", 
+                                    "size": 150000.0
+                                }, 
+                                {
+                                    "name": "Material de consumo de uso directo", 
+                                    "size": 1000000.0
+                                }, 
+                                {
+                                    "name": "Equipo de Laboratorios", 
+                                    "size": 200000.0
+                                }
+                            ]
+                        }
+                    ]
+                }, 
+                {
+                    "name": "Nutrigen\u00e9tica y Nutrigen\u00f3mica", 
+                    "children": [
+                        {
+                            "name": "Respuesta a la intervenci\u00f3n con PUFAs de acuerdo a los genotipos de PPAR", 
+                            "children": [
+                                {
+                                    "name": "Material de consumo de uso directo", 
+                                    "size": 225000.0
+                                }, 
+                                {
+                                    "name": "Gastos del trabajo de campo", 
+                                    "size": 35000.0
+                                }
+                            ]
+                        }, 
+                        {
+                            "name": "Factores gen\u00e9ticos y ambientales asociados a la obesidad en ni\u00f1os escolares. ", 
+                            "children": [
+                                {
+                                    "name": "Vi\u00e1ticos y Pasajes", 
+                                    "size": 20000.0
+                                }, 
+                                {
+                                    "name": "Material de consumo de uso directo", 
+                                    "size": 439282.0
+                                }
+                            ]
+                        }, 
+                        {
+                            "name": "Mecanismos gen\u00e9ticos y epigen\u00e9ticos asociados a los beneficios de la cocoa", 
+                            "children": [
+                                {
+                                    "name": "Vi\u00e1ticos y Pasajes", 
+                                    "size": 5000.0
+                                }, 
+                                {
+                                    "name": "Gastos del trabajo de campo", 
+                                    "size": 5000.0
+                                }, 
+                                {
+                                    "name": "Material de consumo de uso directo", 
+                                    "size": 100000.0
+                                }, 
+                                {
+                                    "name": "Equipo de Laboratorios", 
+                                    "size": 15000.0
+                                }
+                            ]
+                        }, 
+                        {
+                            "name": "EFECTO DE OMEGA 3 SOBRE LOS PATRONES DE METILACI\u00d3N DEL DNA DE GENES EN UN MODELO CON S\u00cdNDROME METAB\u00d3LICO INDUCIDO POR LA DIETA ", 
+                            "children": [
+                                {
+                                    "name": "gastos primeros auxilios", 
+                                    "size": 500.0
+                                }, 
+                                {
+                                    "name": "Servicios de unidades alta tecnolog\u00eda INMEGEN", 
+                                    "size": 155620.0
+                                }, 
+                                {
+                                    "name": "Material de consumo de uso directo", 
+                                    "size": 201769.0
+                                }, 
+                                {
+                                    "name": "ediciones e impresiones", 
+                                    "size": 10000.0
+                                }
+                            ]
+                        }
+                    ]
+                }, 
+                {
+                    "name": "Gen\u00f3mica y enfermedades infecciosas", 
+                    "children": [
+                        {
+                            "name": "Asociaci\u00f3n Estructural Huesped-Par\u00e1sito en Leishmania Mexicana", 
+                            "children": [
+                                {
+                                    "name": "Vi\u00e1ticos y Pasajes", 
+                                    "size": 50000.0
+                                }, 
+                                {
+                                    "name": "Contrataci\u00f3n de servicios externos", 
+                                    "size": 48000.0
+                                }, 
+                                {
+                                    "name": "Material de consumo de uso directo", 
+                                    "size": 50000.0
+                                }, 
+                                {
+                                    "name": "Equipo de Laboratorios", 
+                                    "size": 143570.45
+                                }
+                            ]
+                        }, 
+                        {
+                            "name": "Determinaci\u00f3n de mutaciones de resistencia a f\u00e1rmacos en Mycobacterium tuberculosis mediante secuenciaci\u00f3n de nueva generaci\u00f3n", 
+                            "children": [
+                                {
+                                    "name": "Material de consumo de uso directo", 
+                                    "size": 280000.0
+                                }
+                            ]
+                        }, 
+                        {
+                            "name": "Efecto de la expresi\u00f3n de Thy-1 en fibroblastos pulmonares humanos en su comunicaci\u00f3n con las c\u00e9lulas epiteliales alveolares.", 
+                            "children": [
+                                {
+                                    "name": "Material de consumo de uso directo", 
+                                    "size": 170000.0
+                                }
+                            ]
+                        }
+                    ]
+                }, 
+                {
+                    "name": "Gen\u00f3mica de la respuesta celular al estr\u00e9s oxidativo", 
+                    "children": [
+                        {
+                            "name": "Asociaci\u00f3n de variantes g\u00e9nicas en regiones que participan en la biog\u00e9nesis de  miRNAs y sus genes blanco con la susceptibilidad a desarrollar leucemia mieloide cr\u00f3nica.", 
+                            "children": [
+                                {
+                                    "name": "Vi\u00e1ticos y Pasajes", 
+                                    "size": 35000.0
+                                }, 
+                                {
+                                    "name": "Software especializados", 
+                                    "size": 20000.0
+                                }, 
+                                {
+                                    "name": "Material de consumo de uso directo", 
+                                    "size": 880000.0
+                                }
+                            ]
+                        }
+                    ]
+                }, 
+                {
+                    "name": "Bases moleculares de las enfermedades hep\u00e1ticas cr\u00f3nicas", 
+                    "children": [
+                        {
+                            "name": "Estudio del efecto hepatoprotector por bacterias probi\u00f3ticas, productoras de \u00e1cido f\u00f3lico, en un modelo experimental de cirrosis y c\u00e1ncer hep\u00e1tico", 
+                            "children": [
+                                {
+                                    "name": "Equipo de c\u00f3mputo", 
+                                    "size": 30000.0
+                                }, 
+                                {
+                                    "name": "Material de consumo de uso directo", 
+                                    "size": 626000.0
+                                }, 
+                                {
+                                    "name": "Equipo de Laboratorios", 
+                                    "size": 630000.0
+                                }
+                            ]
+                        }, 
+                        {
+                            "name": "Estudio integral del transcriptoma, proteoma y metiloma de las c\u00e9lulas del c\u00e1ncer de h\u00edgado", 
+                            "children": [
+                                {
+                                    "name": "UAT\u00b4s", 
+                                    "size": 563279.0
+                                }, 
+                                {
+                                    "name": "Material de consumo de uso directo", 
+                                    "size": 140000.0
+                                }
+                            ]
+                        }, 
+                        {
+                            "name": "EVALUACI\u00d3N DE PERFILES GLOBALES DE METILACI\u00d3N Y EXPRESI\u00d3N G\u00c9NICA ASOCIADOS A LA ESTEATOSIS Y/O A LA PROGRESI\u00d3N A ESTEATOHEPATITIS EN SUJETOS OBESOS ", 
+                            "children": [
+                                {
+                                    "name": "Material de consumo de uso directo", 
+                                    "size": 1256771.12
+                                }
+                            ]
+                        }, 
+                        {
+                            "name": "Aplicaci\u00f3n de la microdisecci\u00f3n laser para la identificaci\u00f3n de cambios moleculares espec\u00edficos de las regiones patol\u00f3gicas en la cirrosis y el c\u00e1ncer hep\u00e1tico", 
+                            "children": [
+                                {
+                                    "name": "Material de consumo de uso directo", 
+                                    "size": 452224.0
+                                }, 
+                                {
+                                    "name": "Equipo de Laboratorios", 
+                                    "size": 234311.2
+                                }
+                            ]
+                        }, 
+                        {
+                            "name": "ESTUDIO GEN\u00d3MICO DEL HIGADO GRASO NO ALCOH\u00d3LICO: PARTICIPACI\u00d3N DE LOS GENES DE LA HOMEOSTASIS DEL COLESTEROL EN LA PROGRESI\u00d3N DE ESTEATOSIS A ESTEATOHEPATITIS EN SUJETOS OBESOS", 
+                            "children": [
+                                {
+                                    "name": "Equipo de c\u00f3mputo", 
+                                    "size": 20000.0
+                                }, 
+                                {
+                                    "name": "Material de consumo de uso directo", 
+                                    "size": 1047000.0
+                                }, 
+                                {
+                                    "name": "Equipo de Laboratorios", 
+                                    "size": 580000.0
+                                }
+                            ]
+                        }
+                    ]
+                }, 
+                {
+                    "name": "Biolog\u00eda de Sistemas", 
+                    "children": [
+                        {
+                            "name": "Biolog\u00eda de sistemas en c\u00e1ncer: An\u00e1lisis del metabolismo en l\u00edneas celulares cancerosas a trav\u00e9s de un esquema integral entre modelos computacionales y datos de tecnolog\u00eda gen\u00f3mica.", 
+                            "children": [
+                                {
+                                    "name": "Servicios de las UATS (Transcriptoma)", 
+                                    "size": 200000.0
+                                }, 
+                                {
+                                    "name": "Servicios externos (Metaboloma)", 
+                                    "size": 90000.0
+                                }, 
+                                {
+                                    "name": "Unidad de Biomarcadores (INMEGEN)", 
+                                    "size": 20000.0
+                                }, 
+                                {
+                                    "name": "Servicios de las UATS (Proteoma)", 
+                                    "size": 400000.0
+                                }
+                            ]
+                        }
+                    ]
+                }, 
+                {
+                    "name": "Gen\u00f3mica del Metabolismo \u00d3seo", 
+                    "children": [
+                        {
+                            "name": "Identificaci\u00f3n de biomarcadores asociados a la variaci\u00f3n de la Densidad Mineral \u00d3sea mediante an\u00e1lisis de miRNAs  en monocitos circulantes de sangre perif\u00e9rica en mujeres postmenop\u00e1usicas mexicanas.", 
+                            "children": [
+                                {
+                                    "name": "UATs", 
+                                    "size": 580000.0
+                                }, 
+                                {
+                                    "name": "Material de consumo de uso directo", 
+                                    "size": 420000.0
+                                }
+                            ]
+                        }, 
+                        {
+                            "name": "Densidad mineral \u00f3sea y osteoporosis en mujeres mexicanas: estudio de asociaci\u00f3n de genoma completo.", 
+                            "children": [
+                                {
+                                    "name": "Uso de unidades de alta Tecnolog\u00eda-Affymetrix", 
+                                    "size": 1900000.0
+                                }, 
+                                {
+                                    "name": "Material de consumo de uso directo", 
+                                    "size": 2130000.0
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }, 
+        {
+            "name": "enviado", 
+            "children": [
+                {
+                    "name": "Gen\u00f3mica Funcional del C\u00e1ncer", 
+                    "children": [
+                        {
+                            "name": "Participaci\u00f3n de RNAs largos no codificantes (lncRNA) durante los cambios epigen\u00e9ticos en el proceso de formaci\u00f3n de mamo-esferas.", 
+                            "children": [
+                                {
+                                    "name": "Material de consumo de uso directo", 
+                                    "size": 1100000.0
+                                }
+                            ]
+                        }, 
+                        {
+                            "name": "El lncRNAoma de las c\u00e9lulas troncales de c\u00e1ncer.", 
+                            "children": [
+                                {
+                                    "name": "Material de consumo de uso directo", 
+                                    "size": 1800000.0
+                                }
+                            ]
+                        }
+                    ]
+                }, 
+                {
+                    "name": "Gen\u00f3mica del parto prematuro", 
+                    "children": [
+                        {
+                            "name": "Identificaci\u00f3n de cambios secuenciales en el transcriptoma del corioamnios durante la evoluci\u00f3n del trabajo de parto humano normal y en el trabajo de parto pret\u00e9rmino.", 
+                            "children": [
+                                {
+                                    "name": "Vi\u00e1ticos y Pasajes", 
+                                    "size": 35000.0
+                                }, 
+                                {
+                                    "name": "Material de consumo de uso directo", 
+                                    "size": 1016741.0
+                                }, 
+                                {
+                                    "name": "Equipo de Laboratorios", 
+                                    "size": 150000.0
+                                }
+                            ]
+                        }
+                    ]
+                }, 
+                {
+                    "name": "Gen\u00f3mica de enfermedades cardiovasculares", 
+                    "children": [
+                        {
+                            "name": "EFECTO FUNCIONAL DEL GEN ABCA1 SOBRE LA FORMACI\u00d3N DE MICROPART\u00cdCULAS ENDOTELIALES IN VITRO EN CONDICIONES BASALES Y EN RESPUESTA A EST\u00cdMULOS INVOLUCRADOS EN LA FISIOPATOLOG\u00cdA DE LA ATEROSCLEROSIS", 
+                            "children": [
+                                {
+                                    "name": "Servicio de Secuenciaci\u00f3n", 
+                                    "size": 550000.0
+                                }, 
+                                {
+                                    "name": "Material de consumo de uso directo", 
+                                    "size": 1027000.0
+                                }
+                            ]
+                        }
+                    ]
+                }, 
+                {
+                    "name": "Implicaciones \u00c9ticas, Jur\u00eddicas y Soc de la Gen\u00f3mica", 
+                    "children": [
+                        {
+                            "name": "Actitudes de investigadores, profesionales de la salud y estudiantes acerca de revelar los hallazgos imprevistos a los participantes en las investigaciones gen\u00f3micos.", 
+                            "children": [
+                                {
+                                    "name": "Vi\u00e1ticos y Pasajes", 
+                                    "size": 40000.0
+                                }, 
+                                {
+                                    "name": "Gastos de capacitaci\u00f3n y entrenamiento", 
+                                    "size": 10000.0
+                                }, 
+                                {
+                                    "name": "Material de consumo de uso directo", 
+                                    "size": 10000.0
+                                }
+                            ]
+                        }, 
+                        {
+                            "name": "Delimitaci\u00f3n del concepto de \"Identidad Gen\u00e9tica\" dentro del marco jur\u00eddico mexicano", 
+                            "children": [
+                                {
+                                    "name": "Vi\u00e1ticos y Pasajes", 
+                                    "size": 100000.0
+                                }, 
+                                {
+                                    "name": "Acervo Bibliogr\u00e1fico", 
+                                    "size": 20000.0
+                                }, 
+                                {
+                                    "name": "Gastos de capacitaci\u00f3n y entrenamiento", 
+                                    "size": 20000.0
+                                }, 
+                                {
+                                    "name": "Equipo de c\u00f3mputo", 
+                                    "size": 20000.0
+                                }
+                            ]
+                        }
+                    ]
+                }, 
+                {
+                    "name": "Farmacogen\u00f3mica", 
+                    "children": [
+                        {
+                            "name": "Caracterizaci\u00f3n de la diversidad en genes importantes en la farmacogen\u00f3mica de estatinas mediante secuenciaci\u00f3n de nueva generaci\u00f3n.", 
+                            "children": [
+                                {
+                                    "name": "Panel de enriquecimiento NGS HaloPlex (Agilent) ", 
+                                    "size": 573920.0
+                                }, 
+                                {
+                                    "name": "Servicio interno de secuenciacion", 
+                                    "size": 240444.6
+                                }, 
+                                {
+                                    "name": "Servicio externo secuenciacion capilar", 
+                                    "size": 1295.3
+                                }, 
+                                {
+                                    "name": "Servicio externo sintesis oligonucleotidos", 
+                                    "size": 1245.2
+                                }
+                            ]
+                        }, 
+                        {
+                            "name": "Identificaci\u00f3n de variantes farmacogen\u00e9ticas asociadas a la respuesta farmacol\u00f3gica de anticoagulantes en poblaciones mexicanas", 
+                            "children": [
+                                {
+                                    "name": "Reactivos de Secuenciaci\u00f3n", 
+                                    "size": 563322.0
+                                }, 
+                                {
+                                    "name": "Servicio de Secuenciaci\u00f3n", 
+                                    "size": 321700.0
+                                }, 
+                                {
+                                    "name": "Servicio de Microarreglos", 
+                                    "size": 7308.0
+                                }
+                            ]
+                        }
+                    ]
+                }, 
+                {
+                    "name": "Gen\u00f3mica de enfermedades metab\u00f3licas", 
+                    "children": [
+                        {
+                            "name": "Perfil de expresi\u00f3n diferencial de microRNAs en plasma de adultos con s\u00edndrome metab\u00f3lico.   MODALIDAD: PROYECTO DE GRUPO", 
+                            "children": [
+                                {
+                                    "name": "Gastos editoriales", 
+                                    "size": 40000.0
+                                }, 
+                                {
+                                    "name": "Material de consumo de uso directo", 
+                                    "size": 2400000.0
+                                }
+                            ]
+                        }, 
+                        {
+                            "name": "FACTORES DE SUSCEPTIBILIDAD GEN\u00c9TICA PARA EL DESARROLLO DE LA OBESIDAD Y RASGOS METAB\u00d3LICOS RELACIONADOS", 
+                            "children": [
+                                {
+                                    "name": "pago de microarreglos", 
+                                    "size": 3000000.0
+                                }, 
+                                {
+                                    "name": "Material de consumo de uso directo", 
+                                    "size": 180000.0
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }, 
+        {
+            "name": "nuevo", 
+            "children": [
+                {
+                    "name": "Oncogen\u00f3mica", 
+                    "children": [
+                        {
+                            "name": "Estudio farmacogen\u00f3mico utilizando microarreglos de alta densidad en pacientes con C\u00e1ncer de Pr\u00f3stata expuestos a terapia antihormonal.", 
+                            "children": [
+                                {
+                                    "name": "Material de consumo de uso directo", 
+                                    "size": 1813200.0
+                                }
+                            ]
+                        }, 
+                        {
+                            "name": "IDENTIFICACI\u00d3N DE MIRNAS COMO BIOMARCADORES DE DIAGN\u00d3STICO TEMPRANO Y PARA LA DETECCI\u00d3N DE LA ENFERMEDAD M\u00cdNIMA RESIDUAL EN NI\u00d1OS CON LEUCEMIA AGUDA LINFOBL\u00c1STICA", 
+                            "children": [
+                                {
+                                    "name": "Servicio de UATs", 
+                                    "size": 1310000.0
+                                }, 
+                                {
+                                    "name": "Material de consumo de uso directo", 
+                                    "size": 674000.0
+                                }
+                            ]
+                        }, 
+                        {
+                            "name": "Analisis Genomico Integrativo de Leucemias Agudas Linfoblaticas Pediatricas", 
+                            "children": [
+                                {
+                                    "name": "UTA's", 
+                                    "size": 890000.0
+                                }, 
+                                {
+                                    "name": "Material de consumo de uso directo", 
+                                    "size": 170000.0
+                                }
+                            ]
+                        }
+                    ]
+                }, 
+                {
+                    "name": "Gen\u00f3mica del parto prematuro", 
+                    "children": [
+                        {
+                            "name": "Gen\u00f3mica del Nacimiento Pret\u00e9rmino", 
+                            "children": [
+                                {
+                                    "name": "Vi\u00e1ticos y Pasajes", 
+                                    "size": 58000.0
+                                }, 
+                                {
+                                    "name": "Material de consumo de uso directo", 
+                                    "size": 1390000.0
+                                }, 
+                                {
+                                    "name": "Equipo de Laboratorios", 
+                                    "size": 250000.0
+                                }
+                            ]
+                        }
+                    ]
+                }, 
+                {
+                    "name": "Gen\u00f3mica de las enfermedades psiqui\u00e1tricas y neurodegenerativas", 
+                    "children": [
+                        {
+                            "name": "Evaluaci\u00f3n de la expresi\u00f3n de los genes de nicotina sobre la atenci\u00f3n sostenida en el modelo animal de esquizofrenia por lesi\u00f3n neonatal del hipocampo ventral.", 
+                            "children": [
+                                {
+                                    "name": "Software especializados", 
+                                    "size": 200.0
+                                }, 
+                                {
+                                    "name": "Equipo de c\u00f3mputo", 
+                                    "size": 150.0
+                                }, 
+                                {
+                                    "name": "Material de consumo de uso directo", 
+                                    "size": 600.0
+                                }, 
+                                {
+                                    "name": "Equipo de Laboratorios", 
+                                    "size": 1000.0
+                                }
+                            ]
+                        }
+                    ]
+                }, 
+                {
+                    "name": "misc", 
+                    "children": [
+                        {
+                            "name": "Valor pron\u00f3stico de la detecci\u00f3n de genes de fusi\u00f3n en pacientes con sarcomas pediatricos en bioflu\u00eddos", 
+                            "children": [
+                                {
+                                    "name": "Material de consumo de uso directo", 
+                                    "size": 925000.0
+                                }
+                            ]
+                        }
+                    ]
+                }, 
+                {
+                    "name": "Gen\u00f3mica de Poblaciones", 
+                    "children": [
+                        {
+                            "name": "Evaluaci\u00f3n comparativa del metiloma y su asociaci\u00f3n con los fenotipos de adicciones en gemelos monocig\u00f3ticos de la ciudad de M\u00e9xico", 
+                            "children": [
+                                {
+                                    "name": "Equipo de c\u00f3mputo", 
+                                    "size": 35000.0
+                                }, 
+                                {
+                                    "name": "Software especializados", 
+                                    "size": 25000.0
+                                }, 
+                                {
+                                    "name": "Servicio Externo", 
+                                    "size": 120000.0
+                                }, 
+                                {
+                                    "name": "Material de consumo de uso directo", 
+                                    "size": 250000.0
+                                }, 
+                                {
+                                    "name": "UATs", 
+                                    "size": 1837000.0
+                                }
+                            ]
+                        }
+                    ]
+                }, 
+                {
+                    "name": "Gen\u00f3mica de enfermedades metab\u00f3licas", 
+                    "children": [
+                        {
+                            "name": "\u201cCambios en el transcriptoma de pulm\u00f3n en el s\u00edndrome metab\u00f3lico en rata\u201d", 
+                            "children": [
+                                {
+                                    "name": "Material de consumo de uso directo", 
+                                    "size": 241416.95
+                                }
+                            ]
+                        }, 
+                        {
+                            "name": "Estudio de la expresi\u00f3n de microRNAs en el eje hipot\u00e1lamo-tejido adiposo en un modelo de ratas con s\u00edndrome metab\u00f3lico", 
+                            "children": [
+                                {
+                                    "name": "Vi\u00e1ticos y Pasajes", 
+                                    "size": 35000.0
+                                }, 
+                                {
+                                    "name": "Equipo de c\u00f3mputo", 
+                                    "size": 13000.0
+                                }, 
+                                {
+                                    "name": "Material de consumo de uso directo", 
+                                    "size": 530149.24
+                                }
+                            ]
+                        }, 
+                        {
+                            "name": "Secuenciaci\u00f3n de exoma completo para la identificaci\u00f3n de variantes gen\u00e9ticas implicadas en la susceptibilidad al desarrollo de diabetes tipo 2 en poblaci\u00f3n Maya", 
+                            "children": [
+                                {
+                                    "name": "Vi\u00e1ticos y Pasajes", 
+                                    "size": 40000.0
+                                }, 
+                                {
+                                    "name": "Gastos del trabajo de campo", 
+                                    "size": 60000.0
+                                }, 
+                                {
+                                    "name": "Software especializados", 
+                                    "size": 50000.0
+                                }, 
+                                {
+                                    "name": "Material de consumo de uso directo", 
+                                    "size": 600000.0
+                                }, 
+                                {
+                                    "name": "Equipo de Laboratorios", 
+                                    "size": 250000.0
+                                }
+                            ]
+                        }
+                    ]
+                }, 
+                {
+                    "name": "Gen\u00f3mica del Metabolismo \u00d3seo", 
+                    "children": [
+                        {
+                            "name": "An\u00e1lisis de expresi\u00f3n y patrones de metilaci\u00f3n como mecanismos reguladores del proceso de la proliferaci\u00f3n y diferenciaci\u00f3n del osteoblasto", 
+                            "children": [
+                                {
+                                    "name": "Unidades de Alta Tecnolog\u00eda", 
+                                    "size": 691279.04
+                                }, 
+                                {
+                                    "name": "Material de consumo de uso directo", 
+                                    "size": 225000.0
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }, 
+        {
+            "name": "terminado", 
+            "children": [
+                {
+                    "name": "Gen\u00f3mica Funcional del C\u00e1ncer", 
+                    "children": [
+                        {
+                            "name": "An\u00e1lisis de la expresi\u00f3n global en un modelo tridimensional de cultivo en diversos tipos de tumores ", 
+                            "children": [
+                                {
+                                    "name": "Material de consumo de uso directo", 
+                                    "size": 100000.0
+                                }, 
+                                {
+                                    "name": "Equipo de Laboratorios", 
+                                    "size": 94000.0
+                                }
+                            ]
+                        }, 
+                        {
+                            "name": "Regulaci\u00f3n de la expresi\u00f3n de Smac/DIABLO", 
+                            "children": [
+                                {
+                                    "name": "Vi\u00e1ticos y Pasajes", 
+                                    "size": 28000.0
+                                }, 
+                                {
+                                    "name": "Material de consumo de uso directo", 
+                                    "size": 235000.0
+                                }
+                            ]
+                        }
+                    ]
+                }, 
+                {
+                    "name": "Oncogen\u00f3mica", 
+                    "children": [
+                        {
+                            "name": "Caracterizaci\u00f3n de la cin\u00e9tica enzim\u00e1tica y de la regulaci\u00f3n por modificaciones post-traduccionales de la piruvato cinasa, alfa-enolasa,  lactoferrina, calreticulina y la prote\u00edna disulfuro isomerasa en c\u00e1ncer de mama.", 
+                            "children": [
+                                {
+                                    "name": "Manuscritos", 
+                                    "size": 50000.0
+                                }, 
+                                {
+                                    "name": "Material de consumo de uso directo", 
+                                    "size": 125000.0
+                                }
+                            ]
+                        }, 
+                        {
+                            "name": "Especificidad de la Determinaci\u00f3n de PCA3 en Orina para la detecci\u00f3n de c\u00e1ncer de pr\u00f3stata en pacientes mexicanos en el Hospital General \"Dr Manuel Gea Gonz\u00e1lez\".", 
+                            "children": [
+                                {
+                                    "name": "gastos de papeleria y publicaci\u00f3n", 
+                                    "size": 10000.0
+                                }, 
+                                {
+                                    "name": "UAT TIEMPO REAL", 
+                                    "size": 25000.0
+                                }, 
+                                {
+                                    "name": "GASTO CORRIENTE", 
+                                    "size": 125000.0
+                                }, 
+                                {
+                                    "name": "Gastos del trabajo de campo", 
+                                    "size": 10000.0
+                                }
+                            ]
+                        }, 
+                        {
+                            "name": "An\u00e1lisis prote\u00f3mico en c\u00e1ncer de mama de poblaci\u00f3n mexicana: identificaci\u00f3n de prote\u00ednas solubles y membranales como biomarcadores de diagn\u00f3stico en c\u00e1ncer", 
+                            "children": [
+                                {
+                                    "name": "Material de consumo de uso directo", 
+                                    "size": 624498.0
+                                }
+                            ]
+                        }
+                    ]
+                }, 
+                {
+                    "name": "Estructura de Prote\u00ednas", 
+                    "children": [
+                        {
+                            "name": "Identificaci\u00f3n de los determinantes de secuencia de la Amiloidog\u00e9nesis de las cadenas ligeras de Inmunoglobulinas", 
+                            "children": [
+                                {
+                                    "name": "Vi\u00e1ticos y Pasajes", 
+                                    "size": 25000.0
+                                }, 
+                                {
+                                    "name": "Publicaci\u00f3n", 
+                                    "size": 16000.0
+                                }, 
+                                {
+                                    "name": "Material de consumo de uso directo", 
+                                    "size": 349000.0
+                                }, 
+                                {
+                                    "name": "Servicios externos", 
+                                    "size": 40000.0
+                                }, 
+                                {
+                                    "name": "Mantenimiento de equipos", 
+                                    "size": 20000.0
+                                }, 
+                                {
+                                    "name": "Equipo de Laboratorios", 
+                                    "size": 45000.0
+                                }
+                            ]
+                        }, 
+                        {
+                            "name": "Desarrollo de Biosensores Fluorescentes para el Estudio de las Propiedades Funcionales y de Interacci\u00f3n de Prote\u00ednas Relacionadas con la Diabetes Mellitus Tipo 2", 
+                            "children": [
+                                {
+                                    "name": "Unidades de Alta Tecnolog\u00eda", 
+                                    "size": 198865.0
+                                }, 
+                                {
+                                    "name": "Material de consumo de uso directo", 
+                                    "size": 158000.0
+                                }
+                            ]
+                        }
+                    ]
+                }, 
+                {
+                    "name": "Gen\u00f3mica de Poblaciones", 
+                    "children": [
+                        {
+                            "name": "Identificaci\u00f3n de Marcadores Gen\u00e9ticos Asociados a Rasgos Metab\u00f3licos en Poblaci\u00f3n Ind\u00edgena Mexicana a trav\u00e9s del Escrutinio Completo del Genoma", 
+                            "children": [
+                                {
+                                    "name": "UATs", 
+                                    "size": 1800000.0
+                                }
+                            ]
+                        }
+                    ]
+                }, 
+                {
+                    "name": "Gen\u00f3mica de enfermedades cardiovasculares", 
+                    "children": [
+                        {
+                            "name": "Estudio de asociaci\u00f3n de variantes gen\u00e9ticas candidata a rasgos cuantitativos de Hipertensi\u00f3n Arterial esencial en poblaci\u00f3n mexicana ", 
+                            "children": [
+                                {
+                                    "name": "Equipo de Laboratorios", 
+                                    "size": 2079500.0
+                                }
+                            ]
+                        }, 
+                        {
+                            "name": "Detecci\u00f3n de Nuevos Genes Implicados en la Muerte S\u00fabita Inexplicada por Medio de la Secuenciaci\u00f3n del Exoma", 
+                            "children": [
+                                {
+                                    "name": "Material de consumo de uso directo", 
+                                    "size": 1000000.0
+                                }
+                            ]
+                        }, 
+                        {
+                            "name": "Identificaci\u00f3n de Variantes Gen\u00e9ticas que Confieren Susceptibilidad a la Enfermedad Arterial Coronaria en Poblaci\u00f3n Mexicana", 
+                            "children": [
+                                {
+                                    "name": "Vi\u00e1ticos y Pasajes", 
+                                    "size": 12000.0
+                                }, 
+                                {
+                                    "name": "PUBLICACIONES", 
+                                    "size": 14000.0
+                                }, 
+                                {
+                                    "name": "Software especializados", 
+                                    "size": 50000.0
+                                }, 
+                                {
+                                    "name": "Material de consumo de uso directo", 
+                                    "size": 1274000.0
+                                }
+                            ]
+                        }
+                    ]
+                }, 
+                {
+                    "name": "Gen\u00f3mica de las enfermedades autoinmunes", 
+                    "children": [
+                        {
+                            "name": "Polimorfismos en genes candidatos y su asociaci\u00f3n con lupus eritematoso sist\u00e9mico de inicio en la edad pedi\u00e1trica.", 
+                            "children": [
+                                {
+                                    "name": "Material de consumo de uso directo", 
+                                    "size": 600000.0
+                                }, 
+                                {
+                                    "name": "Equipo de Laboratorios", 
+                                    "size": 100000.0
+                                }
+                            ]
+                        }, 
+                        {
+                            "name": "Identificaci\u00f3n de los factores de riesgo gen\u00e9tico para desarrollar artritis  idiop\u00e1tica juvenil en poblaci\u00f3n mexicana", 
+                            "children": [
+                                {
+                                    "name": "Material de consumo de uso directo", 
+                                    "size": 900000.0
+                                }, 
+                                {
+                                    "name": "Equipo de Laboratorios", 
+                                    "size": 200000.0
+                                }
+                            ]
+                        }
+                    ]
+                }, 
+                {
+                    "name": "Implicaciones \u00c9ticas, Jur\u00eddicas y Soc de la Gen\u00f3mica", 
+                    "children": [
+                        {
+                            "name": "Estudio de la relaci\u00f3n epist\u00e9mica entre Ciencia y Derecho: Individualidad gen\u00e9tica en la legislaci\u00f3n sobre el genoma humano.", 
+                            "children": [
+                                {
+                                    "name": "Vi\u00e1ticos y Pasajes", 
+                                    "size": 1.0
+                                }, 
+                                {
+                                    "name": "Gastos de capacitaci\u00f3n y entrenamiento", 
+                                    "size": 1.0
+                                }, 
+                                {
+                                    "name": "Material de consumo de uso directo", 
+                                    "size": 1.0
+                                }
+                            ]
+                        }
+                    ]
+                }, 
+                {
+                    "name": "Gen\u00f3mica Computacional y An\u00e1lisis de Expresi\u00f3n", 
+                    "children": [
+                        {
+                            "name": "Redes transcripcionales implicadas en la diferenciaci\u00f3n y el desarrollo  de los Sistemas Biol\u00f3gicos: La ra\u00edz de Arabidopsis thaliana y c\u00e9lulas tumorales humanas como modelos de estudio", 
+                            "children": [
+                                {
+                                    "name": "Vi\u00e1ticos y Pasajes", 
+                                    "size": 30000.0
+                                }, 
+                                {
+                                    "name": "Equipo de c\u00f3mputo", 
+                                    "size": 20000.0
+                                }, 
+                                {
+                                    "name": "Beca Estudiante Maestr\u00eda", 
+                                    "size": 93085.2
+                                }, 
+                                {
+                                    "name": "Material de consumo de uso directo", 
+                                    "size": 230000.0
+                                }
+                            ]
+                        }, 
+                        {
+                            "name": "An\u00e1lisis e implementaci\u00f3n de algoritmos como herramientas computacionales para el mapeo de datos de secuenciaci\u00f3n masiva de applied biosystems solid a un genoma de referencia para aplicaciones a gen\u00f3mica funcional", 
+                            "children": [
+                                {
+                                    "name": "Vi\u00e1ticos y Pasajes", 
+                                    "size": 30000.0
+                                }, 
+                                {
+                                    "name": "Equipo de c\u00f3mputo", 
+                                    "size": 175000.0
+                                }, 
+                                {
+                                    "name": "Material de consumo de uso directo", 
+                                    "size": 15000.0
+                                }
+                            ]
+                        }
+                    ]
+                }, 
+                {
+                    "name": "Gen\u00f3mica de enfermedades metab\u00f3licas", 
+                    "children": [
+                        {
+                            "name": "Factores gen\u00e9ticos amerindios y variantes raras que contribuyen al desarrollo de la diabetes mellitus tipo 2 en familias ind\u00edgenas rurales de la Cd. de M\u00e9xico.", 
+                            "children": [
+                                {
+                                    "name": "Material de consumo de uso directo", 
+                                    "size": 1300000.0
+                                }
+                            ]
+                        }, 
+                        {
+                            "name": "Bases gen\u00f3micas del S\u00edndrome Metab\u00f3lico en la Poblaci\u00f3n Mexicana", 
+                            "children": [
+                                {
+                                    "name": "Material de consumo de uso directo", 
+                                    "size": 1000000.0
+                                }
+                            ]
+                        }
+                    ]
+                }, 
+                {
+                    "name": "Gen\u00f3mica de enfermedades at\u00f3picas", 
+                    "children": [
+                        {
+                            "name": "Asociaci\u00f3n de Polimorfismos en genes candidato con la susceptibilidad, gravedad y respuesta al tratamiento en poblaci\u00f3n infantil mexicana con Asma", 
+                            "children": [
+                                {
+                                    "name": "Material de consumo de uso directo", 
+                                    "size": 200000.0
+                                }
+                            ]
+                        }
+                    ]
+                }, 
+                {
+                    "name": "Nutrigen\u00e9tica y Nutrigen\u00f3mica", 
+                    "children": [
+                        {
+                            "name": "Efecto del tratamiento con alimento l\u00e1cteo fermentado con Lactobacillus johnsonii La1 en los patrones de metilaci\u00f3n y el p\u00e9rfil de expresi\u00f3n transcripcional a nivel gen\u00f3mico en mucosa g\u00e1strica de individuos sanos o con dispepsia funcional asociada a helycobacter Pylori", 
+                            "children": [
+                                {
+                                    "name": "Material de consumo de uso directo", 
+                                    "size": 1350000.0
+                                }
+                            ]
+                        }, 
+                        {
+                            "name": "Efecto de la prote\u00edna dieteria sobre la expresi\u00f3n de enzimas degradadoras de amino\u00e1cidos mediada por PPAR?", 
+                            "children": [
+                                {
+                                    "name": "Material de consumo de uso directo", 
+                                    "size": 270000.0
+                                }
+                            ]
+                        }
+                    ]
+                }, 
+                {
+                    "name": "Bases moleculares de las enfermedades hep\u00e1ticas cr\u00f3nicas", 
+                    "children": [
+                        {
+                            "name": "Biomarcadores moleculares tempranos del cancer hep\u00e1tico. parte 1, identificaci\u00f3n de genes-candidato de la de la Carcinog\u00e9nesis experimental.", 
+                            "children": [
+                                {
+                                    "name": "Vi\u00e1ticos y Pasajes", 
+                                    "size": 20000.0
+                                }, 
+                                {
+                                    "name": "Gastos asociados a publicaci\u00f3n ", 
+                                    "size": 30000.0
+                                }, 
+                                {
+                                    "name": "Material de consumo de uso directo", 
+                                    "size": 418000.0
+                                }, 
+                                {
+                                    "name": "Gastos del trabajo de campo", 
+                                    "size": 18000.0
+                                }
+                            ]
+                        }
+                    ]
+                }, 
+                {
+                    "name": "Gen\u00f3mica del Metabolismo \u00d3seo", 
+                    "children": [
+                        {
+                            "name": "Polimorfismos en genes de la ruta de se\u00f1alizaci\u00f3n WNT y su asociaci\u00f3n en la variaci\u00f3n de la densidad mineral \u00f3sea (DMO) en pacientes con Osteoporosis", 
+                            "children": [
+                                {
+                                    "name": "Vi\u00e1ticos y Pasajes", 
+                                    "size": 10000.0
+                                }, 
+                                {
+                                    "name": "Apoyo a estudiantes", 
+                                    "size": 40000.0
+                                }, 
+                                {
+                                    "name": "Material de consumo de uso directo", 
+                                    "size": 650000.0
+                                }, 
+                                {
+                                    "name": "Equipo de Laboratorios", 
+                                    "size": 50000.0
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }, 
+        {
+            "name": "cancelado", 
+            "children": [
+                {
+                    "name": "Oncogen\u00f3mica", 
+                    "children": [
+                        {
+                            "name": "Cambios en el metiloma del DNA dirigidos por la cinasa NIK en c\u00e1ncer de mama.", 
+                            "children": [
+                                {
+                                    "name": "Material de consumo de uso directo", 
+                                    "size": 166312.0
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }, 
+        {
+            "name": "en_evaluacion", 
+            "children": [
+                {
+                    "name": "Gen\u00f3mica de las enfermedades psiqui\u00e1tricas y neurodegenerativas", 
+                    "children": [
+                        {
+                            "name": "Asociaci\u00f3n de genes del sistema inmune y el virus de la Influenza en poblaci\u00f3n mexicana con psicosis.", 
+                            "children": [
+                                {
+                                    "name": "Equipo de c\u00f3mputo", 
+                                    "size": 35000.0
+                                }, 
+                                {
+                                    "name": "UATs", 
+                                    "size": 700000.0
+                                }, 
+                                {
+                                    "name": "Material de consumo de uso directo", 
+                                    "size": 100000.0
+                                }
+                            ]
+                        }, 
+                        {
+                            "name": "Asociaci\u00f3n de los receptores a nicotina en pacientes con psicosis y tabaquismo e interacci\u00f3n con cambios en el Epigenoma ", 
+                            "children": [
+                                {
+                                    "name": "UATs", 
+                                    "size": 1050000.0
+                                }, 
+                                {
+                                    "name": "Material de consumo de uso directo", 
+                                    "size": 200000.0
+                                }
+                            ]
+                        }
+                    ]
+                }, 
+                {
+                    "name": "Gen\u00f3mica Computacional y An\u00e1lisis de Expresi\u00f3n", 
+                    "children": [
+                        {
+                            "name": "An\u00e1lisis gen\u00f3mico de la respuesta a f\u00e1rmacos antineopl\u00e1sicos basados en cobre (Casiope\u00edna IIIia) en pacientes: Estudio Cl\u00ednico Fase I", 
+                            "children": [
+                                {
+                                    "name": "Material de consumo de uso directo", 
+                                    "size": 678652.0
+                                }, 
+                                {
+                                    "name": "Gastos del trabajo de campo", 
+                                    "size": 10400.0
+                                }
+                            ]
+                        }
+                    ]
+                }, 
+                {
+                    "name": "Nutrigen\u00e9tica y Nutrigen\u00f3mica", 
+                    "children": [
+                        {
+                            "name": "B\u00fasqueda de variantes gen\u00e9ticas asociadas a la obesidad y condici\u00f3n f\u00edsica en la poblaci\u00f3n mexicana", 
+                            "children": [
+                                {
+                                    "name": "Material de consumo de uso directo", 
+                                    "size": 39721.0
+                                }
+                            ]
+                        }, 
+                        {
+                            "name": "Estudio de asociaci\u00f3n de la microbiota intestinal con la obesidad y sus complicaciones metab\u00f3licas en poblaci\u00f3n infantil mexicana.", 
+                            "children": [
+                                {
+                                    "name": "Vi\u00e1ticos y Pasajes", 
+                                    "size": 35000.0
+                                }, 
+                                {
+                                    "name": "Gastos del trabajo de campo", 
+                                    "size": 5000.0
+                                }, 
+                                {
+                                    "name": "Material de consumo de uso directo", 
+                                    "size": 610000.0
+                                }, 
+                                {
+                                    "name": "Publicaciones e impresiones", 
+                                    "size": 18000.0
+                                }, 
+                                {
+                                    "name": "Equipo de c\u00f3mputo", 
+                                    "size": 20000.0
+                                }, 
+                                {
+                                    "name": "Equipo de Laboratorios", 
+                                    "size": 215000.0
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

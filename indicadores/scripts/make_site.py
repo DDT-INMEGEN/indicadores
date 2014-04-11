@@ -11,6 +11,8 @@ reportes = [
     { 'reporte': 'rspi_recursos_destino.html', 'template': 'dashboard_investigacion.html' },
     { 'reporte': 'rspi_recursos_origen.html', 'template': 'dashboard_investigacion.html' },
     { 'reporte': 'rspi_status.html',  'template': 'dashboard_investigacion.html' },
+    { 'reporte': 'rspi_investigadores.html',  'template': 'dashboard_investigacion.html' },
+    { 'reporte': 'rspi_proyectos_costos_sunburst.html',  'template': 'dashboard_investigacion_d3.html' },
 
     { 'reporte': "tg_categorias.html", 'template': 'dashboard_tg.html' },
     { 'reporte': "tg_estados.html", 'template': 'dashboard_tg.html' },
@@ -19,6 +21,8 @@ reportes = [
 
 
     { 'reporte': 'ti_tipos.html',  'template': 'dashboard_ti.html' },
+    { 'reporte': 'ti_personas.html',  'template': 'dashboard_ti.html' },
+    { 'reporte': 'ti_dinamica.html',  'template': 'dashboard_ti.html' },
 ]
 
 

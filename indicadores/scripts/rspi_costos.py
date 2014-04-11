@@ -1,3 +1,6 @@
+from htsql import HTSQL
+from db_conf import DB_URL
+
 class AutoVivification(dict):
     """Implementation of perl's autovivification feature."""
     def __getitem__(self, item):
@@ -8,10 +11,10 @@ class AutoVivification(dict):
         return value
  
 
-from htsql import HTSQL
-import pprint
 
-htsql = HTSQL("mysql://ddt:ttd@localhost/hesk")
+htsql = HTSQL(DB_URL)
+
+
 rows = htsql.produce("/protocolos_gasto{proyecto{status, linea_de_investigacion{linea_investigacion_desc :as desc} :as linea, titulo}, descripcion, monto}")
 
 # | proyecto                                                                            |                                  |            |
@@ -56,6 +59,6 @@ proyectos = {'name': 'proyectos',
 
 
 import json
-f = open('proyectos.json', 'w')
+f = open('rspi_proyectos_costos.json', 'w')
 f.write(json.dumps(proyectos, indent=4))
 f.close()
