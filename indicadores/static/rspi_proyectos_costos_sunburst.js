@@ -51,7 +51,11 @@ d3.json("rspi_proyectos_costos.json", function(error, root) {
 	.style("fill", function(d) { return color((d.children ? d : d.parent).name); })
 	.on("click", click);
 
+    path.append("svg:title").text(function(d) { return d.name });
+
     var nodes = partition.nodes(root);
+
+    
 
 
     function click(d) {
@@ -59,25 +63,8 @@ d3.json("rspi_proyectos_costos.json", function(error, root) {
 	    .duration(duration)
 	    .attrTween("d", arcTween(d)); }
 
-
-
-    path.append("g")
-        .attr("width", 20)
-        .attr("height", 20)
-        .attr("class", "aguas")
-
-    
-
-
-$('#sunburst path').tipsy({
-    gravity: 'w', 
-    html: false, 
-    title: function() { 
-        var d = this.__data__;
-        return d.name; }});
-
-
 });
+
 
 
 
