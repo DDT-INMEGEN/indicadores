@@ -18,7 +18,7 @@ var force = d3.layout.force()
     .size([width, height])
     .friction(0.9)
     .gravity(0.09)
-    .charge(-400)
+    .charge(-200)
     .linkDistance(190);
 
 function dragstart(d) {
