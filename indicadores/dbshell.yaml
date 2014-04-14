@@ -1,0 +1,4 @@
+tweak.shell:
+  server-root: http://indicadores.inmegen.gob.mx/dbshell
+  limit: 100
+tweak.shell.default:
