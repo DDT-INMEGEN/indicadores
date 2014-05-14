@@ -21,4 +21,7 @@ for f in args.xmlfiles:
         conceptos   = 'cfdi:Conceptos'
         concepto    = 'cfdi:Concepto'
 
-    print f.name, doc[comprobante]['@fecha'], doc[comprobante]['@total'],doc[comprobante]['@subTotal'], doc[comprobante][conceptos][concepto]['@cantidad']
+    print ",".join([doc[comprobante]['@fecha'],
+                    doc[comprobante]['@total'],])
+#                    doc[comprobante]['@subTotal'],
+#                    doc[comprobante][conceptos][concepto]['@cantidad']])
