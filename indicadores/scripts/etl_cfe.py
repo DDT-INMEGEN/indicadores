@@ -17,11 +17,11 @@ metadata.bind = args.db_url
 # metadata.bind.echo = True
 
 class Recibo(Entity):
-    fecha = Field(DateTime)
+    fecha = Field(Date)
     total = Field(Integer)
     kwh   = Field(Integer)
 
-    using_options(tablename="recibos")
+    using_options(tablename="recibos_cfe")
 
 
 setup_all()
