@@ -1,32 +1,16 @@
-<!DOCTYPE html>
-<meta charset="utf-8">
-<style>
+<h1 class="page-header">Recibos CFE</h1>
+    <div style="width: 800px; height: 350px;"
+	 data-widget="chart"
+	 data-type="line"
+	 data-yint="true"
+	 data-title="Consumo de Energía Eléctrica"
+         data-show-title="false"
+	 data-htsql="/recibos_cfe{fecha,total :as MXN, kwh :as 'kW/h'}">
+    </div>
 
-.bar {
-  fill: steelblue;
-}
-
-.bar:hover {
-  fill: brown;
-}
-
-.axis {
-  font: 10px sans-serif;
-}
-
-.axis path,
-.axis line {
-  fill: none;
-  stroke: #000;
-  shape-rendering: crispEdges;
-}
-
-.x.axis path {
-  display: none;
-}
-
-</style>
-
-<body>
-<script src="http://d3js.org/d3.v3.min.js"></script>
-<script src="aprendo.js"></script>
+<br />
+<div class="table-responsive">
+  <table class="table table-striped"
+	 data-htsql="/recibos_cfe{fecha,total :as MXN, kwh :as 'kW/h'}">
+  </table>
+</div>

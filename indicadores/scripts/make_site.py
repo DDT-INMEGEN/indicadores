@@ -23,6 +23,8 @@ reportes = [
     { 'reporte': 'ti_tipos.html',  'template': 'dashboard_ti.html' },
     { 'reporte': 'ti_personas.html',  'template': 'dashboard_ti.html' },
     { 'reporte': 'ti_dinamica.html',  'template': 'dashboard_ti.html' },
+
+    { 'reporte': 'admin_cfe.html',  'template': 'dashboard_admin.html' },
 ]
 
 
