@@ -1,0 +1,51 @@
+{% extends "dashboard_tg.html" %}
+
+{% block extrahead %}
+
+    <style>
+
+      .node {
+      stroke: #cce0ff;
+      fill: #ffc;
+      stroke-width: 1.9px;
+      }
+
+      .link {
+      stroke: #999;
+      stroke-opacity: 0.3;
+      }
+
+      #chart {
+      border: 0px solid #aaa;
+      width: 800px;
+      height: 800px;
+      background-color: #Fff;
+      }
+
+      path {
+      stroke: #fff;
+      fill-rule: evenodd;
+      }
+
+      #wut {
+      font-family: 'Trebuchet MS', sans-serif;
+      color: #111;
+      font-size: 0.4em;
+      font-weight: normal;
+      margin: 10;
+      padding: 10;
+}
+
+    </style>
+
+    <script type="text/javascript" src="bower_components/d3/d3.min.js"></script>
+{% endblock %}
+
+{% block main %}
+{{ html }}
+{% endblock %}
+
+
+{% block tailscripts %}
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+{% endblock %}

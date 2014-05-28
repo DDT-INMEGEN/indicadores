@@ -1,3 +1,12 @@
+import json
+from htsql import HTSQL
+from db_conf import DB_URL
+
+htsql = HTSQL(DB_URL)
+
+rows = htsql.produce("/helpdesk_ticket{ tipo.tipo, categoria.nombre, estado.estado, fecha_creacion}")
+
+
 class AutoVivification(dict):
     """Implementation of perl's autovivification feature."""
     def __getitem__(self, item):
@@ -6,13 +15,6 @@ class AutoVivification(dict):
         except KeyError:
             value = self[item] = type(self)()
         return value
- 
-
-from htsql import HTSQL
-import pprint
-
-htsql = HTSQL("mysql://ddt:ttd@localhost/hesk")
-rows = htsql.produce("/helpdesk_ticket{ tipo.tipo, categoria.nombre, estado.estado, fecha_creacion}")
 
 partitions = AutoVivification()
 
@@ -62,7 +64,6 @@ for row in rows:
 
 
 
-pprint.pprint(partitions)
 tipos = []
 for tipo in partitions:
     children = []
@@ -90,11 +91,6 @@ tickets = {'name': 'tickets',
 
 
 
-
-# import json
-# f = open('tickets_tg.json', 'w')
-# f.write(json.dumps(tickets, indent=4))
-# f.close()
-
-
+with open('../static/tg_sunburst.json', 'w') as f:
+    f.write(json.dumps(tickets, indent=4))
 

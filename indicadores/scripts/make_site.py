@@ -18,6 +18,7 @@ reportes = [
     { 'reporte': "tg_estados.html", 'template': 'dashboard_tg.html' },
     { 'reporte': "tg_internos_externos.html", 'template': 'dashboard_tg.html' },
     { 'reporte': "tg_tiempo.html", 'template': 'dashboard_tg.html' },
+    { 'reporte': "tg_sunburst.html", 'template': 'dashboard_tg_d3.html' },
 
 
     { 'reporte': 'ti_tipos.html',  'template': 'dashboard_ti.html' },
