@@ -14,7 +14,7 @@ function isParentOf(p, c) {
 
 
 var width = 600,
-height = 600,
+height = 650,
 radius = 300,
 padding = 5;
 

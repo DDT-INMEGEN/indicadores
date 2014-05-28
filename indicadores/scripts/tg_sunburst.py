@@ -91,6 +91,6 @@ tickets = {'name': 'tickets',
 
 
 
-with open('../static/tg_sunburst.json', 'w') as f:
+with open('static/tg_sunburst.json', 'w') as f:
     f.write(json.dumps(tickets, indent=4))
 
