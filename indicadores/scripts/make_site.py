@@ -13,6 +13,7 @@ reportes = [
     { 'reporte': 'rspi_status.html',  'template': 'dashboard_investigacion.html' },
     { 'reporte': 'rspi_investigadores.html',  'template': 'dashboard_investigacion.html' },
     { 'reporte': 'rspi_proyectos_costos_sunburst.html',  'template': 'dashboard_investigacion_d3.html' },
+    { 'reporte': 'rspi_usuarios_puesto.html',  'template': 'dashboard_investigacion.html' },
 
     { 'reporte': "tg_categorias.html", 'template': 'dashboard_tg.html' },
     { 'reporte': "tg_estados.html", 'template': 'dashboard_tg.html' },
