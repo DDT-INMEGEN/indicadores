@@ -13,7 +13,7 @@ reportes = [
     { 'reporte': 'rspi_status.html',  'template': 'dashboard_investigacion.html' },
     { 'reporte': 'rspi_investigadores.html',  'template': 'dashboard_investigacion.html' },
     { 'reporte': 'rspi_proyectos_costos_sunburst.html',  'template': 'dashboard_investigacion_d3.html' },
-    { 'reporte': 'rspi_proyectos_convenio.html',  'template': 'dashboard_investigacion.html' },
+#    { 'reporte': 'rspi_proyectos_convenio.html',  'template': 'dashboard_investigacion.html' },
     { 'reporte': 'rspi_usuarios_puesto.html',  'template': 'dashboard_investigacion.html' },
     { 'reporte': 'rspi_usuarios_area.html',  'template': 'dashboard_investigacion.html' },
     { 'reporte': 'rspi_tesis_avance.html',  'template': 'dashboard_investigacion.html' },

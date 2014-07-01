@@ -59,6 +59,6 @@ proyectos = {'name': 'proyectos',
 
 
 import json
-f = open('rspi_proyectos_costos.json', 'w')
+f = open('static/rspi_proyectos_costos.json', 'w')
 f.write(json.dumps(proyectos, indent=4))
 f.close()
