@@ -8,10 +8,11 @@ import pprint
 
 parser = argparse.ArgumentParser(description='Extrae unos datos de los XMLs, los deja en un diccionario.')
 parser.add_argument('--db_url', required=True)
-parser.add_argument('--color', type=Boolean, default=False)
+parser.add_argument('--color', dest='color', action='store_true')
+parser.add_argument('--no_color', dest='color', action='store_false')
 parser.add_argument('--impresoras', type=argparse.FileType('r'), required=True, help='Relación de impresoras en formato CSV')
 parser.add_argument('--volumen', type=argparse.FileType('r'), required=True, help='Volumen de impresión en formato CSV')
-
+parser.set_defaults(color=False)
 args = parser.parse_args()
 
 # sqlite:///cfe.sqlite
@@ -42,13 +43,14 @@ create_all()
 
 # carga relación de impresoras
 impresoras_reader = csv.reader(args.impresoras, delimiter=',', quotechar='"')
-
+encabezado = impresoras_reader.next()
 for row in impresoras_reader:
     #No., IMPRESORA , MODELO, N/S, Dirección MAC, IP, Ubicación Actual
-    Impresora( serie = row[3],
-               modelo = row[2],
-               ubicacion = u"%s" % row[6] )
-    session.commit()
+    if not Impresora.get_by(serie=row[3]):
+        Impresora( serie = row[3],
+                   modelo = row[2],
+                   ubicacion = u"%s" % row[6] )
+        session.commit()
 
 
 
@@ -60,6 +62,13 @@ months     = ['ENE','FEB','MZO','ABR','MAY','JUN','JUL','AGO','SEP','OCT','NOV',
 
 for row in volumen_reader:
     impresora = Impresora.get_by(serie=row[1])
+
+    if not impresora:
+        impresora = Impresora( serie = row[1],
+                               modelo = 'Modelo Desconocido',
+                               ubicacion = u"Ubicación Desconocida" )
+        session.commit()
+
 
     for n in range(2,len(row)):
         volumen = row[n]
