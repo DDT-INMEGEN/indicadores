@@ -30,6 +30,7 @@ reportes = [
     { 'reporte': 'ti_dinamica.html',  'template': 'dashboard_ti.html' },
 
     { 'reporte': 'admin_cfe.html',  'template': 'dashboard_admin.html' },
+    { 'reporte': 'admin_impresoras_dinamica.html',  'template': 'dashboard_admin.html' },
 ]
 
 

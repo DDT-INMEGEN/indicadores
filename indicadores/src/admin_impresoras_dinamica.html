@@ -1,0 +1,16 @@
+<h1 class="page-header">Volumen de Impresión</h1>
+    <div style="width: 800px; height: 350px;"
+	 data-widget="chart"
+	 data-type="line"
+	 data-yint="true"
+	 data-title="Volumen de Impresión"
+         data-show-title="false"
+	 data-htsql="/impresoras_volumen{fecha}^fecha {fecha,sum(impresoras_volumen.volumen) :as impresiones}">
+    </div>
+
+<br />
+<div class="table-responsive">
+  <table class="table table-striped"
+	 data-htsql="/impresoras_volumen{fecha}^fecha {fecha-,sum(impresoras_volumen.volumen) :as impresiones}">
+  </table>
+</div>
