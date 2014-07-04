@@ -31,6 +31,7 @@ reportes = [
 
     { 'reporte': 'admin_cfe.html',  'template': 'dashboard_admin.html' },
     { 'reporte': 'admin_impresoras_dinamica.html',  'template': 'dashboard_admin.html' },
+    { 'reporte': 'admin_impresoras_areas.html',  'template': 'dashboard_admin.html' },
 ]
 
 

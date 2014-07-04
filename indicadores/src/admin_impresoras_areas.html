@@ -1,0 +1,16 @@
+<h1 class="page-header">Impresión por áreas</h1>
+    <div style="width: 800px; height: 350px;"
+	 data-widget="chart"
+	 data-type="pie"
+	 data-yint="true"
+	 data-title="Volumen de Impresión por áreas"
+         data-show-title="false"
+	 data-htsql="/impresoras{ubicacion}^ubicacion {ubicacion,sum(impresoras.impresoras_volumen.volumen)- :as impresiones}.limit(10)">
+    </div>
+
+<br />
+<div class="table-responsive">
+  <table class="table table-striped"
+	 data-htsql="/impresoras{ubicacion}^ubicacion {ubicacion,sum(impresoras.impresoras_volumen.volumen)- :as impresiones}">
+  </table>
+</div>
