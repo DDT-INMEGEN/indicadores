@@ -1,0 +1,522 @@
+
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<title>
+ .::INMEGEN::.   &middot; Visualizacion
+</title>
+<!-- Meta Tags -->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
+
+
+<link type="text/css" rel="stylesheet" media="all" href="https://inet.inmegen.gob.mx/tema/visualizacion/css/app.css" >
+<link rel="shortcut icon" href="https://inet.inmegen.gob.mx/tema/visualizacion/images/url_icon.png" type="image/x-icon">
+
+
+<link type="text/css" rel="stylesheet" media="all" href="https://inet.inmegen.gob.mx/tema/intranet.css" >
+
+
+<link type="text/css" href="https://inet.inmegen.gob.mx/tema/cv/css/start/jquery-ui-1.8.9.custom.css" rel="stylesheet" />	
+<script type="text/javascript" src="https://inet.inmegen.gob.mx/tema/cv/js/jquery-1.4.4.min.js"></script>
+
+
+
+
+
+<link rel="stylesheet" type="text/css" href="/tema/intragen/css/bootstrap.min.css">
+<link href="/tema/visualizacion/css/dc.css" rel="stylesheet" type="text/css">
+
+
+
+
+</head>
+
+<body>
+<div id="intranet-header">
+<div id="intranet-top-menu"></div>
+
+<div id="intranet-banner">
+<div id="intranet-banner-layer">
+<ul class="horizontal">
+    <li class="inmegen">
+        <a href="/"></a>
+    </li>
+</ul>
+<div id="app">Visualización <span class="version">v. 1.0</span></div>
+<p id="app_name"></p>
+
+</div>
+</div>
+
+</div>
+
+
+<div class="colmask rightmenu">
+
+
+<div class="colleft">
+<div class="col1">
+<div id="intranet-content">
+
+
+
+<div style="background: #fff;">  
+  <div>
+    <div id="pie-chart" class="dc-chart-dash">
+      <span>Proyectos Internos, Externos</span>
+      <a class="reset" href="javascript:pieChart.filterAll();dc.redrawAll();" style="display: none;">reset</a>
+      <div class="clearfix"></div>
+    </div>
+    
+    <div id="pie-chart-status" class="dc-chart-dash">
+      <span>Status</span>
+      <a class="reset" href="javascript:pieChartStatus.filterAll();dc.redrawAll();" style="display: none;">reset</a>
+      <div class="clearfix"></div>
+    </div>
+    
+    <div id="pie-chart-recursos" class="dc-chart-dash">
+      <span>Recursos por institución</span>
+      <a class="reset" href="javascript:pieChartRecursos.filterAll();dc.redrawAll();" style="display: none;">reset</a>
+      <span class="reset" style="display: none;">Current filter: <span class="filter"></span></span>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+
+  <div id="bar-chart-recursos">
+    <!--<span>Recursos por fechas</span>-->
+    <a class="reset" href="javascript:barChartRecursos.filterAll();dc.redrawAll();" style="display: none;">reset</a>
+    <span class="reset" style="display: none;">Current filter: <span class="filter"></span></span>
+    <div class="clearfix"></div>
+  </div>
+  
+    <div id="bar-chart">
+      <!--<span>Proyectos con Fecha de inicio y recursos</span>-->
+      <a class="reset" href="javascript:bubbleChart.filterAll();dc.redrawAll();" style="display: none;">reset</a>
+      <span class="reset" style="display: none;">Current filter: <span class="filter"></span></span>
+      <div class="clearfix"></div>
+    </div>
+    
+    <div id="row-chart-linea">
+      <span>#Proyectos por Lineas de investigación</span>
+      <a class="reset" href="javascript:rowChartLinea.filterAll();dc.redrawAll();" style="display: none;">reset</a>
+      <div class="clearfix"></div>
+    </div>
+
+    <div class="dc-data-count">
+      <!--<span class="filter-count"></span> selected out of --> 
+      <span class="total-count"></span> total records | <a href="javascript:dc.filterAll(); dc.renderAll();">Reset All</a>
+    </div>
+    
+    <table class="table table-hover dc-data-table">
+      <thead>
+	<tr class="header">
+          <th>Proyecto</th>
+	  <th>Institución</th>
+	  <th>Total recursos</th>
+	</tr>
+      </thead>
+    </table>
+</div>
+
+
+</div>
+</div>
+
+<div class="col2">
+<div id="caja" style="display:block;">
+</div>
+
+</div>
+<a href="#" id="mostrar">
+<div id="button-collapse-menu" class="btn_open"></div>
+</a>
+</div>
+
+</div><!-- colleft -->
+
+</div><!-- colmask -->
+
+<div id="intranet-footer">
+<a href="http://www.djangoproject.com">
+<img src="https://inet.inmegen.gob.mx/tema/intragen/images/django-python-logo.png" alt="django">
+</a>
+<a href="http://www.gnu.org/">
+<img src="https://inet.inmegen.gob.mx/tema/intragen/images/gnu-mini.png" alt="gnu">
+</a>
+<a href="http://www.w3.org/html/logo/">
+<img src="https://inet.inmegen.gob.mx/tema/intragen/images/HTML5_Logo_32.png" alt="html5">
+</a>
+</div>
+
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        
+        var menu_click = false;
+        
+        
+        $(function(){  
+            $("#mostrar").click(function(event) {
+                $.ajax({
+                    type: "GET",
+                    url: "/intragen/switch_panel_session"
+                });
+                
+                lastBlock = $(".col1");
+                lastBlock2 = $(".col2");
+                if (menu_click) {
+                    minWidthCol2 = '12%';
+                    minWidthCol1 = '87%';
+                }
+                else {
+                    minWidthCol2 = '1%';
+                    minWidthCol1 = '98%';
+                }
+                $(lastBlock).animate({width: minWidthCol1}, { queue:false, duration:300 });
+                $(lastBlock2).animate({width: minWidthCol2}, { queue:false, duration:300 });
+                menu_click = menu_click ^ true;
+                event.preventDefault();
+                $("#caja").slideToggle();
+                if(menu_click) {
+                    $("#button-collapse-menu").removeClass("btn_open");
+                    $("#button-collapse-menu").addClass("btn_close");
+                } else {
+                    $("#button-collapse-menu").removeClass("btn_close");
+                    $("#button-collapse-menu").addClass("btn_open");
+                }
+            });  
+        });
+    });
+
+    function no_panel() {
+        lastBlock = $(".col1");
+        lastBlock2 = $(".col2");
+        
+        minWidthCol2 = '1%';
+        minWidthCol1 = '98%';
+        
+        $(lastBlock).animate({width: minWidthCol1}, { queue:false, duration:0 });
+        $(lastBlock2).animate({width: minWidthCol2}, { queue:false, duration:0 });
+        $("#button-collapse-menu").removeClass("btn_open");
+        $("#button-collapse-menu").addClass("btn_close");
+    }
+    
+    $(function(){
+        $('#button-msg-box').click(function(){
+            $("#message_box").fadeOut("slow");
+            return false
+        })
+    });
+    
+    $(function(){
+	    $('.menu li a').click(function(event){
+	        //$(this).children().toggleClass("active");
+                $(this).parent().toggleClass("active");
+		//var elem = $(this).next().next();
+                var elem = $(this).next();
+		if(elem.is('ul')){
+		    event.preventDefault();
+		    /*$('.menu ul:visible').not(elem).slideUp();*/
+		    elem.slideToggle();
+		}
+	    });
+    });
+</script>
+
+
+
+<script type="text/javascript" src="https://inet.inmegen.gob.mx/tema/cv/js/jquery-ui-1.8.9.custom.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+
+		// Tabs
+		$('#tabs').tabs();
+		
+		//hover states on the static widgets
+		$('#dialog_link, ul#icons li').hover(
+			function() { $(this).addClass('ui-state-hover'); }, 
+			function() { $(this).removeClass('ui-state-hover'); }
+		);
+		
+	});
+</script>
+
+<script src="/tema/intragen/scripts/crossfilter.v1.min.js"></script>
+<script src="/tema/intragen/scripts/d3.v3.min.js"></script>
+<script src="/tema/visualizacion/js/dc.js"></script>
+<script type="text/javascript">
+var data = [{"status": "terminado", "anio": 2005, "recursos_externos": 0.0, "recursos_internos": 0.0, "tipo": "interno", "count": 1, "institucion": "", "instituciones": "", "recursos": 0.0, "proyecto": 1, "proyecto_titulo": "Estructura Gen\u00f3mica y Mapa de Haplotipos de la Poblaci\u00f3n Mexicana", "linea": "Gen\u00f3mica de Poblaciones", "termino": 2013}, {"status": "terminado", "anio": 2005, "recursos_externos": 700000.0, "recursos_internos": 0.0, "tipo": "interno", "count": 1, "institucion": "Otras", "instituciones": "Consejo Nacional de Ciencia y Tecnolog\u00eda", "recursos": 700000.0, "proyecto": 2, "proyecto_titulo": "Polimorfismos en genes candidatos y su asociaci\u00f3n con lupus eritematoso sist\u00e9mico de inicio en la edad pedi\u00e1trica.", "linea": "Gen\u00f3mica de las enfermedades autoinmunes", "termino": 2012}, {"status": "terminado", "anio": 2005, "recursos_externos": 177000.0, "recursos_internos": 0.0, "tipo": "interno", "count": 1, "institucion": "Otras", "instituciones": "Consejo Nacional de Ciencia y Tecnolog\u00eda", "recursos": 177000.0, "proyecto": 3, "proyecto_titulo": "Asociaci\u00f3n de Polimorfismos en genes candidato con la susceptibilidad, gravedad y respuesta al tratamiento en poblaci\u00f3n infantil mexicana con Asma", "linea": "Gen\u00f3mica de enfermedades at\u00f3picas", "termino": 2012}, {"status": "aprobado", "anio": 2006, "recursos_externos": 1875000.0, "recursos_internos": 0.0, "tipo": "interno", "count": 1, "institucion": "Otras", "instituciones": "Consejo Nacional de Ciencia y Tecnolog\u00eda", "recursos": 1875000.0, "proyecto": 4, "proyecto_titulo": "Caracterizaci\u00f3n  de factores gen\u00e9ticos que confieren riesgo para desarrollar  Obesidad en poblaci\u00f3n mexicana", "linea": "Gen\u00f3mica de enfermedades metab\u00f3licas", "termino": 2013}, {"status": "cancelado", "anio": 2005, "recursos_externos": 0.0, "recursos_internos": 0.0, "tipo": "interno", "count": 1, "institucion": "", "instituciones": "", "recursos": 0.0, "proyecto": 5, "proyecto_titulo": "Patr\u00f3n diferencial de expresi\u00f3n g\u00e9nica en Rabdomiosarcomas embrionarios de estad\u00edos avanzados en pacientes pedi\u00e1tricos", "linea": "Oncogen\u00f3mica", "termino": 2007}, {"status": "terminado", "anio": 2007, "recursos_externos": 900000.0, "recursos_internos": 0.0, "tipo": "interno", "count": 1, "institucion": "Otras", "instituciones": "Consejo Nacional de Ciencia y Tecnolog\u00eda", "recursos": 900000.0, "proyecto": 6, "proyecto_titulo": "Variabilidad Gen\u00f3mica Asociada a Degeneraci\u00f3n Macular Relacionada a la Edad en M\u00e9xico", "linea": "Gen\u00f3mica de enfermedades metab\u00f3licas", "termino": 2013}, {"status": "terminado", "anio": 2007, "recursos_externos": 0.0, "recursos_internos": 0.0, "tipo": "interno", "count": 1, "institucion": "", "instituciones": "", "recursos": 0.0, "proyecto": 7, "proyecto_titulo": "Estudio de asociaci\u00f3n de variantes gen\u00e9ticas candidata a rasgos cuantitativos de Hipertensi\u00f3n Arterial esencial en poblaci\u00f3n mexicana ", "linea": "Gen\u00f3mica de enfermedades cardiovasculares", "termino": 2012}, {"status": "cancelado", "anio": 2007, "recursos_externos": 0.0, "recursos_internos": 0.0, "tipo": "interno", "count": 1, "institucion": "", "instituciones": "", "recursos": 0.0, "proyecto": 8, "proyecto_titulo": "Identificaci\u00f3n de variantes gen\u00f3micas asociadas a susceptibilidad a Tuberculosis pulmonar en la Poblaci\u00f3n mexicana", "linea": "Gen\u00f3mica y enfermedades infecciosas", "termino": 2008}, {"status": "aprobado", "anio": 2007, "recursos_externos": 0.0, "recursos_internos": 0.0, "tipo": "interno", "count": 1, "institucion": "", "instituciones": "", "recursos": 0.0, "proyecto": 9, "proyecto_titulo": "Estudio de asociaci\u00f3n gen\u00f3mica para al Diabetes Mellitus Tipo 2 en Poblaci\u00f3n mexicana", "linea": "Gen\u00f3mica de enfermedades metab\u00f3licas", "termino": 2014}, {"status": "cancelado", "anio": 2007, "recursos_externos": 0.0, "recursos_internos": 0.0, "tipo": "interno", "count": 1, "institucion": "", "instituciones": "", "recursos": 0.0, "proyecto": 10, "proyecto_titulo": "Identificaci\u00f3n de Genotipos de Susceptibilidad para el Desarrollo de Sepsis y Severidad del Cuadro S\u00e9ptico en Ni\u00f1os Mestizos-Mexicanos con Leucemia Aguda Linfobl\u00e1stica", "linea": "Oncogen\u00f3mica", "termino": 2009}, {"status": "terminado", "anio": 2008, "recursos_externos": 1210000.0, "recursos_internos": 0.0, "tipo": "interno", "count": 1, "institucion": "Otras", "instituciones": "Consejo Nacional de Ciencia y Tecnolog\u00eda", "recursos": 1210000.0, "proyecto": 11, "proyecto_titulo": "Participaci\u00f3n de la ruta de NRF2-KEAP1 en la susceptibilidad a desarrollar Leucemia Mieloides", "linea": "Gen\u00f3mica de la respuesta celular al estr\u00e9s oxidativo", "termino": 2014}, {"status": "terminado", "anio": 2008, "recursos_externos": 1100000.0, "recursos_internos": 0.0, "tipo": "interno", "count": 1, "institucion": "Otras", "instituciones": "Consejo Nacional de Ciencia y Tecnolog\u00eda", "recursos": 1100000.0, "proyecto": 12, "proyecto_titulo": "Identificaci\u00f3n de los factores de riesgo gen\u00e9tico para desarrollar artritis  idiop\u00e1tica juvenil en poblaci\u00f3n mexicana", "linea": "Gen\u00f3mica de las enfermedades autoinmunes", "termino": 2013}, {"status": "terminado", "anio": 2008, "recursos_externos": 972500.0, "recursos_internos": 263000.0, "tipo": "interno", "count": 1, "institucion": "Recursos Compartidos", "instituciones": "Instituto Nacional de Medicina Gen\u00f3mica, Consejo Nacional de Ciencia y Tecnolog\u00eda", "recursos": 1235500.0, "proyecto": 13, "proyecto_titulo": "Regulaci\u00f3n de la expresi\u00f3n de Smac/DIABLO", "linea": "Gen\u00f3mica Funcional del C\u00e1ncer", "termino": 2013}, {"status": "terminado", "anio": 2008, "recursos_externos": 0.0, "recursos_internos": 194000.0, "tipo": "interno", "count": 1, "institucion": "INMEGEN", "instituciones": "Instituto Nacional de Medicina Gen\u00f3mica", "recursos": 194000.0, "proyecto": 14, "proyecto_titulo": "An\u00e1lisis de la expresi\u00f3n global en un modelo tridimensional de cultivo en diversos tipos de tumores ", "linea": "Gen\u00f3mica Funcional del C\u00e1ncer", "termino": 2013}, {"status": "terminado", "anio": 2009, "recursos_externos": 0.0, "recursos_internos": 0.0, "tipo": "interno", "count": 1, "institucion": "", "instituciones": "", "recursos": 0.0, "proyecto": 15, "proyecto_titulo": "Biomarcadores moleculares tempranos del cancer hep\u00e1tico. parte 1, identificaci\u00f3n de genes-candidato de la de la Carcinog\u00e9nesis experimental.", "linea": "Bases moleculares de las enfermedades hep\u00e1ticas cr\u00f3nicas", "termino": 2012}, {"status": "suspendido", "anio": 2008, "recursos_externos": 0.0, "recursos_internos": 0.0, "tipo": "interno", "count": 1, "institucion": "", "instituciones": "", "recursos": 0.0, "proyecto": 16, "proyecto_titulo": "Biomarcadores prote\u00f3micos asociados a Melanoma", "linea": "Prote\u00f3mica", "termino": 2013}, {"status": "terminado", "anio": 2007, "recursos_externos": 0.0, "recursos_internos": 624498.0, "tipo": "interno", "count": 1, "institucion": "INMEGEN", "instituciones": "Instituto Nacional de Medicina Gen\u00f3mica", "recursos": 624498.0, "proyecto": 17, "proyecto_titulo": "An\u00e1lisis prote\u00f3mico en c\u00e1ncer de mama de poblaci\u00f3n mexicana: identificaci\u00f3n de prote\u00ednas solubles y membranales como biomarcadores de diagn\u00f3stico en c\u00e1ncer", "linea": "Oncogen\u00f3mica", "termino": 2012}, {"status": "cancelado", "anio": 2007, "recursos_externos": 0.0, "recursos_internos": 0.0, "tipo": "interno", "count": 1, "institucion": "", "instituciones": "", "recursos": 0.0, "proyecto": 18, "proyecto_titulo": "B\u00fasqueda de Biomarcadores de diagn\u00f3stico temprano para C\u00e1ncer G\u00e1strico a trav\u00e9s de an\u00e1lisis prote\u00f3mico en muestras de Biopsias g\u00e1stricas y plasma de Poblaci\u00f3n Mexicana ", "linea": "Oncogen\u00f3mica", "termino": 2012}, {"status": "aprobado", "anio": 2009, "recursos_externos": 1000000.0, "recursos_internos": 1000000.0, "tipo": "interno", "count": 1, "institucion": "Recursos Compartidos", "instituciones": "Instituto Nacional de Medicina Gen\u00f3mica, Instituto Carlos Slim de la Salud", "recursos": 2000000.0, "proyecto": 19, "proyecto_titulo": "An\u00e1lisis de alta resoluci\u00f3n de alteraciones som\u00e1ticas en el genoma y transcriptoma de tumores de mama en pacientes Mexicanas.", "linea": "Oncogen\u00f3mica", "termino": 2014}, {"status": "terminado", "anio": 2010, "recursos_externos": 0.0, "recursos_internos": 0.0, "tipo": "interno", "count": 1, "institucion": "", "instituciones": "", "recursos": 0.0, "proyecto": 20, "proyecto_titulo": "Estudio comparativo entre la dosis guiada por genotipo-fenotipo y el manejo est\u00e1ndar en pacientes que inician antocoagulaci\u00f3n con Acenocumarol.", "linea": "Farmacogen\u00f3mica", "termino": 2014}, {"status": "aprobado", "anio": 2009, "recursos_externos": 2000000.0, "recursos_internos": 0.0, "tipo": "interno", "count": 1, "institucion": "Otras", "instituciones": "Universidad de Washington", "recursos": 2000000.0, "proyecto": 21, "proyecto_titulo": "Fenotipos asociados al S\u00edndrome de Werner", "linea": "Oncogen\u00f3mica", "termino": 2014}, {"status": "terminado", "anio": 2010, "recursos_externos": 0.0, "recursos_internos": 1000000.0, "tipo": "interno", "count": 1, "institucion": "INMEGEN", "instituciones": "Instituto Nacional de Medicina Gen\u00f3mica", "recursos": 1000000.0, "proyecto": 22, "proyecto_titulo": "Bases gen\u00f3micas del S\u00edndrome Metab\u00f3lico en la Poblaci\u00f3n Mexicana", "linea": "Gen\u00f3mica de enfermedades metab\u00f3licas", "termino": 2013}, {"status": "terminado", "anio": 2010, "recursos_externos": 0.0, "recursos_internos": 0.0, "tipo": "interno", "count": 1, "institucion": "", "instituciones": "", "recursos": 0.0, "proyecto": 23, "proyecto_titulo": "Estudio de la frecuencia de HLA-B*5701 y su asociaci\u00f3n con el rs2395029 en el panel de mestizos mexicanos", "linea": "Farmacogen\u00f3mica", "termino": 2011}, {"status": "terminado", "anio": 2007, "recursos_externos": 0.0, "recursos_internos": 0.0, "tipo": "interno", "count": 1, "institucion": "", "instituciones": "", "recursos": 0.0, "proyecto": 24, "proyecto_titulo": "Patrones de Expresi\u00f3n Diferencial en el Transcriptoma y Proteoma de Saliva de Fumadores con Adenocarcinoma de Pulm\u00f3n", "linea": "Gen\u00f3mica Funcional del C\u00e1ncer", "termino": 2011}, {"status": "terminado", "anio": 2009, "recursos_externos": 0.0, "recursos_internos": 0.0, "tipo": "interno", "count": 1, "institucion": "", "instituciones": "", "recursos": 0.0, "proyecto": 25, "proyecto_titulo": "Identificaci\u00f3n de los determinantes de secuencia de la Amiloidog\u00e9nesis de las cadenas ligeras de Inmunoglobulinas", "linea": "Estructura de Prote\u00ednas", "termino": 2011}, {"status": "terminado", "anio": 2009, "recursos_externos": 750000.0, "recursos_internos": 800000.0, "tipo": "interno", "count": 1, "institucion": "Recursos Compartidos", "instituciones": "Consejo Nacional de Ciencia y Tecnolog\u00eda, Instituto Nacional de Medicina Gen\u00f3mica", "recursos": 1550000.0, "proyecto": 26, "proyecto_titulo": "Polimorfismos en genes de la ruta de se\u00f1alizaci\u00f3n WNT y su asociaci\u00f3n en la variaci\u00f3n de la densidad mineral \u00f3sea (DMO) en pacientes con Osteoporosis", "linea": "Gen\u00f3mica del Metabolismo \u00d3seo", "termino": 2012}, {"status": "terminado", "anio": 2010, "recursos_externos": 1350000.0, "recursos_internos": 0.0, "tipo": "externo", "count": 1, "institucion": "Otras", "instituciones": "Nestl\u00e9, S.A. de C.V.", "recursos": 1350000.0, "proyecto": 27, "proyecto_titulo": "Efecto del tratamiento con alimento l\u00e1cteo fermentado con Lactobacillus johnsonii La1 en los patrones de metilaci\u00f3n y el p\u00e9rfil de expresi\u00f3n transcripcional a nivel gen\u00f3mico en mucosa g\u00e1strica de individuos sanos o con dispepsia funcional asociada a helycobacter Pylori", "linea": "Nutrigen\u00e9tica y Nutrigen\u00f3mica", "termino": 2013}, {"status": "terminado", "anio": 2010, "recursos_externos": 0.0, "recursos_internos": 0.0, "tipo": "externo", "count": 1, "institucion": "", "instituciones": "", "recursos": 0.0, "proyecto": 28, "proyecto_titulo": "Identificaci\u00f3n de microRNAs circulantes en suero como biomarcadores viables en el diagn\u00f3stico de Osteoartritis", "linea": "Gen\u00f3mica del Metabolismo \u00d3seo", "termino": 2013}, {"status": "terminado", "anio": 2008, "recursos_externos": 0.0, "recursos_internos": 1344200.0, "tipo": "interno", "count": 1, "institucion": "INMEGEN", "instituciones": "Instituto Nacional de Medicina Gen\u00f3mica", "recursos": 1344200.0, "proyecto": 29, "proyecto_titulo": "Participaci\u00f3n de los miRNAs como posibles marcadores moleculares de diagn\u00f3stico temprano en c\u00e1ncer de Pr\u00f3stata", "linea": "Oncogen\u00f3mica", "termino": 2012}, {"status": "aprobado", "anio": 2011, "recursos_externos": 1125000.0, "recursos_internos": 490000.0, "tipo": "interno", "count": 1, "institucion": "Recursos Compartidos", "instituciones": "Consejo Nacional de Ciencia y Tecnolog\u00eda, Instituto Nacional de Medicina Gen\u00f3mica", "recursos": 1615000.0, "proyecto": 30, "proyecto_titulo": "Detecci\u00f3n de c\u00e9lulas troncales tumorales circulantes para el Diagn\u00f3stico y pron\u00f3stico de C\u00e1ncer de Mama", "linea": "Gen\u00f3mica Funcional del C\u00e1ncer", "termino": 2013}, {"status": "terminado", "anio": 2008, "recursos_externos": 0.0, "recursos_internos": 0.0, "tipo": "externo", "count": 1, "institucion": "", "instituciones": "", "recursos": 0.0, "proyecto": 31, "proyecto_titulo": "Gen\u00f3mica funcional en la germinaci\u00f3n del Ma\u00edz mecanismos de control traduccional  ", "linea": "Gen\u00f3mica Computacional y An\u00e1lisis de Expresi\u00f3n", "termino": 2011}, {"status": "terminado", "anio": 2007, "recursos_externos": 0.0, "recursos_internos": 0.0, "tipo": "externo", "count": 1, "institucion": "", "instituciones": "", "recursos": 0.0, "proyecto": 32, "proyecto_titulo": "Alteraciones en el n\u00famero de copias de DNA durante la progresi\u00f3n del carcinoma de c\u00e9lulas peque\u00f1as de pulm\u00f3n                        ", "linea": "Oncogen\u00f3mica", "termino": 2012}, {"status": "terminado", "anio": 2008, "recursos_externos": 0.0, "recursos_internos": 0.0, "tipo": "externo", "count": 1, "institucion": "", "instituciones": "", "recursos": 0.0, "proyecto": 33, "proyecto_titulo": "An\u00e1lisis de cambios en la expresi\u00f3n g\u00e9nica inducidos por LPG de Leishamaniasis en c\u00e9lulas NK de pacientes con Leishmaniasis cut\u00e1nea localizada y difusa", "linea": "Gen\u00f3mica Computacional y An\u00e1lisis de Expresi\u00f3n", "termino": 2014}, {"status": "suspendido", "anio": 2008, "recursos_externos": 0.0, "recursos_internos": 0.0, "tipo": "externo", "count": 1, "institucion": "", "instituciones": "", "recursos": 0.0, "proyecto": 34, "proyecto_titulo": "El papel de la Progesterona en  el crecimiento de tumores cerebrales  ", "linea": "Gen\u00f3mica Funcional del C\u00e1ncer", "termino": 2013}, {"status": "aprobado", "anio": 2008, "recursos_externos": 1200000.0, "recursos_internos": 0.0, "tipo": "externo", "count": 1, "institucion": "Otras", "instituciones": "Consejo Nacional de Ciencia y Tecnolog\u00eda", "recursos": 1200000.0, "proyecto": 35, "proyecto_titulo": "Asociaci\u00f3n de un perfil de expresi\u00f3n gen\u00e9tica de c\u00e9lulas de tumor primario con el desarrollo de met\u00e1stasis a SNC en pacientes con C\u00e1 de Pulm\u00f3n c\u00e9lulas no peque\u00f1as                ", "linea": "Oncogen\u00f3mica", "termino": 2014}, {"status": "suspendido", "anio": 2008, "recursos_externos": 0.0, "recursos_internos": 0.0, "tipo": "externo", "count": 1, "institucion": "", "instituciones": "", "recursos": 0.0, "proyecto": 36, "proyecto_titulo": "B\u00fasqueda de Biomarcadores prote\u00f3micos en un modelo de hipercolesterolemia inducida por la dieta                         ", "linea": "Prote\u00f3mica", "termino": 2013}, {"status": "terminado", "anio": 2008, "recursos_externos": 0.0, "recursos_internos": 0.0, "tipo": "externo", "count": 1, "institucion": "", "instituciones": "", "recursos": 0.0, "proyecto": 37, "proyecto_titulo": "Identificaci\u00f3n de receptores de transplante renal con perfil gen\u00e9tico de tolerancia inmunol\u00f3gica   ", "linea": "Gen\u00f3mica de enfermedades metab\u00f3licas", "termino": 2013}, {"status": "suspendido", "anio": 2008, "recursos_externos": 0.0, "recursos_internos": 0.0, "tipo": "externo", "count": 1, "institucion": "", "instituciones": "", "recursos": 0.0, "proyecto": 40, "proyecto_titulo": "Alergenos de Amaranto ", "linea": "Prote\u00f3mica", "termino": 2013}, {"status": "terminado", "anio": 2008, "recursos_externos": 0.0, "recursos_internos": 0.0, "tipo": "externo", "count": 1, "institucion": "", "instituciones": "", "recursos": 0.0, "proyecto": 42, "proyecto_titulo": "Identificaci\u00f3n de marcadores gen\u00e9ticos asociados al desarrollo y progresi\u00f3n de enfermedad pulmonar obstructiva cr\u00f3nica mediante an\u00e1lisis de genotipificaci\u00f3n", "linea": "Gen\u00f3mica y enfermedades infecciosas", "termino": 2013}, {"status": "terminado", "anio": 2010, "recursos_externos": 1350000.0, "recursos_internos": 0.0, "tipo": "interno", "count": 1, "institucion": "Otras", "instituciones": "Consejo Nacional de Ciencia y Tecnolog\u00eda", "recursos": 1350000.0, "proyecto": 43, "proyecto_titulo": "BIOMARCADORES MOLECULARES TEMPRANOS DEL CANCER HEPATICO. PARTE 2, VALIDACI\u00d3N DE BIOMARCADORES CANDIDATO PARA LA DIFERENCIACI\u00d3N MOLECULAR ENTRE N\u00d3DULOS DISPL\u00c1SICOS Y CARCINOMAS HEPATOCELULARES", "linea": "Bases moleculares de las enfermedades hep\u00e1ticas cr\u00f3nicas", "termino": 2014}, {"status": "terminado", "anio": 2010, "recursos_externos": 42500.0, "recursos_internos": 0.0, "tipo": "interno", "count": 1, "institucion": "Otras", "instituciones": "Consejo Nacional de Ciencia y Tecnolog\u00eda", "recursos": 42500.0, "proyecto": 44, "proyecto_titulo": "Frecuencia en poblaci\u00f3n mexicana de variantes gen\u00e9ticas que interact\u00faan con la dieta en el desarrollo de enfermedades cr\u00f3nicas", "linea": "Nutrigen\u00e9tica y Nutrigen\u00f3mica", "termino": 2012}, {"status": "aprobado", "anio": 2009, "recursos_externos": 1400000.0, "recursos_internos": 0.0, "tipo": "interno", "count": 1, "institucion": "Otras", "instituciones": "Consejo Nacional de Ciencia y Tecnolog\u00eda", "recursos": 1400000.0, "proyecto": 46, "proyecto_titulo": "Aplicaci\u00f3n de un microarreglo de oligonucl\u00e9otidos de alta densidad para determinar la secuencia del genoma del virus AH1N1 como herramienta de vigilancia epidemiol\u00f3gica molecular", "linea": "Gen\u00f3mica y enfermedades infecciosas", "termino": 2014}, {"status": "terminado", "anio": 2010, "recursos_externos": 2072000.0, "recursos_internos": 0.0, "tipo": "interno", "count": 1, "institucion": "Otras", "instituciones": "Consejo Nacional de Ciencia y Tecnolog\u00eda", "recursos": 2072000.0, "proyecto": 47, "proyecto_titulo": "Factores gen\u00e9ticos asociados a la susceptibilidad y gravedad de la infecci\u00f3n por virus de Influenza A/H1N1 en poblaci\u00f3n mexicana", "linea": "Gen\u00f3mica y enfermedades infecciosas", "termino": 2013}, {"status": "terminado", "anio": 2009, "recursos_externos": 0.0, "recursos_internos": 0.0, "tipo": "interno", "count": 1, "institucion": "", "instituciones": "", "recursos": 0.0, "proyecto": 48, "proyecto_titulo": "Efecto de la suplementaci\u00f3n con zinc sobre indicadores de  estr\u00e9s oxidativo,  insulina y expresi\u00f3n de genes en leucocitos circulantes. Estudio piloto", "linea": "Nutrigen\u00e9tica y Nutrigen\u00f3mica", "termino": 2012}, {"status": "terminado", "anio": 2010, "recursos_externos": 1350000.0, "recursos_internos": 0.0, "tipo": "interno", "count": 1, "institucion": "Otras", "instituciones": "Consejo Nacional de Ciencia y Tecnolog\u00eda", "recursos": 1350000.0, "proyecto": 49, "proyecto_titulo": "Identificaci\u00f3n de Variantes Gen\u00e9ticas que Confieren Susceptibilidad a la Enfermedad Arterial Coronaria en Poblaci\u00f3n Mexicana", "linea": "Gen\u00f3mica de enfermedades cardiovasculares", "termino": 2013}, {"status": "aprobado", "anio": 2010, "recursos_externos": 9108000.0, "recursos_internos": 1000000.0, "tipo": "interno", "count": 1, "institucion": "Recursos Compartidos", "instituciones": "Instituto Broad, Instituto Carlos Slim de la Salud, Instituto Nacional de Medicina Gen\u00f3mica", "recursos": 10108000.0, "proyecto": 52, "proyecto_titulo": "Genoma del C\u00e1ncer. Cap\u00edtulo M\u00e9xico", "linea": "Gen\u00f3mica Funcional del C\u00e1ncer", "termino": 2016}, {"status": "terminado", "anio": 2010, "recursos_externos": 1550000.0, "recursos_internos": 0.0, "tipo": "externo", "count": 1, "institucion": "Otras", "instituciones": "Instituto Carlos Slim de la Salud", "recursos": 1550000.0, "proyecto": 53, "proyecto_titulo": "DIABETES M\u00c9XICO Iniciativa del Instituto Carlos Slim para la Salud", "linea": "Gen\u00f3mica de enfermedades metab\u00f3licas", "termino": 2013}, {"status": "suspendido", "anio": 2010, "recursos_externos": 0.0, "recursos_internos": 0.0, "tipo": "externo", "count": 1, "institucion": "", "instituciones": "", "recursos": 0.0, "proyecto": 54, "proyecto_titulo": "Papel del virus de papiloma humano en el desarrollo del pterigi\u00f3n y la alteraci\u00f3n del sistema inmune en este padecimiento", "linea": "Prote\u00f3mica", "termino": 2013}, {"status": "suspendido", "anio": 2010, "recursos_externos": 0.0, "recursos_internos": 0.0, "tipo": "externo", "count": 1, "institucion": "", "instituciones": "", "recursos": 0.0, "proyecto": 55, "proyecto_titulo": "An\u00e1lisis prote\u00f3mico de aductos prot\u00e9icos por productos de peroxidaci\u00f3n lip\u00eddica en la inicializaci\u00f3n de la hepatocarcinog\u00e9nesis.", "linea": "Prote\u00f3mica", "termino": 2013}, {"status": "nuevo", "anio": 2009, "recursos_externos": 0.0, "recursos_internos": 0.0, "tipo": "interno", "count": 1, "institucion": "", "instituciones": "", "recursos": 0.0, "proyecto": 56, "proyecto_titulo": "Valor pron\u00f3stico de la detecci\u00f3n de genes de fusi\u00f3n en pacientes con sarcomas pediatricos en bioflu\u00eddos", "linea": "", "termino": 2012}, {"status": "aprobado", "anio": 2010, "recursos_externos": 600000.0, "recursos_internos": 425000.0, "tipo": "interno", "count": 1, "institucion": "Recursos Compartidos", "instituciones": "Instituto Nacional de Medicina Gen\u00f3mica, Applied Biosystems", "recursos": 1025000.0, "proyecto": 57, "proyecto_titulo": "Estudio de Diversidad Gen\u00f3mica en Poblaciones Nativas Mexicanas: Secuenciaci\u00f3n Completa del Genoma como un Recurso de Investigaci\u00f3n para Estudios Evolutivos y Aplicados a la Salud", "linea": "Gen\u00f3mica de Poblaciones", "termino": 2014}, {"status": "aprobado", "anio": 2011, "recursos_externos": 1860000.0, "recursos_internos": 783000.0, "tipo": "interno", "count": 1, "institucion": "Recursos Compartidos", "instituciones": "Consejo Nacional de Ciencia y Tecnolog\u00eda, Instituto Nacional de Medicina Gen\u00f3mica", "recursos": 2643000.0, "proyecto": 59, "proyecto_titulo": "IDENTIFICACI\u00d3N DE CINASAS DE PROTE\u00cdNA QUE PARTICIPAN EN LA RESISTENCIA DE LAS C\u00c9LULAS DE C\u00c1NCER A LA QUIMIOTERAPIA MEDIANTE ARN DE INTERFERENCIA", "linea": "Gen\u00f3mica Funcional del C\u00e1ncer", "termino": 2016}, {"status": "nuevo", "anio": 2009, "recursos_externos": 0.0, "recursos_internos": 0.0, "tipo": "interno", "count": 1, "institucion": "", "instituciones": "", "recursos": 0.0, "proyecto": 60, "proyecto_titulo": "PGENI (Pharmacogenomics for every nation initiative) Centro regional MEXICO", "linea": "", "termino": 2011}, {"status": "terminado", "anio": 2011, "recursos_externos": 0.0, "recursos_internos": 809277.37, "tipo": "interno", "count": 1, "institucion": "INMEGEN", "instituciones": "Instituto Nacional de Medicina Gen\u00f3mica", "recursos": 809277.37, "proyecto": 61, "proyecto_titulo": "Efecto de quimiopreventores en la desregulaci\u00f3n epigen\u00f3mica del proceso de transformaci\u00f3n celular inducido por ars\u00e9nico", "linea": "Oncogen\u00f3mica", "termino": 2014}, {"status": "aprobado", "anio": 2011, "recursos_externos": 0.0, "recursos_internos": 1330000.0, "tipo": "interno", "count": 1, "institucion": "INMEGEN", "instituciones": "Instituto Nacional de Medicina Gen\u00f3mica", "recursos": 1330000.0, "proyecto": 63, "proyecto_titulo": "Aislamiento y caracterizaci\u00f3n de una genoteca de LincRNA asociados con resistencia antineopl\u00e1sicas en esferoides tumorales.", "linea": "Gen\u00f3mica Funcional del C\u00e1ncer", "termino": 2014}, {"status": "aprobado", "anio": 2011, "recursos_externos": 2130000.0, "recursos_internos": 1900000.0, "tipo": "interno", "count": 1, "institucion": "Recursos Compartidos", "instituciones": "Consejo Nacional de Ciencia y Tecnolog\u00eda, Instituto Nacional de Medicina Gen\u00f3mica", "recursos": 4030000.0, "proyecto": 64, "proyecto_titulo": "Densidad mineral \u00f3sea y osteoporosis en mujeres mexicanas: estudio de asociaci\u00f3n de genoma completo.", "linea": "Gen\u00f3mica del Metabolismo \u00d3seo", "termino": 2014}, {"status": "terminado", "anio": 2011, "recursos_externos": 700000.0, "recursos_internos": 1350000.0, "tipo": "interno", "count": 1, "institucion": "Recursos Compartidos", "instituciones": "Instituto Nacional de Medicina Gen\u00f3mica, Consejo Nacional de Ciencia y Tecnolog\u00eda", "recursos": 2050000.0, "proyecto": 66, "proyecto_titulo": "ESTUDIO DE ASOCIACI\u00d3N ENTRE POLIMORFISMOS EN LOS GENES DE LOS RECEPTORES TIPO TOLL (TLR) Y ASMA EN POBLACI\u00d3N INFANTIL MEXICANA.", "linea": "Gen\u00f3mica de enfermedades at\u00f3picas", "termino": 2014}, {"status": "terminado", "anio": 2011, "recursos_externos": 100000.0, "recursos_internos": 1300000.0, "tipo": "interno", "count": 1, "institucion": "Recursos Compartidos", "instituciones": "Instituto Nacional de Medicina Gen\u00f3mica, Fundaci\u00f3n Miguel Alem\u00e1n, A.C:", "recursos": 1400000.0, "proyecto": 68, "proyecto_titulo": "Factores gen\u00e9ticos amerindios y variantes raras que contribuyen al desarrollo de la diabetes mellitus tipo 2 en familias ind\u00edgenas rurales de la Cd. de M\u00e9xico.", "linea": "Gen\u00f3mica de enfermedades metab\u00f3licas", "termino": 2013}, {"status": "aprobado", "anio": 2010, "recursos_externos": 1.0, "recursos_internos": 200000.0, "tipo": "interno", "count": 1, "institucion": "Recursos Compartidos", "instituciones": "Instituto Nacional de Medicina Gen\u00f3mica, Hospital Ju\u00e1rez de M\u00e9xico", "recursos": 200001.0, "proyecto": 69, "proyecto_titulo": "B\u00fasqueda de biomarcadores tempranos de nefropat\u00eda diab\u00e9tica", "linea": "Gen\u00f3mica de enfermedades metab\u00f3licas", "termino": 2014}, {"status": "aprobado", "anio": 2010, "recursos_externos": 0.0, "recursos_internos": 0.0, "tipo": "interno", "count": 1, "institucion": "", "instituciones": "", "recursos": 0.0, "proyecto": 70, "proyecto_titulo": "\u201cANALISIS GEN\u00d3MICO DE LAS VARIANTES RELACIONADAS A RESISTENCIA A ANTINEOPLASICOS PARA EL TRATAMIENTO DE C\u00c1NCER DE MAMA", "linea": "Oncogen\u00f3mica", "termino": 2014}, {"status": "terminado", "anio": 2010, "recursos_externos": 700000.0, "recursos_internos": 459282.0, "tipo": "interno", "count": 1, "institucion": "Recursos Compartidos", "instituciones": "Instituto Nacional de Medicina Gen\u00f3mica, Funsalud", "recursos": 1159282.0, "proyecto": 73, "proyecto_titulo": "Factores gen\u00e9ticos y ambientales asociados a la obesidad en ni\u00f1os escolares. ", "linea": "Nutrigen\u00e9tica y Nutrigen\u00f3mica", "termino": 2014}, {"status": "aprobado", "anio": 2011, "recursos_externos": 1290000.0, "recursos_internos": 828240.0, "tipo": "interno", "count": 1, "institucion": "Recursos Compartidos", "instituciones": "Instituto Nacional de Medicina Gen\u00f3mica, Consejo Nacional de Ciencia y Tecnolog\u00eda", "recursos": 2118240.0, "proyecto": 74, "proyecto_titulo": "An\u00e1lisis de Variabilidad Gen\u00f3mica y Composici\u00f3n \u00c9tnica en Pacientes Mexicanos con Esclerosis M\u00faltiple", "linea": "Gen\u00f3mica de Poblaciones", "termino": 2016}, {"status": "terminado", "anio": 2011, "recursos_externos": 0.0, "recursos_internos": 935000.0, "tipo": "interno", "count": 1, "institucion": "INMEGEN", "instituciones": "Instituto Nacional de Medicina Gen\u00f3mica", "recursos": 935000.0, "proyecto": 76, "proyecto_titulo": "Asociaci\u00f3n de variantes g\u00e9nicas en regiones que participan en la biog\u00e9nesis de  miRNAs y sus genes blanco con la susceptibilidad a desarrollar leucemia mieloide cr\u00f3nica.", "linea": "Gen\u00f3mica de la respuesta celular al estr\u00e9s oxidativo", "termino": 2014}, {"status": "terminado", "anio": 2011, "recursos_externos": 0.0, "recursos_internos": 686535.19999999995, "tipo": "interno", "count": 1, "institucion": "INMEGEN", "instituciones": "Instituto Nacional de Medicina Gen\u00f3mica", "recursos": 686535.19999999995, "proyecto": 77, "proyecto_titulo": "Aplicaci\u00f3n de la microdisecci\u00f3n laser para la identificaci\u00f3n de cambios moleculares espec\u00edficos de las regiones patol\u00f3gicas en la cirrosis y el c\u00e1ncer hep\u00e1tico", "linea": "Bases moleculares de las enfermedades hep\u00e1ticas cr\u00f3nicas", "termino": 2014}, {"status": "nuevo", "anio": 2011, "recursos_externos": 0.0, "recursos_internos": 1813200.0, "tipo": "interno", "count": 1, "institucion": "INMEGEN", "instituciones": "Instituto Nacional de Medicina Gen\u00f3mica", "recursos": 1813200.0, "proyecto": 79, "proyecto_titulo": "Estudio farmacogen\u00f3mico utilizando microarreglos de alta densidad en pacientes con C\u00e1ncer de Pr\u00f3stata expuestos a terapia antihormonal.", "linea": "Oncogen\u00f3mica", "termino": 2014}, {"status": "terminado", "anio": 2011, "recursos_externos": 0.0, "recursos_internos": 1000000.0, "tipo": "interno", "count": 1, "institucion": "INMEGEN", "instituciones": "Instituto Nacional de Medicina Gen\u00f3mica", "recursos": 1000000.0, "proyecto": 80, "proyecto_titulo": "Detecci\u00f3n de Nuevos Genes Implicados en la Muerte S\u00fabita Inexplicada por Medio de la Secuenciaci\u00f3n del Exoma", "linea": "Gen\u00f3mica de enfermedades cardiovasculares", "termino": 2013}, {"status": "terminado", "anio": 2011, "recursos_externos": 0.0, "recursos_internos": 175000.0, "tipo": "interno", "count": 1, "institucion": "INMEGEN", "instituciones": "Instituto Nacional de Medicina Gen\u00f3mica", "recursos": 175000.0, "proyecto": 81, "proyecto_titulo": "Caracterizaci\u00f3n de la cin\u00e9tica enzim\u00e1tica y de la regulaci\u00f3n por modificaciones post-traduccionales de la piruvato cinasa, alfa-enolasa,  lactoferrina, calreticulina y la prote\u00edna disulfuro isomerasa en c\u00e1ncer de mama.", "linea": "Oncogen\u00f3mica", "termino": 2012}, {"status": "aprobado", "anio": 2011, "recursos_externos": 0.0, "recursos_internos": 1600000.0, "tipo": "interno", "count": 1, "institucion": "INMEGEN", "instituciones": "Instituto Nacional de Medicina Gen\u00f3mica", "recursos": 1600000.0, "proyecto": 83, "proyecto_titulo": "DETERMINACI\u00d3N DE LA PREVALENCIA DE SUBTIPOS MOLECULARES EN TUMORES DE MAMA Y DEFINICI\u00d3N DEL ESPECTRO DE MUTACIONES EN LOS GENES BRCA1 Y BRCA2: GEN\u00d3MICA TRADUCCIONAL EN C\u00c1NCER DE MAMA.", "linea": "Oncogen\u00f3mica", "termino": 2014}, {"status": "terminado", "anio": 2011, "recursos_externos": 0.0, "recursos_internos": 900000.0, "tipo": "interno", "count": 1, "institucion": "INMEGEN", "instituciones": "Instituto Nacional de Medicina Gen\u00f3mica", "recursos": 900000.0, "proyecto": 84, "proyecto_titulo": "IDENTIFICACI\u00d3N DE DETERMINANTES ESTRUCTURALES  DE LA AGREGACI\u00d3N AMILOIDE DE LAS PROTE\u00cdNAS. ", "linea": "Estructura de Prote\u00ednas", "termino": 2014}, {"status": "aprobado", "anio": 2011, "recursos_externos": 1104000.0, "recursos_internos": 0.0, "tipo": "interno", "count": 1, "institucion": "Otras", "instituciones": "Consejo Nacional de Ciencia y Tecnolog\u00eda, Fundaci\u00f3n Miguel Alem\u00e1n, A.C:", "recursos": 1104000.0, "proyecto": 85, "proyecto_titulo": "Identificaci\u00f3n de biomarcadores de adenocarcinoma pulmonar en el proteoma de saliva", "linea": "Oncogen\u00f3mica", "termino": 2014}, {"status": "terminado", "anio": 2011, "recursos_externos": 373085.20000000001, "recursos_internos": 0.0, "tipo": "interno", "count": 1, "institucion": "Otras", "instituciones": "Instituto de Ciencia y Tecnolog\u00eda del Distrito Federal", "recursos": 373085.20000000001, "proyecto": 86, "proyecto_titulo": "Redes transcripcionales implicadas en la diferenciaci\u00f3n y el desarrollo  de los Sistemas Biol\u00f3gicos: La ra\u00edz de Arabidopsis thaliana y c\u00e9lulas tumorales humanas como modelos de estudio", "linea": "Gen\u00f3mica Computacional y An\u00e1lisis de Expresi\u00f3n", "termino": 2013}, {"status": "terminado", "anio": 2010, "recursos_externos": 0.0, "recursos_internos": 170000.0, "tipo": "interno", "count": 1, "institucion": "INMEGEN", "instituciones": "Instituto Nacional de Medicina Gen\u00f3mica", "recursos": 170000.0, "proyecto": 87, "proyecto_titulo": "Especificidad de la Determinaci\u00f3n de PCA3 en Orina para la detecci\u00f3n de c\u00e1ncer de pr\u00f3stata en pacientes mexicanos en el Hospital General \"Dr Manuel Gea Gonz\u00e1lez\".", "linea": "Oncogen\u00f3mica", "termino": 2012}, {"status": "aprobado", "anio": 2011, "recursos_externos": 0.0, "recursos_internos": 0.0, "tipo": "externo", "count": 1, "institucion": "", "instituciones": "", "recursos": 0.0, "proyecto": 88, "proyecto_titulo": "ESTUDIO INTEGRAL DEL GENOMA, PROTEOMA Y METABOLOMA EN ABORTOS Y NACIDOS VIVOS CON ANEUPLOID\u00cdAS. B\u00daSQUEDA DE BIOMARCADORES NO INVASIVOS.", "linea": "", "termino": 2013}, {"status": "aprobado", "anio": 2011, "recursos_externos": 0.0, "recursos_internos": 1396697.5, "tipo": "interno", "count": 1, "institucion": "INMEGEN", "instituciones": "Instituto Nacional de Medicina Gen\u00f3mica", "recursos": 1396697.5, "proyecto": 89, "proyecto_titulo": "IDENTIFICACI\u00d3N DE BIOMARCADORES DE SUSCEPTIBILIDAD PARA DIABETES MELLITUS TIPO 2  Y OBESIDAD, MEDIANTE LA CARACTERIZACI\u00d3N DE PERFILES DE EXPRESI\u00d3N,  EPIGEN\u00d3MICOS  Y METABOL\u00d3MICOS. ", "linea": "Gen\u00f3mica de enfermedades metab\u00f3licas", "termino": 2015}, {"status": "terminado", "anio": 2011, "recursos_externos": 220000.0, "recursos_internos": 0.0, "tipo": "interno", "count": 1, "institucion": "Otras", "instituciones": "Instituto de Ciencia y Tecnolog\u00eda del Distrito Federal", "recursos": 220000.0, "proyecto": 90, "proyecto_titulo": "An\u00e1lisis e implementaci\u00f3n de algoritmos como herramientas computacionales para el mapeo de datos de secuenciaci\u00f3n masiva de applied biosystems solid a un genoma de referencia para aplicaciones a gen\u00f3mica funcional", "linea": "Gen\u00f3mica Computacional y An\u00e1lisis de Expresi\u00f3n", "termino": 2014}, {"status": "aprobado", "anio": 2012, "recursos_externos": 1582000.0, "recursos_internos": 490000.0, "tipo": "interno", "count": 1, "institucion": "Recursos Compartidos", "instituciones": "Instituto Nacional de Medicina Gen\u00f3mica, Consejo Nacional de Ciencia y Tecnolog\u00eda", "recursos": 2072000.0, "proyecto": 91, "proyecto_titulo": "Perfil de expresi\u00f3n diferencial de genes durante la transdiferenciaci\u00f3n al fenotipo NE a partir de c\u00e9lulas de C\u00e1ncer de Pr\u00f3stata", "linea": "Oncogen\u00f3mica", "termino": 2016}, {"status": "aprobado", "anio": 2011, "recursos_externos": 0.0, "recursos_internos": 950000.0, "tipo": "interno", "count": 1, "institucion": "INMEGEN", "instituciones": "Instituto Nacional de Medicina Gen\u00f3mica", "recursos": 950000.0, "proyecto": 94, "proyecto_titulo": "Herramientas OMICAS para el estudio de sistemas ateroscler\u00f3ticos", "linea": "Prote\u00f3mica", "termino": 2014}, {"status": "aprobado", "anio": 2011, "recursos_externos": 0.0, "recursos_internos": 367889.0, "tipo": "interno", "count": 1, "institucion": "INMEGEN", "instituciones": "Instituto Nacional de Medicina Gen\u00f3mica", "recursos": 367889.0, "proyecto": 95, "proyecto_titulo": "EFECTO DE OMEGA 3 SOBRE LOS PATRONES DE METILACI\u00d3N DEL DNA DE GENES EN UN MODELO CON S\u00cdNDROME METAB\u00d3LICO INDUCIDO POR LA DIETA ", "linea": "Nutrigen\u00e9tica y Nutrigen\u00f3mica", "termino": 2013}, {"status": "aprobado", "anio": 2011, "recursos_externos": 0.0, "recursos_internos": 800000.0, "tipo": "interno", "count": 1, "institucion": "INMEGEN", "instituciones": "Instituto Nacional de Medicina Gen\u00f3mica", "recursos": 800000.0, "proyecto": 96, "proyecto_titulo": "EVALUACI\u00d3N DEL EFECTO DEL POLIMORFISMO R230C/ABCA1 EN LA FUNCI\u00d3N ANTI-INFLAMATORIA Y EN LA MIGRACION DE MACROFAGOS ", "linea": "Gen\u00f3mica de enfermedades cardiovasculares", "termino": 2014}, {"status": "terminado", "anio": 2011, "recursos_externos": 0.0, "recursos_internos": 270000.0, "tipo": "externo", "count": 1, "institucion": "INMEGEN", "instituciones": "Instituto Nacional de Medicina Gen\u00f3mica", "recursos": 270000.0, "proyecto": 97, "proyecto_titulo": "Efecto de la prote\u00edna dieteria sobre la expresi\u00f3n de enzimas degradadoras de amino\u00e1cidos mediada por PPAR?", "linea": "Nutrigen\u00e9tica y Nutrigen\u00f3mica", "termino": 2012}, {"status": "aprobado", "anio": 2013, "recursos_externos": 0.0, "recursos_internos": 461224.0, "tipo": "interno", "count": 1, "institucion": "INMEGEN", "instituciones": "Instituto Nacional de Medicina Gen\u00f3mica", "recursos": 461224.0, "proyecto": 98, "proyecto_titulo": "Participaci\u00f3n de SFRP1 en estroma y su efecto par\u00e1crino en c\u00e9lulas epiteliales de c\u00e1ncer de pr\u00f3stata", "linea": "Gen\u00f3mica Funcional del C\u00e1ncer", "termino": 2015}, {"status": "aprobado", "anio": 2011, "recursos_externos": 873103.0, "recursos_internos": 490149.0, "tipo": "interno", "count": 1, "institucion": "Recursos Compartidos", "instituciones": "Instituto Nacional de Cardiolog\u00eda Ignacio Ch\u00e1vez, Instituto Nacional de Cancerolog\u00eda, Consejo Nacional de Ciencia y Tecnolog\u00eda, Instituto Nacional de Medicina Gen\u00f3mica", "recursos": 1363252.0, "proyecto": 99, "proyecto_titulo": "Estudio de la expresi\u00f3n g\u00e9nica en el eje hipot\u00e1lamo-tejido adiposo en un modelo de ratas con s\u00edndrome metab\u00f3lico.", "linea": "Gen\u00f3mica de enfermedades metab\u00f3licas", "termino": 2014}, {"status": "aprobado", "anio": 2012, "recursos_externos": 0.0, "recursos_internos": 460000.0, "tipo": "externo", "count": 1, "institucion": "INMEGEN", "instituciones": "Instituto Nacional de Medicina Gen\u00f3mica", "recursos": 460000.0, "proyecto": 100, "proyecto_titulo": "Caracterizaci\u00f3n del perfil prote\u00f3mico y de citocinas en sueros de pacientes infectados con el virus de la influenza AH1N1 pand\u00e9mica", "linea": "Estructura de Prote\u00ednas", "termino": 2013}, {"status": "terminado", "anio": 2011, "recursos_externos": 0.0, "recursos_internos": 1800000.0, "tipo": "interno", "count": 1, "institucion": "INMEGEN", "instituciones": "Instituto Nacional de Medicina Gen\u00f3mica", "recursos": 1800000.0, "proyecto": 101, "proyecto_titulo": "Identificaci\u00f3n de Marcadores Gen\u00e9ticos Asociados a Rasgos Metab\u00f3licos en Poblaci\u00f3n Ind\u00edgena Mexicana a trav\u00e9s del Escrutinio Completo del Genoma", "linea": "Gen\u00f3mica de Poblaciones", "termino": 2012}, {"status": "aprobado", "anio": 2011, "recursos_externos": 0.0, "recursos_internos": 1100000.0, "tipo": "interno", "count": 1, "institucion": "INMEGEN", "instituciones": "Instituto Nacional de Medicina Gen\u00f3mica", "recursos": 1100000.0, "proyecto": 102, "proyecto_titulo": "Identificaci\u00f3n de genes diferencialmente metilados en individuos con enferemedad arterial coronaria prematura, aterosclerosis subcl\u00ednica y controles sanos", "linea": "Gen\u00f3mica de enfermedades cardiovasculares", "termino": 2014}, {"status": "aprobado", "anio": 2011, "recursos_externos": 0.0, "recursos_internos": 4000000.0, "tipo": "interno", "count": 1, "institucion": "INMEGEN", "instituciones": "Instituto Nacional de Medicina Gen\u00f3mica", "recursos": 4000000.0, "proyecto": 103, "proyecto_titulo": "DIVERSIDAD GEN\u00d3MICA  Y VARIANTES RARAS QUE CONTRIBUYEN AL DESARROLLO DE LAS ENFERMEDADES CR\u00d3NICO-DEGENERATIVAS EN LOS GRUPOS IND\u00cdGENAS DEL TERRITORIO MEXICANO", "linea": "Gen\u00f3mica de enfermedades metab\u00f3licas", "termino": 2014}, {"status": "aprobado", "anio": 2012, "recursos_externos": 1300000.0, "recursos_internos": 1800000.0, "tipo": "interno", "count": 1, "institucion": "Recursos Compartidos", "instituciones": "Instituto Nacional de Medicina Gen\u00f3mica, Consejo Nacional de Ciencia y Tecnolog\u00eda", "recursos": 3100000.0, "proyecto": 104, "proyecto_titulo": "Genoma del C\u00e1ncer de P\u00e1ncreas", "linea": "Gen\u00f3mica Funcional del C\u00e1ncer", "termino": 2016}, {"status": "aprobado", "anio": 2011, "recursos_externos": 1000000.0, "recursos_internos": 533984.39999999991, "tipo": "externo", "count": 1, "institucion": "Recursos Compartidos", "instituciones": "Instituto Nacional de Medicina Gen\u00f3mica, Consejo Nacional de Ciencia y Tecnolog\u00eda", "recursos": 1533984.3999999999, "proyecto": 105, "proyecto_titulo": "BUSQUEDA DE CNVs EN INDIVIDUOS CON TRISOM\u00cdA 21 Y MONOSOMIA X", "linea": "Gen\u00f3mica de enfermedades at\u00f3picas", "termino": 2013}, {"status": "aprobado", "anio": 2012, "recursos_externos": 0.0, "recursos_internos": 1500000.0, "tipo": "interno", "count": 1, "institucion": "INMEGEN", "instituciones": "Instituto Nacional de Medicina Gen\u00f3mica", "recursos": 1500000.0, "proyecto": 106, "proyecto_titulo": "Preparaci\u00f3n y an\u00e1lisis de una genoteca de LncRNA en c\u00e9lulas troncales de c\u00e1ncer de mama.", "linea": "Gen\u00f3mica Funcional del C\u00e1ncer", "termino": 2013}, {"status": "terminado", "anio": 2012, "recursos_externos": 0.0, "recursos_internos": 356865.0, "tipo": "interno", "count": 1, "institucion": "INMEGEN", "instituciones": "Instituto Nacional de Medicina Gen\u00f3mica", "recursos": 356865.0, "proyecto": 108, "proyecto_titulo": "Desarrollo de Biosensores Fluorescentes para el Estudio de las Propiedades Funcionales y de Interacci\u00f3n de Prote\u00ednas Relacionadas con la Diabetes Mellitus Tipo 2", "linea": "Estructura de Prote\u00ednas", "termino": 2013}, {"status": "nuevo", "anio": 2011, "recursos_externos": 0.0, "recursos_internos": 1060000.0, "tipo": "interno", "count": 1, "institucion": "INMEGEN", "instituciones": "Instituto Nacional de Medicina Gen\u00f3mica", "recursos": 1060000.0, "proyecto": 109, "proyecto_titulo": "Analisis Genomico Integrativo de Leucemias Agudas Linfoblaticas Pediatricas", "linea": "Oncogen\u00f3mica", "termino": 2013}, {"status": "terminado", "anio": 2011, "recursos_externos": 0.0, "recursos_internos": 3.0, "tipo": "interno", "count": 1, "institucion": "INMEGEN", "instituciones": "Instituto Nacional de Medicina Gen\u00f3mica", "recursos": 3.0, "proyecto": 110, "proyecto_titulo": "Estudio de la relaci\u00f3n epist\u00e9mica entre Ciencia y Derecho: Individualidad gen\u00e9tica en la legislaci\u00f3n sobre el genoma humano.", "linea": "Implicaciones \u00c9ticas, Jur\u00eddicas y Soc de la Gen\u00f3mica", "termino": 2013}, {"status": "nuevo", "anio": 2012, "recursos_externos": 0.0, "recursos_internos": 0.0, "tipo": "externo", "count": 1, "institucion": "", "instituciones": "", "recursos": 0.0, "proyecto": 111, "proyecto_titulo": "Variantes gen\u00e9ticas asociadas a fenotipos de obesidad infantil. ", "linea": "Nutrigen\u00e9tica y Nutrigen\u00f3mica", "termino": 2012}, {"status": "aprobado", "anio": 2013, "recursos_externos": 125000.0, "recursos_internos": 0.0, "tipo": "interno", "count": 1, "institucion": "Otras", "instituciones": "Nestl\u00e9, S.A. de C.V., Nestl\u00e9 Research Center", "recursos": 125000.0, "proyecto": 112, "proyecto_titulo": "Mecanismos gen\u00e9ticos y epigen\u00e9ticos asociados a los beneficios de la cocoa", "linea": "Nutrigen\u00e9tica y Nutrigen\u00f3mica", "termino": 2014}, {"status": "nuevo", "anio": 2011, "recursos_externos": 0.0, "recursos_internos": 0.0, "tipo": "interno", "count": 1, "institucion": "", "instituciones": "", "recursos": 0.0, "proyecto": 113, "proyecto_titulo": "\u201cAproximaciones de Medicina de Sistemas basadas en Ingenier\u00eda de Prote\u00ednas para descubrir genes candidato en enfermedades complejas: Cap\u00edtulo C\u00e1ncer\u201d", "linea": "Estructura de Prote\u00ednas", "termino": 2013}, {"status": "aprobado", "anio": 2011, "recursos_externos": 20000000.0, "recursos_internos": 50000.0, "tipo": "externo", "count": 1, "institucion": "Recursos Compartidos", "instituciones": "Universidad Nacional Aut\u00f3noma de M\u00e9xico, Instituto Nacional de Medicina Gen\u00f3mica", "recursos": 20050000.0, "proyecto": 114, "proyecto_titulo": "Secuenciaci\u00f3n, armado y an\u00e1lisis del genoma, transcriptoma y proteoma del par\u00e1sito humano Taenia solium", "linea": "Gen\u00f3mica Computacional y An\u00e1lisis de Expresi\u00f3n", "termino": 2014}, {"status": "aprobado", "anio": 2011, "recursos_externos": 0.0, "recursos_internos": 280000.0, "tipo": "interno", "count": 1, "institucion": "INMEGEN", "instituciones": "Instituto Nacional de Medicina Gen\u00f3mica", "recursos": 280000.0, "proyecto": 115, "proyecto_titulo": "Determinaci\u00f3n de mutaciones de resistencia a f\u00e1rmacos en Mycobacterium tuberculosis mediante secuenciaci\u00f3n de nueva generaci\u00f3n", "linea": "Gen\u00f3mica y enfermedades infecciosas", "termino": 2015}, {"status": "aprobado", "anio": 2012, "recursos_externos": 0.0, "recursos_internos": 720200.0, "tipo": "interno", "count": 1, "institucion": "INMEGEN", "instituciones": "Instituto Nacional de Medicina Gen\u00f3mica", "recursos": 720200.0, "proyecto": 116, "proyecto_titulo": "Desarrollo de tecnolog\u00edas gen\u00f3micas para la Secuenciaci\u00f3n de alta cobertura de Microbiomas Humanos", "linea": "Desarrollo de tecnolog\u00edas gen\u00f3micas", "termino": 2014}, {"status": "aprobado", "anio": 2012, "recursos_externos": 260000.0, "recursos_internos": 0.0, "tipo": "interno", "count": 1, "institucion": "Otras", "instituciones": "Nestl\u00e9 Research Center", "recursos": 260000.0, "proyecto": 117, "proyecto_titulo": "Respuesta a la intervenci\u00f3n con PUFAs de acuerdo a los genotipos de PPAR", "linea": "Nutrigen\u00e9tica y Nutrigen\u00f3mica", "termino": 2014}, {"status": "aprobado", "anio": 2012, "recursos_externos": 0.0, "recursos_internos": 200000.0, "tipo": "interno", "count": 1, "institucion": "INMEGEN", "instituciones": "Instituto Nacional de Medicina Gen\u00f3mica", "recursos": 200000.0, "proyecto": 119, "proyecto_titulo": "Impacto de factores gen\u00e9ticos y ambientales en la Susceptibilidad a Enfermedad Hep\u00e1tica en una cohorte de adultos mexicanos", "linea": "Gen\u00f3mica de enfermedades metab\u00f3licas", "termino": 2014}, {"status": "aprobado", "anio": 2013, "recursos_externos": 0.0, "recursos_internos": 750000.0, "tipo": "interno", "count": 1, "institucion": "INMEGEN", "instituciones": "Instituto Nacional de Medicina Gen\u00f3mica", "recursos": 750000.0, "proyecto": 120, "proyecto_titulo": "An\u00e1lisis de Haplotipos y prevalencia de la mutaci\u00f3n c.1987delC en el Gen GAA causante de la enfermedad de Pompe en individuos de comunidades en aislamiento gen\u00e9tico en la Zona Huasteca de San Luis Potos\u00ed", "linea": "Gen\u00f3mica de enfermedades metab\u00f3licas", "termino": 2015}, {"status": "aprobado", "anio": 2012, "recursos_externos": 0.0, "recursos_internos": 834000.0, "tipo": "interno", "count": 1, "institucion": "INMEGEN", "instituciones": "Instituto Nacional de Medicina Gen\u00f3mica", "recursos": 834000.0, "proyecto": 121, "proyecto_titulo": "Comparaci\u00f3n de los niveles circulantes de Irisina antes y despu\u00e9s del ejercicio en sujetos con diferentes IMC", "linea": "Gen\u00f3mica de enfermedades metab\u00f3licas", "termino": 2015}, {"status": "aprobado", "anio": 2013, "recursos_externos": 0.0, "recursos_internos": 389000.0, "tipo": "interno", "count": 1, "institucion": "INMEGEN", "instituciones": "Instituto Nacional de Medicina Gen\u00f3mica", "recursos": 389000.0, "proyecto": 122, "proyecto_titulo": "Cambios en el metiloma y miRNA/oma en esferoides tumorales de c\u00e1ncer de mama.", "linea": "Oncogen\u00f3mica", "termino": 2013}, {"status": "nuevo", "anio": 2012, "recursos_externos": 0.0, "recursos_internos": 166312.0, "tipo": "interno", "count": 1, "institucion": "INMEGEN", "instituciones": "Instituto Nacional de Medicina Gen\u00f3mica", "recursos": 166312.0, "proyecto": 123, "proyecto_titulo": "Cambios en el metiloma del DNA dirigidos por la cinasa NIK en c\u00e1ncer de mama.", "linea": "Oncogen\u00f3mica", "termino": 2013}, {"status": "nuevo", "anio": 2012, "recursos_externos": 0.0, "recursos_internos": 578149.23999999999, "tipo": "interno", "count": 1, "institucion": "INMEGEN", "instituciones": "Instituto Nacional de Medicina Gen\u00f3mica", "recursos": 578149.23999999999, "proyecto": 124, "proyecto_titulo": "Estudio de la expresi\u00f3n de microRNAs en el eje hipot\u00e1lamo-tejido adiposo en un modelo de ratas con s\u00edndrome metab\u00f3lico", "linea": "Gen\u00f3mica de enfermedades metab\u00f3licas", "termino": 2014}, {"status": "aprobado", "anio": 2012, "recursos_externos": 0.0, "recursos_internos": 1000000.0, "tipo": "interno", "count": 1, "institucion": "INMEGEN", "instituciones": "Instituto Nacional de Medicina Gen\u00f3mica", "recursos": 1000000.0, "proyecto": 125, "proyecto_titulo": "An\u00e1lisis de la prevalencia de mutaciones asociadas a la selecci\u00f3n y  respuesta al tratamiento en tumores de mama, colorrectales y de pulm\u00f3n mediante secuenciaci\u00f3n masiva en paralelo de un panel de 137 genes.", "linea": "Oncogen\u00f3mica", "termino": 2014}, {"status": "suspendido", "anio": 2012, "recursos_externos": 0.0, "recursos_internos": 0.10000000000000001, "tipo": "interno", "count": 1, "institucion": "INMEGEN", "instituciones": "Instituto Nacional de Medicina Gen\u00f3mica", "recursos": 0.10000000000000001, "proyecto": 126, "proyecto_titulo": "Diagn\u00f3stico de la educaci\u00f3n en gen\u00e9tica y gen\u00f3mica en las Escuelas y Facultades de Medicina en M\u00e9xico.", "linea": "Implicaciones \u00c9ticas, Jur\u00eddicas y Soc de la Gen\u00f3mica", "termino": 2014}, {"status": "suspendido", "anio": 2012, "recursos_externos": 0.0, "recursos_internos": 3000.0, "tipo": "interno", "count": 1, "institucion": "INMEGEN", "instituciones": "Instituto Nacional de Medicina Gen\u00f3mica", "recursos": 3000.0, "proyecto": 127, "proyecto_titulo": "Estudio sobre la disposici\u00f3n y la percepci\u00f3n de la poblaci\u00f3n a donar  muestras biol\u00f3gicas para su almacenamiento e investigaci\u00f3n en gen\u00e9tica humana y medicina gen\u00f3mica. \u00bfQu\u00e9 piensan los potenciales donadores mexicanos?", "linea": "Implicaciones \u00c9ticas, Jur\u00eddicas y Soc de la Gen\u00f3mica", "termino": 2014}, {"status": "aprobado", "anio": 2012, "recursos_externos": 1350000.0, "recursos_internos": 0.0, "tipo": "interno", "count": 1, "institucion": "Otras", "instituciones": "Consejo Nacional de Ciencia y Tecnolog\u00eda", "recursos": 1350000.0, "proyecto": 128, "proyecto_titulo": "Polimorfismos funcionales en la v\u00eda del interfer\u00f3n alfa y su asociaci\u00f3n con el desarrollo de lupus eritematoso sist\u00e9mico pedi\u00e1trico", "linea": "Gen\u00f3mica de las enfermedades autoinmunes", "termino": 2015}, {"status": "en_evaluacion", "anio": 2013, "recursos_externos": 0.0, "recursos_internos": 689052.0, "tipo": "interno", "count": 1, "institucion": "INMEGEN", "instituciones": "Instituto Nacional de Medicina Gen\u00f3mica", "recursos": 689052.0, "proyecto": 129, "proyecto_titulo": "An\u00e1lisis gen\u00f3mico de la respuesta a f\u00e1rmacos antineopl\u00e1sicos basados en cobre (Casiope\u00edna IIIia) en pacientes: Estudio Cl\u00ednico Fase I", "linea": "Gen\u00f3mica Computacional y An\u00e1lisis de Expresi\u00f3n", "termino": 2015}, {"status": "aprobado", "anio": 2013, "recursos_externos": 0.0, "recursos_internos": 890000.0, "tipo": "interno", "count": 1, "institucion": "INMEGEN", "instituciones": "Instituto Nacional de Medicina Gen\u00f3mica", "recursos": 890000.0, "proyecto": 130, "proyecto_titulo": "Identificaci\u00f3n y caracterizaci\u00f3n cl\u00ednica y molecular de la Cardiomiopat\u00eda Dilatada Familiar en pacientes mexicanos", "linea": "Gen\u00f3mica de enfermedades cardiovasculares", "termino": 2015}, {"status": "aprobado", "anio": 2013, "recursos_externos": 0.0, "recursos_internos": 2000000.0, "tipo": "interno", "count": 1, "institucion": "INMEGEN", "instituciones": "Instituto Nacional de Medicina Gen\u00f3mica", "recursos": 2000000.0, "proyecto": 131, "proyecto_titulo": "ESTRUCTURA DEL GENOMA MITOCONDRIAL EN POBLACIONES AMERINDIAS DE M\u00c9XICO: IDENTIFICACION DE HAPLOGRUPOS ASOCIADOS A ENFERMEDADES COMUNES", "linea": "Gen\u00f3mica de enfermedades metab\u00f3licas", "termino": 2016}, {"status": "aprobado", "anio": 2013, "recursos_externos": 0.0, "recursos_internos": 1000000.0, "tipo": "interno", "count": 1, "institucion": "INMEGEN", "instituciones": "Instituto Nacional de Medicina Gen\u00f3mica", "recursos": 1000000.0, "proyecto": 132, "proyecto_titulo": "Identificaci\u00f3n de biomarcadores asociados a la variaci\u00f3n de la Densidad Mineral \u00d3sea mediante an\u00e1lisis de miRNAs  en monocitos circulantes de sangre perif\u00e9rica en mujeres postmenop\u00e1usicas mexicanas.", "linea": "Gen\u00f3mica del Metabolismo \u00d3seo", "termino": 2014}, {"status": "aprobado", "anio": 2012, "recursos_externos": 25000.0, "recursos_internos": 300000.0, "tipo": "externo", "count": 1, "institucion": "Recursos Compartidos", "instituciones": "Instituto Nacional de Medicina Gen\u00f3mica, Instituto de Investigaciones Biom\u00e9dicas", "recursos": 325000.0, "proyecto": 133, "proyecto_titulo": "Evaluaci\u00f3n del transcriptoma de las fases de trofozo\u00edto y quiste del par\u00e1sito Entamoeba histolytica, agente causal de la amibiasis en humanos", "linea": "Gen\u00f3mica de enfermedades at\u00f3picas", "termino": 2014}, {"status": "aprobado", "anio": 2013, "recursos_externos": 65000.0, "recursos_internos": 105000.0, "tipo": "externo", "count": 1, "institucion": "Recursos Compartidos", "instituciones": "Instituto Nacional de Medicina Gen\u00f3mica, Universidad Nacional Aut\u00f3noma de M\u00e9xico", "recursos": 170000.0, "proyecto": 134, "proyecto_titulo": "Efecto de la expresi\u00f3n de Thy-1 en fibroblastos pulmonares humanos en su comunicaci\u00f3n con las c\u00e9lulas epiteliales alveolares.", "linea": "Gen\u00f3mica y enfermedades infecciosas", "termino": 2013}, {"status": "cancelado", "anio": 2013, "recursos_externos": 500000.0, "recursos_internos": 0.0, "tipo": "externo", "count": 1, "institucion": "Otras", "instituciones": "Centro M\u00e9dico Siglo XXI", "recursos": 500000.0, "proyecto": 135, "proyecto_titulo": "Caracterizaci\u00f3n de la respuesta inflamatoria a expensas de mediadores inflamatorios s\u00e9ricos y c\u00e9lulas progenitoras circulantes en sujetos obesos sometidos a cirug\u00eda bari\u00e1trica.", "linea": "Gen\u00f3mica de enfermedades metab\u00f3licas", "termino": 2014}, {"status": "aprobado", "anio": 2013, "recursos_externos": 0.0, "recursos_internos": 1229000.0, "tipo": "interno", "count": 1, "institucion": "INMEGEN", "instituciones": "Instituto Nacional de Medicina Gen\u00f3mica", "recursos": 1229000.0, "proyecto": 136, "proyecto_titulo": "An\u00e1lisis gen\u00f3mico de la interacci\u00f3n entre c\u00e9lulas troncales de tejido adiposo ADSC y c\u00e9lulas tumorales de mama.", "linea": "Gen\u00f3mica Funcional del C\u00e1ncer", "termino": 2014}, {"status": "aprobado", "anio": 2010, "recursos_externos": 1300000.0, "recursos_internos": 460492.0, "tipo": "externo", "count": 1, "institucion": "Recursos Compartidos", "instituciones": "Hospital General de Mexico, Instituto Nacional de Medicina Gen\u00f3mica", "recursos": 1760492.0, "proyecto": 137, "proyecto_titulo": "\u201cComponentes del s\u00edndrome metab\u00f3lico en familias Mexicanas asociados al grado de heredabilidad: Reestructuraci\u00f3n de los criterios", "linea": "Gen\u00f3mica de enfermedades metab\u00f3licas", "termino": 2014}, {"status": "nuevo", "anio": 2013, "recursos_externos": 0.0, "recursos_internos": 2267000.0, "tipo": "interno", "count": 1, "institucion": "INMEGEN", "instituciones": "Instituto Nacional de Medicina Gen\u00f3mica", "recursos": 2267000.0, "proyecto": 138, "proyecto_titulo": "Evaluaci\u00f3n comparativa del metiloma y su asociaci\u00f3n con los fenotipos de adicciones en gemelos monocig\u00f3ticos de la ciudad de M\u00e9xico", "linea": "Gen\u00f3mica de Poblaciones", "termino": 2015}, {"status": "en_evaluacion", "anio": 2013, "recursos_externos": 0.0, "recursos_internos": 1250000.0, "tipo": "interno", "count": 1, "institucion": "INMEGEN", "instituciones": "Instituto Nacional de Medicina Gen\u00f3mica", "recursos": 1250000.0, "proyecto": 139, "proyecto_titulo": "Asociaci\u00f3n de los receptores a nicotina en pacientes con psicosis y tabaquismo e interacci\u00f3n con cambios en el Epigenoma ", "linea": "Gen\u00f3mica de las enfermedades psiqui\u00e1tricas y neurodegenerativas", "termino": 2016}, {"status": "en_evaluacion", "anio": 2013, "recursos_externos": 0.0, "recursos_internos": 835000.0, "tipo": "interno", "count": 1, "institucion": "INMEGEN", "instituciones": "Instituto Nacional de Medicina Gen\u00f3mica", "recursos": 835000.0, "proyecto": 140, "proyecto_titulo": "Asociaci\u00f3n de genes del sistema inmune y el virus de la Influenza en poblaci\u00f3n mexicana con psicosis.", "linea": "Gen\u00f3mica de las enfermedades psiqui\u00e1tricas y neurodegenerativas", "termino": 2015}, {"status": "nuevo", "anio": 2013, "recursos_externos": 0.0, "recursos_internos": 1984000.0, "tipo": "interno", "count": 1, "institucion": "INMEGEN", "instituciones": "Instituto Nacional de Medicina Gen\u00f3mica", "recursos": 1984000.0, "proyecto": 141, "proyecto_titulo": "IDENTIFICACI\u00d3N DE MIRNAS COMO BIOMARCADORES DE DIAGN\u00d3STICO TEMPRANO Y PARA LA DETECCI\u00d3N DE LA ENFERMEDAD M\u00cdNIMA RESIDUAL EN NI\u00d1OS CON LEUCEMIA AGUDA LINFOBL\u00c1STICA", "linea": "Oncogen\u00f3mica", "termino": 2016}, {"status": "aprobado", "anio": 2013, "recursos_externos": 0.0, "recursos_internos": 710000.0, "tipo": "interno", "count": 1, "institucion": "INMEGEN", "instituciones": "Instituto Nacional de Medicina Gen\u00f3mica", "recursos": 710000.0, "proyecto": 142, "proyecto_titulo": "Biolog\u00eda de sistemas en c\u00e1ncer: An\u00e1lisis del metabolismo en l\u00edneas celulares cancerosas a trav\u00e9s de un esquema integral entre modelos computacionales y datos de tecnolog\u00eda gen\u00f3mica.", "linea": "Biolog\u00eda de Sistemas", "termino": 2015}, {"status": "aprobado", "anio": 2013, "recursos_externos": 2600000.0, "recursos_internos": 0.0, "tipo": "interno", "count": 1, "institucion": "Otras", "instituciones": "Facultad de Medicina", "recursos": 2600000.0, "proyecto": 143, "proyecto_titulo": "Caracterizaci\u00f3n de cambios en mediadores inflamatorios asociados a modificaciones en la microbiota cervicovaginal a lo largo del embarazo y su relaci\u00f3n con el nacimiento pret\u00e9rmino.", "linea": "Gen\u00f3mica del parto prematuro", "termino": 2015}, {"status": "aprobado", "anio": 2013, "recursos_externos": 239464.0, "recursos_internos": 291570.44999999995, "tipo": "interno", "count": 1, "institucion": "Recursos Compartidos", "instituciones": "Instituto Nacional de Medicina Gen\u00f3mica, Facultad de Medicina", "recursos": 531034.44999999995, "proyecto": 144, "proyecto_titulo": "Asociaci\u00f3n Estructural Huesped-Par\u00e1sito en Leishmania Mexicana", "linea": "Gen\u00f3mica y enfermedades infecciosas", "termino": 2015}, {"status": "aprobado", "anio": 2013, "recursos_externos": 0.0, "recursos_internos": 1425000.0, "tipo": "interno", "count": 1, "institucion": "INMEGEN", "instituciones": "Instituto Nacional de Medicina Gen\u00f3mica", "recursos": 1425000.0, "proyecto": 145, "proyecto_titulo": "VARIACI\u00d3N GEN\u00c9TICA COM\u00daN ASOCIADA A ENFERMEDAD ARTERIAL CORONARIA PREMATURA EN POBLACI\u00d3N MEXICANA Y AN\u00c1LISIS DE INTERACCIONES GEN AMBIENTE", "linea": "Gen\u00f3mica de enfermedades cardiovasculares", "termino": 2014}, {"status": "nuevo", "anio": 2013, "recursos_externos": 0.0, "recursos_internos": 241416.95000000001, "tipo": "interno", "count": 1, "institucion": "INMEGEN", "instituciones": "Instituto Nacional de Medicina Gen\u00f3mica", "recursos": 241416.95000000001, "proyecto": 146, "proyecto_titulo": "\u201cCambios en el transcriptoma de pulm\u00f3n en el s\u00edndrome metab\u00f3lico en rata\u201d", "linea": "Gen\u00f3mica de enfermedades metab\u00f3licas", "termino": 2015}, {"status": "aprobado", "anio": 2013, "recursos_externos": 0.0, "recursos_internos": 1256771.1200000001, "tipo": "interno", "count": 1, "institucion": "INMEGEN", "instituciones": "Instituto Nacional de Medicina Gen\u00f3mica", "recursos": 1256771.1200000001, "proyecto": 147, "proyecto_titulo": "EVALUACI\u00d3N DE PERFILES GLOBALES DE METILACI\u00d3N Y EXPRESI\u00d3N G\u00c9NICA ASOCIADOS A LA ESTEATOSIS Y/O A LA PROGRESI\u00d3N A ESTEATOHEPATITIS EN SUJETOS OBESOS ", "linea": "Bases moleculares de las enfermedades hep\u00e1ticas cr\u00f3nicas", "termino": 2014}, {"status": "aprobado", "anio": 2013, "recursos_externos": 0.0, "recursos_internos": 703239.0, "tipo": "interno", "count": 1, "institucion": "INMEGEN", "instituciones": "Instituto Nacional de Medicina Gen\u00f3mica", "recursos": 703239.0, "proyecto": 148, "proyecto_titulo": "Estudio integral del transcriptoma, proteoma y metiloma de las c\u00e9lulas del c\u00e1ncer de h\u00edgado", "linea": "Bases moleculares de las enfermedades hep\u00e1ticas cr\u00f3nicas", "termino": 2015}, {"status": "aprobado", "anio": 2013, "recursos_externos": 0.0, "recursos_internos": 953637.0, "tipo": "interno", "count": 1, "institucion": "INMEGEN", "instituciones": "Instituto Nacional de Medicina Gen\u00f3mica", "recursos": 953637.0, "proyecto": 149, "proyecto_titulo": "An\u00e1lisis de la participaci\u00f3n de microRNAs en el proceso de met\u00e1stasis en tumores de la gl\u00e1ndula mamaria", "linea": "Oncogen\u00f3mica", "termino": 2014}, {"status": "aprobado", "anio": 2012, "recursos_externos": 1254204.0, "recursos_internos": 0.0, "tipo": "externo", "count": 1, "institucion": "Otras", "instituciones": "Consejo Nacional de Ciencia y Tecnolog\u00eda", "recursos": 1254204.0, "proyecto": 150, "proyecto_titulo": "Termodin\u00e1mica fuera de equilibrio y an\u00e1lisis de redes complejas en la regulaci\u00f3n gen\u00e9tica mediada por factores de transcripci\u00f3n maestros", "linea": "Gen\u00f3mica Computacional y An\u00e1lisis de Expresi\u00f3n", "termino": 2015}, {"status": "aprobado", "anio": 2013, "recursos_externos": 1286000.0, "recursos_internos": 0.0, "tipo": "interno", "count": 1, "institucion": "Otras", "instituciones": "Consejo Nacional de Ciencia y Tecnolog\u00eda", "recursos": 1286000.0, "proyecto": 151, "proyecto_titulo": "Estudio del efecto hepatoprotector por bacterias probi\u00f3ticas, productoras de \u00e1cido f\u00f3lico, en un modelo experimental de cirrosis y c\u00e1ncer hep\u00e1tico", "linea": "Bases moleculares de las enfermedades hep\u00e1ticas cr\u00f3nicas", "termino": 2016}, {"status": "aprobado", "anio": 2014, "recursos_externos": 668000.0, "recursos_internos": 0.0, "tipo": "interno", "count": 1, "institucion": "Otras", "instituciones": "Consejo Nacional de Ciencia y Tecnolog\u00eda", "recursos": 668000.0, "proyecto": 152, "proyecto_titulo": "Estudio de asociaci\u00f3n de la microbiota intestinal con la obesidad y sus complicaciones metab\u00f3licas en poblaci\u00f3n infantil mexicana.", "linea": "Nutrigen\u00e9tica y Nutrigen\u00f3mica", "termino": 2016}, {"status": "aprobado", "anio": 2013, "recursos_externos": 1647000.0, "recursos_internos": 0.0, "tipo": "interno", "count": 1, "institucion": "Otras", "instituciones": "Consejo Nacional de Ciencia y Tecnolog\u00eda", "recursos": 1647000.0, "proyecto": 153, "proyecto_titulo": "ESTUDIO GEN\u00d3MICO DEL HIGADO GRASO NO ALCOH\u00d3LICO: PARTICIPACI\u00d3N DE LOS GENES DE LA HOMEOSTASIS DEL COLESTEROL EN LA PROGRESI\u00d3N DE ESTEATOSIS A ESTEATOHEPATITIS EN SUJETOS OBESOS", "linea": "Bases moleculares de las enfermedades hep\u00e1ticas cr\u00f3nicas", "termino": 2015}, {"status": "en_evaluacion", "anio": 2013, "recursos_externos": 39000.0, "recursos_internos": 0.0, "tipo": "externo", "count": 1, "institucion": "Otras", "instituciones": "Sport City", "recursos": 39000.0, "proyecto": 154, "proyecto_titulo": "B\u00fasqueda de variantes gen\u00e9ticas asociadas a la obesidad y condici\u00f3n f\u00edsica en la poblaci\u00f3n mexicana", "linea": "Nutrigen\u00e9tica y Nutrigen\u00f3mica", "termino": 2014}, {"status": "enviado", "anio": 2014, "recursos_externos": 1000000.0, "recursos_internos": 0.0, "tipo": "interno", "count": 1, "institucion": "Otras", "instituciones": "Facultad de Qu\u00edmica", "recursos": 1000000.0, "proyecto": 155, "proyecto_titulo": "Secuenciaci\u00f3n de exoma completo para la identificaci\u00f3n de variantes gen\u00e9ticas implicadas en la susceptibilidad al desarrollo de diabetes tipo 2 en poblaci\u00f3n Maya", "linea": "Gen\u00f3mica de enfermedades metab\u00f3licas", "termino": 2015}, {"status": "en_evaluacion", "anio": 2013, "recursos_externos": 0.0, "recursos_internos": 1.0, "tipo": "interno", "count": 1, "institucion": "INMEGEN", "instituciones": "Instituto Nacional de Medicina Gen\u00f3mica", "recursos": 1.0, "proyecto": 156, "proyecto_titulo": "Identificaci\u00f3n de variantes farmacogen\u00e9ticas asociadas a la respuesta de anticoagulantes en poblaciones mexicanas", "linea": "Farmacogen\u00f3mica", "termino": 2016}, {"status": "en_evaluacion", "anio": 2013, "recursos_externos": 0.0, "recursos_internos": 1.0, "tipo": "interno", "count": 1, "institucion": "INMEGEN", "instituciones": "Instituto Nacional de Medicina Gen\u00f3mica", "recursos": 1.0, "proyecto": 157, "proyecto_titulo": "Caracterizaci\u00f3n de la diversidad en genes importantes en la farmacogen\u00f3mica de estatinas mediante secuenciaci\u00f3n de nueva generaci\u00f3n.", "linea": "Farmacogen\u00f3mica", "termino": 2016}, {"status": "aprobado", "anio": 2014, "recursos_externos": 2050000.0, "recursos_internos": 0.0, "tipo": "interno", "count": 1, "institucion": "Otras", "instituciones": "Consejo Nacional de Ciencia y Tecnolog\u00eda", "recursos": 2050000.0, "proyecto": 158, "proyecto_titulo": "Evaluaci\u00f3n de los factores gen\u00e9ticos que predisponen al desarrollo de lupus eritematoso sist\u00e9mico en ni\u00f1os y adultos en poblaci\u00f3n mestiza mexicana", "linea": "Gen\u00f3mica de las enfermedades autoinmunes", "termino": 2015}, {"status": "aprobado", "anio": 2012, "recursos_externos": 1340000.0, "recursos_internos": 0.0, "tipo": "interno", "count": 1, "institucion": "Otras", "instituciones": "Consejo Nacional de Ciencia y Tecnolog\u00eda", "recursos": 1340000.0, "proyecto": 159, "proyecto_titulo": "DESCIFRANDO LAS BASES ESTRUCTURALES DE LA AGREGACI\u00d3N AMILOIDE DE LAS CADENAS LIGERAS  ", "linea": "Estructura de Prote\u00ednas", "termino": 2015}, {"status": "aprobado", "anio": 2014, "recursos_externos": 0.0, "recursos_internos": 0.0, "tipo": "interno", "count": 1, "institucion": "", "instituciones": "", "recursos": 0.0, "proyecto": 160, "proyecto_titulo": "IDENTIFICACI\u00d3N DE FACTORES DE SUSCEPTIBILIDAD GEN\u00c9TICA PARA EL DESARROLLO DE LA OBESIDAD Y RASGOS METAB\u00d3LICOS RELACIONADOS", "linea": "Gen\u00f3mica de enfermedades metab\u00f3licas", "termino": 2015}, {"status": "aprobado", "anio": 2014, "recursos_externos": 0.0, "recursos_internos": 100000.0, "tipo": "interno", "count": 1, "institucion": "INMEGEN", "instituciones": "Instituto Nacional de Medicina Gen\u00f3mica", "recursos": 100000.0, "proyecto": 161, "proyecto_titulo": "Delimitaci\u00f3n del concepto de \"Identidad Gen\u00e9tica\" dentro del marco jur\u00eddico mexicano", "linea": "Implicaciones \u00c9ticas, Jur\u00eddicas y Soc de la Gen\u00f3mica", "termino": 2015}, {"status": "aprobado", "anio": 2014, "recursos_externos": 0.0, "recursos_internos": 60000.0, "tipo": "interno", "count": 1, "institucion": "INMEGEN", "instituciones": "Instituto Nacional de Medicina Gen\u00f3mica", "recursos": 60000.0, "proyecto": 162, "proyecto_titulo": "Actitudes de investigadores, profesionales de la salud y estudiantes acerca de revelar los hallazgos imprevistos a los participantes en las investigaciones gen\u00f3micos.", "linea": "Implicaciones \u00c9ticas, Jur\u00eddicas y Soc de la Gen\u00f3mica", "termino": 2015}, {"status": "nuevo", "anio": 2014, "recursos_externos": 0.0, "recursos_internos": 0.0, "tipo": "interno", "count": 1, "institucion": "", "instituciones": "", "recursos": 0.0, "proyecto": 163, "proyecto_titulo": "EFECTO FUNCIONAL DEL GEN ABCA1 SOBRE LA FORMACI\u00d3N DE MICROPART\u00cdCULAS ENDOTELIALES IN VITRO EN CONDICIONES BASALES Y EN RESPUESTA A EST\u00cdMULOS INVOLUCRADOS EN LA FISIOPATOLOG\u00cdA DE LA ATEROSCLEROSIS", "linea": "Gen\u00f3mica de enfermedades cardiovasculares", "termino": 2017}, {"status": "aprobado", "anio": 2014, "recursos_externos": 0.0, "recursos_internos": 1800000.0, "tipo": "interno", "count": 1, "institucion": "INMEGEN", "instituciones": "Instituto Nacional de Medicina Gen\u00f3mica", "recursos": 1800000.0, "proyecto": 164, "proyecto_titulo": "El lncRNAoma de las c\u00e9lulas troncales de c\u00e1ncer.", "linea": "Gen\u00f3mica Funcional del C\u00e1ncer", "termino": 2016}, {"status": "en_evaluacion", "anio": 2014, "recursos_externos": 250000.0, "recursos_internos": 0.0, "tipo": "interno", "count": 1, "institucion": "Otras", "instituciones": "Facultad de Medicina", "recursos": 250000.0, "proyecto": 165, "proyecto_titulo": "Gen\u00f3mica del Nacimiento Pret\u00e9rmino", "linea": "Gen\u00f3mica del parto prematuro", "termino": 2017}, {"status": "aprobado", "anio": 2014, "recursos_externos": 0.0, "recursos_internos": 1100000.0, "tipo": "interno", "count": 1, "institucion": "INMEGEN", "instituciones": "Instituto Nacional de Medicina Gen\u00f3mica", "recursos": 1100000.0, "proyecto": 166, "proyecto_titulo": "Participaci\u00f3n de RNAs largos no codificantes (lncRNA) durante los cambios epigen\u00e9ticos en el proceso de formaci\u00f3n de mamo-esferas.", "linea": "Gen\u00f3mica Funcional del C\u00e1ncer", "termino": 2015}, {"status": "en_evaluacion", "anio": 2014, "recursos_externos": 0.0, "recursos_internos": 2440000.0, "tipo": "interno", "count": 1, "institucion": "INMEGEN", "instituciones": "Instituto Nacional de Medicina Gen\u00f3mica", "recursos": 2440000.0, "proyecto": 167, "proyecto_titulo": "Perfil de expresi\u00f3n diferencial de microRNAs en plasma de adultos con s\u00edndrome metab\u00f3lico.   MODALIDAD: PROYECTO DE GRUPO", "linea": "Gen\u00f3mica de enfermedades metab\u00f3licas", "termino": 2017}, {"status": "en_evaluacion", "anio": 2014, "recursos_externos": 0.0, "recursos_internos": 1201741.0, "tipo": "interno", "count": 1, "institucion": "INMEGEN", "instituciones": "Instituto Nacional de Medicina Gen\u00f3mica", "recursos": 1201741.0, "proyecto": 168, "proyecto_titulo": "Identificaci\u00f3n de cambios secuenciales en el transcriptoma del corioamnios durante la evoluci\u00f3n del trabajo de parto humano normal y en el trabajo de parto pret\u00e9rmino.", "linea": "Gen\u00f3mica del parto prematuro", "termino": 2016}, {"status": "en_evaluacion", "anio": 2014, "recursos_externos": 0.0, "recursos_internos": 1.0, "tipo": "interno", "count": 1, "institucion": "INMEGEN", "instituciones": "Instituto Nacional de Medicina Gen\u00f3mica", "recursos": 1.0, "proyecto": 169, "proyecto_titulo": "EFECTO FUNCIONAL DEL GEN ABCA1 SOBRE LA FORMACI\u00d3N DE MICROPART\u00cdCULAS ENDOTELIALES IN VITRO EN CONDICIONES BASALES Y EN RESPUESTA A EST\u00cdMULOS INVOLUCRADOS EN LA FISIOPATOLOG\u00cdA DE LA ATEROSCLEROSIS", "linea": "Gen\u00f3mica de enfermedades cardiovasculares", "termino": 2017}, {"status": "aprobado", "anio": 2014, "recursos_externos": 0.0, "recursos_internos": 2190000.0, "tipo": "interno", "count": 1, "institucion": "INMEGEN", "instituciones": "Instituto Nacional de Medicina Gen\u00f3mica", "recursos": 2190000.0, "proyecto": 170, "proyecto_titulo": "Evaluaci\u00f3n de la expresi\u00f3n de los genes de nicotina sobre la atenci\u00f3n sostenida en el modelo animal de esquizofrenia por lesi\u00f3n neonatal del hipocampo ventral.", "linea": "Gen\u00f3mica de las enfermedades psiqui\u00e1tricas y neurodegenerativas", "termino": 2016}, {"status": "nuevo", "anio": 2014, "recursos_externos": 0.0, "recursos_internos": 916279.04000000004, "tipo": "interno", "count": 1, "institucion": "INMEGEN", "instituciones": "Instituto Nacional de Medicina Gen\u00f3mica", "recursos": 916279.04000000004, "proyecto": 171, "proyecto_titulo": "An\u00e1lisis de expresi\u00f3n y patrones de metilaci\u00f3n como mecanismos reguladores del proceso de la proliferaci\u00f3n y diferenciaci\u00f3n del osteoblasto", "linea": "Gen\u00f3mica del Metabolismo \u00d3seo", "termino": 2016}, {"status": "aprobado", "anio": 2014, "recursos_externos": 0.0, "recursos_internos": 2000000.0, "tipo": "interno", "count": 1, "institucion": "INMEGEN", "instituciones": "Instituto Nacional de Medicina Gen\u00f3mica", "recursos": 2000000.0, "proyecto": 172, "proyecto_titulo": "Identificaci\u00f3n de variantes funcionales en genes candidato asociados con el riesgo al desarrollo de s\u00edndrome metab\u00f3lico en grupos ind\u00edgenas y poblaci\u00f3n mestiza mexicana", "linea": "Gen\u00f3mica de enfermedades metab\u00f3licas", "termino": 2017}, {"status": "aprobado", "anio": 2014, "recursos_externos": 1500000.0, "recursos_internos": 2000000.0, "tipo": "interno", "count": 1, "institucion": "Recursos Compartidos", "instituciones": "Instituto Nacional de Medicina Gen\u00f3mica, Consejo Nacional de Ciencia y Tecnolog\u00eda", "recursos": 3500000.0, "proyecto": 173, "proyecto_titulo": "Estudio Cl\u00ednico y Gen\u00f3mico de la Insuficiencia Cardiaca, Arritmias y la Muerte S\u00fabita, Causadas por Cardiomiopat\u00edas y Canalopat\u00edas Arritmog\u00e9nicas en Pacientes Mexicanos.", "linea": "Gen\u00f3mica de enfermedades cardiovasculares", "termino": 2016}, {"status": "aprobado", "anio": 2014, "recursos_externos": 1010000.0, "recursos_internos": 340000.0, "tipo": "externo", "count": 1, "institucion": "Recursos Compartidos", "instituciones": "Rosana Pelayo, Instituto Nacional de Pediatria, Instituto Nacional de Medicina Gen\u00f3mica", "recursos": 1350000.0, "proyecto": 174, "proyecto_titulo": "Caracterizaci\u00f3n de las mutaciones en los genes FANC, en un grupo de pacientes con Anemia de Fanconi y su correlaci\u00f3n con el potencial proliferativo de las c\u00e9lulas troncales hematopoy\u00e9ticas", "linea": "Biolog\u00eda de Sistemas", "termino": 2017}, {"status": "en_evaluacion", "anio": 2014, "recursos_externos": 0.0, "recursos_internos": 1.0, "tipo": "interno", "count": 1, "institucion": "INMEGEN", "instituciones": "Instituto Nacional de Medicina Gen\u00f3mica", "recursos": 1.0, "proyecto": 175, "proyecto_titulo": "Farmacogen\u00f3mica de antipsic\u00f3ticos en pacientes mexicanos", "linea": "Farmacogen\u00f3mica", "termino": 2016}, {"status": "en_evaluacion", "anio": 2014, "recursos_externos": 0.0, "recursos_internos": 910000.0, "tipo": "interno", "count": 1, "institucion": "INMEGEN", "instituciones": "Instituto Nacional de Medicina Gen\u00f3mica", "recursos": 910000.0, "proyecto": 176, "proyecto_titulo": "Estudio de asociaci\u00f3n y longevidad del gen APOE en poblaci\u00f3n ind\u00edgena  Mexicana", "linea": "Gen\u00f3mica de las enfermedades psiqui\u00e1tricas y neurodegenerativas", "termino": 2016}, {"status": "en_evaluacion", "anio": 2014, "recursos_externos": 0.0, "recursos_internos": 1650000.0, "tipo": "interno", "count": 1, "institucion": "INMEGEN", "instituciones": "Instituto Nacional de Medicina Gen\u00f3mica", "recursos": 1650000.0, "proyecto": 177, "proyecto_titulo": "Tamizaje inmunogen\u00e9tico en pacientes con Trastorno Bipolar", "linea": "Gen\u00f3mica de las enfermedades psiqui\u00e1tricas y neurodegenerativas", "termino": 2016}, {"status": "aprobado", "anio": 2014, "recursos_externos": 1717000.0, "recursos_internos": 0.0, "tipo": "interno", "count": 1, "institucion": "Otras", "instituciones": "Consejo Nacional de Ciencia y Tecnolog\u00eda", "recursos": 1717000.0, "proyecto": 178, "proyecto_titulo": "Validaci\u00f3n de Teconolog\u00eda para el Seguimiento de Pacientes de Ascendencia Maya con Diabetes Usando Marcadores Gen\u00e9ticos.", "linea": "Gen\u00f3mica de enfermedades metab\u00f3licas", "termino": 2015}, {"status": "en_evaluacion", "anio": 2014, "recursos_externos": 0.0, "recursos_internos": 1525000.0, "tipo": "interno", "count": 1, "institucion": "INMEGEN", "instituciones": "Instituto Nacional de Medicina Gen\u00f3mica", "recursos": 1525000.0, "proyecto": 179, "proyecto_titulo": "Metaboloma y sus implicaciones para estudiar la heterogeneidad metab\u00f3lica en c\u00e1ncer.", "linea": "Biolog\u00eda de Sistemas", "termino": 2017}, {"status": "en_evaluacion", "anio": 2014, "recursos_externos": 0.0, "recursos_internos": 1.0, "tipo": "interno", "count": 1, "institucion": "INMEGEN", "instituciones": "Instituto Nacional de Medicina Gen\u00f3mica", "recursos": 1.0, "proyecto": 180, "proyecto_titulo": "B\u00fasqueda de biomarcadores serol\u00f3gicos prote\u00f3micos para el diagn\u00f3stico  de glaucoma primario  de \u00e1ngulo abierto", "linea": "Prote\u00f3mica", "termino": 2016}, {"status": "aprobado", "anio": 2014, "recursos_externos": 0.0, "recursos_internos": 1400000.0, "tipo": "interno", "count": 1, "institucion": "INMEGEN", "instituciones": "Instituto Nacional de Medicina Gen\u00f3mica", "recursos": 1400000.0, "proyecto": 181, "proyecto_titulo": "Caracterizaci\u00f3n de haplotipos de riesgo para Lupus Eritematoso Sist\u00e9mico pedi\u00e1trico (LESp) localizados en la regi\u00f3n IRAK1-MECP2 y su papel en la regulaci\u00f3n post-transcripcional mediada por microRNAs", "linea": "Gen\u00f3mica de las enfermedades autoinmunes", "termino": 2017}, {"status": "aprobado", "anio": 2014, "recursos_externos": 0.0, "recursos_internos": 1169238.0, "tipo": "interno", "count": 1, "institucion": "INMEGEN", "instituciones": "Instituto Nacional de Medicina Gen\u00f3mica", "recursos": 1169238.0, "proyecto": 182, "proyecto_titulo": "IDENTIFICACI\u00d3N DE ALTERACIONES PERSISTENTES EN LA METILACI\u00d3N DE DNA DURANTE LA DIFERENCIACI\u00d3N DEL ADIPOCITO EN PACIENTES OBESOS DIAB\u00c9TICOS Y NO DIAB\u00c9TICOS", "linea": "Gen\u00f3mica de enfermedades metab\u00f3licas", "termino": 2016}, {"status": "en_evaluacion", "anio": 2014, "recursos_externos": 0.0, "recursos_internos": 2041400.0, "tipo": "externo", "count": 1, "institucion": "INMEGEN", "instituciones": "Instituto Nacional de Medicina Gen\u00f3mica", "recursos": 2041400.0, "proyecto": 184, "proyecto_titulo": "An\u00e1lisis de alteraciones en el genoma y transcriptoma de tumores del c\u00e9rvix uterino asociadas a la falta de respuesta a tratamiento y al proceso de met\u00e1stasis. ", "linea": "Oncogen\u00f3mica", "termino": 2016}, {"status": "nuevo", "anio": 2014, "recursos_externos": 0.0, "recursos_internos": 0.0, "tipo": "interno", "count": 1, "institucion": "", "instituciones": "", "recursos": 0.0, "proyecto": 185, "proyecto_titulo": "Perfiles de expresi\u00f3n de genes en pacientes con Adenocarcinoma Pulmonar en etapas avanzadas relacionado a exposici\u00f3n cr\u00f3nica a humo de le\u00f1a comparado con adenocarcinoma pulmonar asociado a tabaquismo", "linea": "Oncogen\u00f3mica", "termino": 2016}, {"status": "aprobado", "anio": 2014, "recursos_externos": 0.0, "recursos_internos": 820000.0, "tipo": "interno", "count": 1, "institucion": "INMEGEN", "instituciones": "Instituto Nacional de Medicina Gen\u00f3mica", "recursos": 820000.0, "proyecto": 186, "proyecto_titulo": "Contribuci\u00f3n de la regi\u00f3n Thr18-Gln37 a la estructura de la fibra amiloide de la prote\u00edna 6aJL2", "linea": "Estructura de Prote\u00ednas", "termino": 2017}, {"status": "enviado", "anio": 2014, "recursos_externos": 0.0, "recursos_internos": 765000.0, "tipo": "interno", "count": 1, "institucion": "INMEGEN", "instituciones": "Instituto Nacional de Medicina Gen\u00f3mica", "recursos": 765000.0, "proyecto": 187, "proyecto_titulo": "Efectos del estado de nutrici\u00f3n y exposici\u00f3n a factores ambientales durante el embarazo en el perfil del metiloma del ni\u00f1o. ", "linea": "Gen\u00f3mica de enfermedades metab\u00f3licas", "termino": 2016}, {"status": "aprobado", "anio": 2014, "recursos_externos": 360000.0, "recursos_internos": 0.0, "tipo": "interno", "count": 1, "institucion": "Otras", "instituciones": "Instituto Tecnol\u00f3gico y de Estudios Superiores de Monterrey", "recursos": 360000.0, "proyecto": 188, "proyecto_titulo": "Modelo basado en redes Bayesianas din\u00e1micas para inferir la regulaci\u00f3n de microRNAs  y mensajero en respuesta a andr\u00f3genos en c\u00e1ncer", "linea": "Gen\u00f3mica Computacional y An\u00e1lisis de Expresi\u00f3n", "termino": 2016}, {"status": "aprobado", "anio": 2014, "recursos_externos": 0.0, "recursos_internos": 1800000.0, "tipo": "interno", "count": 1, "institucion": "INMEGEN", "instituciones": "Instituto Nacional de Medicina Gen\u00f3mica", "recursos": 1800000.0, "proyecto": 189, "proyecto_titulo": "PROYECTO DE CONTINUIDAD: AN\u00c1LISIS DE VARIANTES G\u00c9NICAS ASOCIADAS A DIABETES EN LA POBLACI\u00d3N IND\u00cdGENA MEXICANA.", "linea": "Gen\u00f3mica de enfermedades metab\u00f3licas", "termino": 2014}];
+var numberFormat = d3.format(",.2f");
+var ndx = crossfilter(data);
+var all = ndx.groupAll().reduce(
+    function (p, v) {
+        p.count += v.count;
+        p.recursos += v.recursos
+        return p;
+    },
+    function (p, v) {
+        p.count -= v.count;
+        p.recursos -= v.recursos
+        return p;
+    },
+    function () {
+        return {count: 0, recursos: 0};
+    }
+);
+
+var proyecto_d = ndx.dimension(function(d) { return d.proyecto; });
+var status_p = ndx.dimension(function(d) { return d.status; });
+var status_p_g = status_p.group().reduce(
+    function (p, v) {
+        p.count += v.count;
+        return p;
+    },
+    function (p, v) {
+        p.count -= v.count;
+        return p;
+    },
+    function () {
+        return {count: 0};
+    }
+);
+var tipo = ndx.dimension(function(d) { return d.tipo; });
+var tipo_g = tipo.group().reduce(
+    function (p, v) {
+        p.count += v.count;
+        return p;
+    },
+    function (p, v) {
+        p.count -= v.count;
+        return p;
+    },
+    function () {
+        return {count: 0};
+    }
+);
+var recursos_p = ndx.dimension(function(d) { return d.institucion; });
+var recursos_p_g = recursos_p.group().reduce(
+    function (p, v) {
+        p.count += v.count;
+        p.recursos += v.recursos;
+        return p;
+    },
+    function (p, v) {
+        p.count -= v.count;
+        p.recursos -= v.recursos;
+        return p;
+    },
+    function () {
+        return {count: 0, recursos: 0};
+    }
+);
+var proyectos_anio = ndx.dimension(function(d) { return d.anio; });
+var proyectos_anio_g = proyectos_anio.group().reduce(
+    function (p, v) {
+        p.count += v.count;
+        p.recursos_internos += v.recursos_internos;
+        p.recursos_externos += v.recursos_externos
+        return p;
+    },
+    function (p, v) {
+        p.count -= v.count;
+        p.recursos_internos -= v.recursos_internos;
+        p.recursos_externos -= v.recursos_externos;
+        return p;
+    },
+    function () {
+        return {count: 0, recursos_internos: 0, recursos_externos: 0};
+    }
+);
+
+var proyectos_linea = ndx.dimension(function(d) { return d.linea; });
+var proyectos_linea_g = proyectos_linea.group().reduce(
+    function (p, v) {
+        p.count += v.count;
+        return p;
+    },
+    function (p, v) {
+        p.count -= v.count;
+        return p;
+    },
+    function () {
+        return {count: 0};
+    }
+);
+
+var pieChart = dc.pieChart("#pie-chart");
+pieChart.width(300)
+    .height(200)
+    .transitionDuration(500)
+    .colors(['#3182bd', '#6baed6', '#9ecae1', '#c6dbef', '#dadaeb'])
+    .radius(90)
+    .label(function (d) {
+        if (pieChart.hasFilter() && !pieChart.hasFilter(d.data.key))
+            return d.data.key + "(0%)";
+        return d.data.key + "(" + Math.floor(d.data.value.count / all.value().count * 100) + "%)";
+    })
+    .innerRadius(40)
+    .dimension(tipo)
+    .group(tipo_g)
+    .valueAccessor(function (p) {
+        return p.value.count;
+    });
+
+var pieChartStatus = dc.pieChart("#pie-chart-status");
+pieChartStatus.width(300)
+    .height(200)
+    .transitionDuration(500)
+    //.colors(['#3182bd', '#6baed6', '#9ecae1', '#c6dbef', '#dadaeb'])
+    .radius(90)
+    .label(function (d) {
+        if (pieChartStatus.hasFilter() && !pieChartStatus.hasFilter(d.data.key))
+            return d.data.key + "(0%)";
+        return d.data.key + "(" + Math.floor(d.data.value.count / all.value().count * 100) + "%)";
+    })
+    //.innerRadius(40)
+    .dimension(status_p)
+    .group(status_p_g)
+    .valueAccessor(function (p) {
+        return p.value.count;
+    });
+
+var pieChartRecursos = dc.pieChart("#pie-chart-recursos");
+pieChartRecursos.width(300)
+    .height(200)
+    .transitionDuration(500)
+    .colors(d3.scale.category20())
+    .radius(90)
+    .label(function (d) {
+        if (pieChartRecursos.hasFilter() && !pieChartRecursos.hasFilter(d.data.key))
+            return d.data.key + "(0%)";
+        return d.data.key + "(" + Math.floor(d.data.value.recursos / all.value().recursos * 100) + "%)";
+    })
+    .dimension(recursos_p)
+    .group(recursos_p_g)
+    .valueAccessor(function (p) {
+        return p.value.recursos;
+    });
+
+
+bubbleChart = dc.bubbleChart("#bar-chart");
+bubbleChart.width(700) 
+    .height(250)
+    .transitionDuration(500)
+    .margins({top: 10, right: 50, bottom: 30, left: 100})
+    .dimension(proyectos_anio)
+    .group(proyectos_anio_g)
+    .elasticY(true)
+    .x(d3.scale.linear().domain([2005, 2015]))
+    .renderHorizontalGridLines(true)
+    .renderVerticalGridLines(true)
+    .title(function(p) { 
+        return p.value.count 
+               + "[$" 
+               + numberFormat(p.value.recursos_internos + p.value.recursos_externos) 
+               + "]"; })
+    .yAxisLabel('Recursos')
+    .xAxisLabel('Año de inicio')
+    .colors(d3.scale.category20())
+    .colorDomain([0, 50])
+    .valueAccessor(function (p) {
+        return p.value.recursos_externos + p.value.recursos_internos;
+    })
+    .label(function (p) {
+        return p.value.count;
+    })
+    .colorAccessor(function (d) {
+        return d.value.count;
+    })
+    .radiusValueAccessor(function (p) {
+        return p.value.count;
+    });
+bubbleChart.xAxis().tickFormat(d3.format('d'));
+//bubbleChart.yAxis().ticks(20);
+
+barChartRecursos = dc.barChart("#bar-chart-recursos");
+barChartRecursos.width(700) 
+    .height(250)
+    .transitionDuration(500)
+    .margins({top: 10, right: 50, bottom: 30, left: 100})
+    .dimension(proyectos_anio)
+    .group(proyectos_anio_g, "INMEGEN")
+    .elasticY(true)
+    .x(d3.scale.linear().domain([2005, 2015]))
+    .xAxisLabel('Año de inicio')
+    .yAxisLabel('Recursos')
+    .centerBar(true)
+    .gap(1)
+    .renderHorizontalGridLines(true)
+    .renderVerticalGridLines(true)
+    .valueAccessor(function (p) {
+        return p.value.recursos_internos;
+    })
+    .stack(proyectos_anio_g, "Otras", function(d){return d.value.recursos_externos;})
+    .legend(dc.legend().x(630).y(10))
+    .title(function(d){
+        return d.key
+    });
+
+barChartRecursos.xAxis().tickFormat(d3.format('d'));
+//barChartRecursos.yAxis().ticks(5);
+
+
+rowChartLinea = dc.rowChart("#row-chart-linea");
+rowChartLinea.width(700) 
+    .height(530)
+    .transitionDuration(500)
+    .colors(d3.scale.category20())
+    .dimension(proyectos_linea)
+    .group(proyectos_linea_g)
+    .elasticX(true)
+    .label(function(d) { return d.key; })
+    .title(function(d) { return d.value.count; })
+    .gap(1)
+    .valueAccessor(function (p) {
+        return p.value.count;
+    })
+    .xAxis().ticks(4);
+
+
+dc.dataCount(".dc-data-count")
+    .dimension(ndx)
+    .group(all)
+    /*.valueAccessor(function (p) {
+        return p.value.count;
+    });*/
+
+dc.dataTable(".dc-data-table")
+    .dimension(proyecto_d)
+    .group(function (d) {
+        return d.anio
+    })
+    //.size(20)
+    .columns([
+        function (d) {
+            return "<a href='/protocolos/" + d.proyecto + "'>" 
+                + "# " + d.proyecto + " " + d.proyecto_titulo + "</a>";
+        },
+        function (d) {
+            return d.instituciones;
+        },
+        function (d) {
+             return "$" + numberFormat(d.recursos);
+        }
+    ])
+    .sortBy(function (d) {
+         return d.proyecto;
+    })
+    .order(d3.descending)
+    .renderlet(function (table) {
+        table.selectAll(".dc-table-group").classed("info", true);
+    });
+
+dc.renderAll();
+ 
+dc.redrawAll();
+</script>
+
+</body>
+</html>
