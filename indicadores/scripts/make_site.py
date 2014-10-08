@@ -17,6 +17,7 @@ reportes = [
     { 'reporte': 'rspi_usuarios_puesto.html',  'template': 'dashboard_investigacion.html' },
     { 'reporte': 'rspi_usuarios_area.html',  'template': 'dashboard_investigacion.html' },
     { 'reporte': 'rspi_tesis_avance.html',  'template': 'dashboard_investigacion.html' },
+    { 'reporte': 'rspi_lineas_proyectos.html',  'template': 'dashboard_investigacion_d3.html' },
 
     { 'reporte': "tg_categorias.html", 'template': 'dashboard_tg.html' },
     { 'reporte': "tg_estados.html", 'template': 'dashboard_tg.html' },
