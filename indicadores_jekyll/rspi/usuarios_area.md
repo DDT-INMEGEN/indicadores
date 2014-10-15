@@ -1,0 +1,24 @@
+---
+layout: page
+title: Usuarios por area
+permalink: /rspi/usuarios_area.html
+---
+<h1 class="page-header">Usuarios por area</h1>
+
+<div style="width: 800px; height: 600px;"
+	 data-htsql="/users_area{area, count(auth_user.area)- :as '%23 Usuarios'}?count(auth_user.area)>1"
+	 data-widget="chart"
+	 data-type="bar"
+	 data-yint="true"
+	 data-x-vertical="true"
+         data-show-title="false"
+         data-show-title="false">
+</div>
+
+
+<h2 class="sub-header">Usuarios</h2>
+<div class="table-responsive">
+  <table class="table table-striped"
+	 data-htsql="/users_area{area :as '&Aacute;rea', count(auth_user.area)- :as '%23 Usuarios'}?count(auth_user.area)>1">
+  </table>
+</div>
