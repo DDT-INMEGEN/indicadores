@@ -1,0 +1,25 @@
+---
+layout: page
+title: Consumo de Energía Eléctrica
+permalink: /admin/cfe.html
+---
+
+<div style="width: 800px; height: 350px;"
+     data-widget="chart"
+     data-type="line"
+     data-yint="true"
+     data-title="Consumo de Energía Eléctrica"
+     data-show-title="false"
+     data-htsql="/recibos_cfe{fecha,total :as MXN, kwh :as 'kW/h'}">
+</div>
+
+
+<br>
+
+
+
+<div class="table-responsive">
+  <table class="table table-striped"
+	 data-htsql="/recibos_cfe{fecha,total :as MXN, kwh :as 'kW/h'}">
+  </table>
+</div>
