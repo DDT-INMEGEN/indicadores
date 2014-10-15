@@ -1,0 +1,23 @@
+---
+layout: page
+title: Categorías de tickets
+permalink: /tg/categorias.html
+---
+
+<h1 class="page-header">Categorías de tickets</h1>
+<div style="width: 600px; height: 350px;"
+	 data-htsql="/helpdesk_categoriaticket{nombre, count(helpdesk_ticket)-}"
+	 data-widget="chart"
+	 data-type="pie"
+         data-show-title="false"
+	 data-title="Tickets por sus categorías">
+</div>
+
+
+
+<div class="table-responsive">
+  <table class="table table-striped"
+	 data-htsql="/helpdesk_categoriaticket{nombre :as categoría,
+	 count(helpdesk_ticket)- :as tickets}">
+  </table>
+</div>
