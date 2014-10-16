@@ -17,8 +17,8 @@ permalink: /tg/internos_externos.html
 
 
 <div class="table-responsive">
-  <table class="table table-striped"
+<table class="table table-striped"
          data-htsql="/helpdesk_ticket{mitipo:=tipo.tipo}^mitipo
-         {mitipo :as tipo, count(helpdesk_ticket) :as tickets}"
-  </table>
+         {mitipo :as tipo, count(helpdesk_ticket) :as tickets}">
+</table>
 </div>

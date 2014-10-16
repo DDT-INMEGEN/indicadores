@@ -1,0 +1,21 @@
+---
+layout: page
+title: Principales usuarios
+permalink: /ti/personas.html
+---
+<h1 class="page-header">Principales usuarios</h1>
+<div style="width: 800px; height: 350px;"
+	 data-htsql="/hesk_tickets^name {name,count(hesk_tickets)- :as 'tickets'}.limit(25)"
+	 data-widget="chart"
+	 data-type="bar"
+	 data-x-vertical="true"
+         data-show-title="false">
+</div>
+
+
+<div class="table-responsive">
+ <table class="table table-striped"
+	 data-htsql="/hesk_tickets^name {name :as usuario,count(hesk_tickets)- :as 'tickets'}.limit(50)"></table>
+	
+</div>
+
