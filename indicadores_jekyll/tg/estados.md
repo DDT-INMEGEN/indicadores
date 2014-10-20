@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Estados de tickets
+aguas: cave canem
 permalink: /tg/estados.html
 ---
 

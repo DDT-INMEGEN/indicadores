@@ -1,5 +1,6 @@
 ---
 layout: page
+tipo: ti
 title: Principales usuarios
 permalink: /ti/personas.html
 ---

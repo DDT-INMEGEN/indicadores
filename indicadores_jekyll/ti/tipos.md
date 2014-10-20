@@ -1,5 +1,6 @@
 ---
 layout: page
+tipo: ti
 title: Categorías de tickets
 permalink: /ti/tipos.html
 ---

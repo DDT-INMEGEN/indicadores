@@ -12,36 +12,7 @@
         {{ content }}
       </div>
     </div>
-    <div class="top-bar" data-topbar id="topbar">
-    <ul class="title-area">
-      <li class="name">
-        <h1><a href="/">{{ site.noita.name }}</a></h1>
-      </li>
-      <li class="toggle-topbar menu-icon"><a href="#topbar"><span>{{ site.noita.topbar.toggle }}</span></a></li>
-    </ul>
-    <div class="top-bar-section">
-      {% if site.noita.topbar.left %}
-      <ul class="left">
-      {% for item in site.noita.topbar.left %}
-        <li{% if item.class %} class="has-form"{% endif %}>
-          <a href="{{ item.url }}" class="{{ item.class }}">{{ item.name }}</a>
-        </li>
-      {% endfor %}
-      </ul>
-      {% endif %}
-
-      {% if site.noita.topbar.right %}
-      <ul class="right">
-      {% for item in site.noita.topbar.right %}
-        <li{% if item.class %} class="has-form"{% endif %}>
-          <a href="{{ item.url }}" class="{{ item.class }}">{{ item.name }}</a>
-        </li>
-      {% endfor %}
-      </ul>
-      {% endif %}
-    </div>
-  </div>
-
+    
     {% include footer.html %}
 
   </body>
