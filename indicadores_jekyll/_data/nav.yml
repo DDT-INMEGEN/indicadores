@@ -2,35 +2,50 @@
   href: "/"
 
 - title: "Admin"
-  href: "/ti/"
+  href: "/admin/"
   subcategories:
-    - subtitle: "Tipos"
-      subhref: "/ti/tipos.html"
-    - subtitle: "Usuarios"
-      subhref: "/ti/personas.html"
-    - subtitle: "Dinamica"
-      subhref: "/ti/dinamica.html"
+    - subtitle: "Recibos CFE"
+      subhref: "/admin/cfe.html"
+    - subtitle: "Impresiones al paso del tiempo"
+      subhref: "/admin/impresora_dinamica.html"
+    - subtitle: "Impresiones por área"
+      subhref: "/admin/impresoras_areas.html"
  
 - title: "RSPI"
-  href: "/ti/"
+  href: "/rspi/"
   subcategories:
-    - subtitle: "Tipos"
-      subhref: "/ti/tipos.html"
-    - subtitle: "Usuarios"
-      subhref: "/ti/personas.html"
-    - subtitle: "Dinamica"
-      subhref: "/ti/dinamica.html"
-      
-       
+    - subtitle: "Status"
+      subhref: "/rspi/status.html"
+    - subtitle: "Origen de Recursos"
+      subhref: "/rspi/recursos_origen.html"
+    - subtitle: "Destino de Recursos"
+      subhref: "/rspi/recursos_destino.html"
+    - subtitle: "Colaboradores Externos"
+      subhref: "/rspi/colaboradores.html"
+    - subtitle: "Coautores Recurrentes"
+      subhref: "/rspi/coautores.html"
+    - subtitle: "MeSH Terms INMEGEN"
+      subhref: "/rspi/mesh.html" 
+    - subtitle: "Investigadores por tipo de puesto y nivel SNI"
+      subhref: "/rspi/investigadores.html"      
+    - subtitle: "Proyectos"
+      subhref: "/rspi/proyectos_costos_sunburst.html" 
+    - subtitle: "Multidimencional"
+      subhref: "/rspi/"       
+             
 - title: "TG"
-  href: "/ti/"
+  href: "/tg/"
   subcategories:
-    - subtitle: "Tipos"
-      subhref: "/ti/tipos.html"
-    - subtitle: "Usuarios"
-      subhref: "/ti/personas.html"
-    - subtitle: "Dinamica"
-      subhref: "/ti/dinamica.html"
+    - subtitle: "Categorías"
+      subhref: "/tg/categorias.html"
+    - subtitle: "Estados"
+      subhref: "/tg/estados.html"
+    - subtitle: "Internos vs. Externos"
+      subhref: "/tg/internos_externos.html"
+    - subtitle: "Dinámica"
+      subhref: "/tg/tiempo.html" 
+    - subtitle: "Sunburst"
+      subhref: "/tg/sunburst.html"           
       
        
 - title: "TI"
@@ -43,12 +58,3 @@
     - subtitle: "Dinamica"
       subhref: "/ti/dinamica.html"
       
- 
- 
-- title: "Tools"
-  subcategories:
-    - subtitle: "Tools1"
-      subhref: "/tools1/"
-    - subtitle: "Tools2"
-      subhref: "/tools2/"
- 
