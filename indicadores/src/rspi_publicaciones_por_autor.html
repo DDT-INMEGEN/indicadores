@@ -1,0 +1,19 @@
+<h1 class="page-header">Publicaciones por autor</h1>
+    <div style="width: 800px; height: 600px;"
+	 data-htsql="/publicaciones_autor{nombre :as 'Autor',
+	 count(publicaciones_publicacionautor)- :as 'Publicaciones'}?interno=true"
+	 data-widget="chart"
+	 data-type="bar"
+	 data-yint="true"
+	 data-x-vertical="true"
+         data-show-title="false"
+	 data-title="Proyectos por Línea de Investigación">
+    </div>
+
+
+<div class="table-responsive">
+  <table class="table table-striped"
+	 data-htsql="/publicaciones_autor{nombre :as 'Autor',
+	 count(publicaciones_publicacionautor)- :as 'Publicaciones'}?interno=true">
+  </table>
+</div>

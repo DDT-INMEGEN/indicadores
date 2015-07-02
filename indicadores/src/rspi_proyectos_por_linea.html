@@ -1,0 +1,19 @@
+<h1 class="page-header">Proyectos por Línea de Investigación</h1>
+    <div style="width: 800px; height: 600px;"
+	 data-htsql="/protocolos_lineainvestigacion{linea_investigacion_desc,count(protocolos_proyecto)-
+                     :as proyectos}"
+	 data-widget="chart"
+	 data-type="bar"
+	 data-yint="true"
+	 data-x-vertical="true"
+         data-show-title="false"
+	 data-title="Proyectos por Línea de Investigación">
+    </div>
+
+
+<div class="table-responsive">
+  <table class="table table-striped"
+	 data-htsql="/protocolos_lineainvestigacion{linea_investigacion_desc
+	 :as 'línea',count(protocolos_proyecto)- :as 'proyectos'}">
+  </table>
+</div>

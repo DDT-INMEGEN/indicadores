@@ -1,32 +1,36 @@
 {% extends "dashboard_base.html" %}
 {% block sidebar %}
-          <ul class="nav nav-sidebar">
-            <li><a href="rspi_status.html">Status</a></li>
-            <li><a href="rspi_recursos_origen.html">Origen de Recursos</a></li>
-            <li><a href="rspi_recursos_destino.html">Destino de Recursos</a></li>
-            <li><a href="rspi_colaboradores.html">Colaboradores Externos</a></li>
+<h3>Publicaciones</h3>
+<ul class="nav nav-sidebar">
+  <li><a href="rspi_publicaciones_por_autor.html">Publicaciones por Autor</a></li>
+  <li><a href="rspi_coautores.html">Coautores Recurrentes</a></li>
+  <li><a href="rspi_mesh.html">MeSH Terms INMEGEN</a></li>
+</ul>
 
-<!--        
-            <li><a href="rspi_usuarios_puesto.html">Usuarios por puesto</a></li>
-            <li><a href="rspi_usuarios_area.html">Usuarios por &aacute;rea</a></li>
-            <li><a href="rspi_tesis_avance.html">Avance tesis</a></li>
--->
+<h3>Proyectos</h3>
+<ul class="nav nav-sidebar">
+  <li><a href="rspi_proyectos_por_linea.html">Proyectos por Línea</a></li>
+  <li><a href="rspi_status.html">Status</a></li>
+  <li><a href="rspi_recursos_origen.html">Origen de Recursos</a></li>
+  <li><a href="rspi_recursos_destino.html">Destino de Recursos</a></li>
+  <li><a href="rspi_colaboradores.html">Colaboradores Externos</a></li>
+  <li><a href="rspi_proyectos_costos_sunburst.html">Proyectos</a></li>
+  <li><a href="https://inet.inmegen.gob.mx/visualizacion/radar/">Multidimensional</a></li>
+  <li><a href="https://inet.inmegen.gob.mx/visualizacion/rspi/">Proyectos y Líneas de Investigación</a></li>  
+</ul>
 
-          </ul>
-          <ul class="nav nav-sidebar">
-            <li><a href="rspi_coautores.html">Coautores Recurrentes</a></li>
-            <li><a href="rspi_mesh.html">MeSH Terms INMEGEN</a></li>
-            <li><a href="rspi_investigadores.html">Investigadores por
-            tipo de puesto y nivel SNI</a></li>
-            <li><a href="rspi_proyectos_costos_sunburst.html">Proyectos</a></li>
-            <li><a href="https://inet.inmegen.gob.mx/visualizacion/radar/">Multidimensional</a></li>
-            <li><a href="https://inet.inmegen.gob.mx/visualizacion/personal_inv/">Personal de investigación</a></li>
-            <li><a href="https://inet.inmegen.gob.mx/visualizacion/rspi/">Proyectos y
-            Líneas de Investigación</a></li>
-            <li><a href="https://inet.inmegen.gob.mx/visualizacion/ens/">Enfermedades ENS</a></li>
-            <li><a href="https://inet.inmegen.gob.mx/visualizacion/ens/antro/">Antropomorfia</a></li>
-            <li><a href="https://inet.inmegen.gob.mx/visualizacion/ens/antro_nutri_o/">Antropomorfia y Nutrición</a></li>
-          </ul>
+<h3>Investigadores</h3>
+<ul class="nav nav-sidebar">
+  <li><a href="rspi_investigadores.html">Investigadores por tipo de puesto y nivel SNI</a></li>
+  <li><a href="https://inet.inmegen.gob.mx/visualizacion/personal_inv/">Personal de investigación</a></li>
+</ul>
+
+<h3>Datos Públicos</h3>
+<ul class="nav nav-sidebar">
+  <li><a href="https://inet.inmegen.gob.mx/visualizacion/ens/">Enfermedades ENS</a></li>
+  <li><a href="https://inet.inmegen.gob.mx/visualizacion/ens/antro/">Antropomorfia</a></li>
+  <li><a href="https://inet.inmegen.gob.mx/visualizacion/ens/antro_nutri_o/">Antropomorfia y Nutrición</a></li>
+</ul>
 {% endblock %}
 
 {% block main %}

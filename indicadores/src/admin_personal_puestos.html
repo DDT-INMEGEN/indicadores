@@ -1,0 +1,24 @@
+
+
+
+<h1 class="page-header">Conteo de personal por puesto</h1>
+    <div style="width: 800px; height: 600px;"
+	 data-htsql="/users_puesto{nombre :as 'Puesto',count(auth_user.is_active=True)- :as 'Personal'}?count(auth_user.is_active=True)>2"
+	 data-widget="chart"
+	 data-type="bar"
+	 data-yint="true"
+	 data-x-vertical="true"
+         data-show-title="false"
+	 data-title="Personal por Puesto">
+    </div>
+
+
+<div class="table-responsive">
+  <table class="table table-striped"
+	 data-htsql="/users_puesto{nombre :as 'Puesto',count(auth_user.is_active=True)- :as 'Personal'}?count(auth_user.is_active=True)>0">
+  </table>
+</div>
+
+
+
+
