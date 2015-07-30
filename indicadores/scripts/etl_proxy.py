@@ -53,7 +53,7 @@ class Server(Base):
     id            = Column(Integer, primary_key=True)
     addr          = Column(Unicode)
     requests      = relationship("Request", backref="server")
-
+    tld           = Column(Unicode)
 
 
 
@@ -75,7 +75,10 @@ session = Session()
 # Parse log file #
 ##################
 for l in args.log.readlines():
-    fields = l.decode('utf-8').split(' ')
+    try:
+        fields = l.decode('utf-8').split(' ')
+    except:
+        continue
     
     day  = datetime.date(*time.strptime( fields[0], "%Y.%m.%d" )[:3])
     hour = datetime.time(*time.strptime( fields[1], "%H:%M:%S" )[3:6])
@@ -86,6 +89,8 @@ for l in args.log.readlines():
 
     url_scheme = url.scheme
     url_netloc = url.netloc
+    host = url_netloc.split(':')[0]
+    tld  = '.'.join(host.split('.')[-2:])
     url_file_type   = url.path.split('/')[-1].split('.')[-1]
     url_port   = url.port
     if not url_port:
@@ -139,7 +144,8 @@ for l in args.log.readlines():
         
     server = session.query(Server).filter(Server.addr == url_netloc).first()
     if not(server):
-        server = Server(addr = url_netloc)
+        server = Server(addr = url_netloc,
+                        tld  = tld)
         session.add(server)
     server.requests.append( request )
 
