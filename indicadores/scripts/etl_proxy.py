@@ -53,7 +53,7 @@ class Server(Base):
     id            = Column(Integer, primary_key=True)
     addr          = Column(Unicode)
     requests      = relationship("Request", backref="server")
-
+    tld           = Column(Unicode)
 
 
 
@@ -75,7 +75,10 @@ session = Session()
 # Parse log file #
 ##################
 for l in args.log.readlines():
-    fields = l.decode('utf-8').split(' ')
+    try:
+        fields = l.decode('utf-8').split(' ')
+    except:
+        continue
     
     day  = datetime.date(*time.strptime( fields[0], "%Y.%m.%d" )[:3])
     hour = datetime.time(*time.strptime( fields[1], "%H:%M:%S" )[3:6])
