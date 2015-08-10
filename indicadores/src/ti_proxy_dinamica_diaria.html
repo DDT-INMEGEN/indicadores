@@ -1,0 +1,12 @@
+<h1 class="page-header">Consultas durante el día</h1>
+    <div style="width: 800px; height: 350px;"
+	 data-widget="chart"
+	 data-type="line"
+	 data-yint="true"
+	 data-title="consultas durante el día"
+         data-show-title="false"
+	 data-htsql="/requests{epa:=hour(time(time))}^epa {epa :as
+	 hora, count(requests) :as consultas}">
+    </div>
+
+

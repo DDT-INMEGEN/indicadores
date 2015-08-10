@@ -34,7 +34,10 @@ reportes = [
     { 'reporte': 'ti_dinamica.html',  'template': 'dashboard_ti.html' },
     { 'reporte': 'ti_proxy_servers.html',  'template': 'dashboard_ti_proxy.html' },
     { 'reporte': 'ti_proxy_clients.html',  'template': 'dashboard_ti_proxy.html' },
-    { 'reporte': 'ti_proxy_dinamica.html',  'template': 'dashboard_ti_proxy.html' },            
+    { 'reporte': 'ti_proxy_dinamica.html',  'template': 'dashboard_ti_proxy.html' },
+    { 'reporte': 'ti_proxy_dinamica_diaria.html',  'template': 'dashboard_ti_proxy.html' },    
+    { 'reporte': 'ti_proxy_protocolo.html',  'template': 'dashboard_ti_proxy.html' },
+    { 'reporte': 'ti_proxy_bloqueos.html',  'template': 'dashboard_ti_proxy.html' },                
 
     { 'reporte': 'admin_personal_puestos.html',  'template': 'dashboard_admin_intranet.html' },
     { 'reporte': 'admin_personal_areas.html',  'template': 'dashboard_admin_intranet.html' },     
