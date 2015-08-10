@@ -1,0 +1,16 @@
+<h1 class="page-header">Consultas web por dirección IP</h1>
+
+    <div style="width: 800px; height: 350px;"
+	 data-htsql="/clients{addr :as cliente, count(requests)- :as consultas}.limit(25)"
+	 data-widget="chart"
+	 data-type="bar"
+	 data-x-vertical="true"
+         data-show-title="false">
+    </div>
+
+<br />
+<div class="table-responsive">
+  <table class="table table-striped"
+	 data-htsql="/clients{addr :as cliente, count(requests)- :as consultas}.limit(100)"
+  </table>
+</div>

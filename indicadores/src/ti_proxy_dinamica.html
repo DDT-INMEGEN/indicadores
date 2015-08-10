@@ -1,0 +1,16 @@
+<h1 class="page-header">Dinámica de Consultas a la Web</h1>
+    <div style="width: 800px; height: 350px;"
+	 data-widget="chart"
+	 data-type="line"
+	 data-yint="true"
+	 data-title="Tickets al paso del tiempo"
+         data-show-title="false"
+	 data-htsql="/requests{epa:=date(date)}^epa {epa- :as fecha, count(requests)}.limit(15)">
+    </div>
+
+
+<div class="table-responsive">
+  <table class="table table-striped"
+	 data-htsql="/requests{epa:=date(date)}^epa {epa- :as fecha, count(requests)}.limit(15)">
+  </table>
+</div>
