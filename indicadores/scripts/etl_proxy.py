@@ -43,13 +43,13 @@ class Request(Base):
     
 
 class Client(Base):
-    __tablename__ = 'clients'
+    __tablename__ = 'webclients'
     id            = Column(Integer, primary_key=True)
     addr          = Column(Unicode)
     requests      = relationship("Request", backref="client")
     
 class Server(Base):
-    __tablename__ = 'servers'
+    __tablename__ = 'webservers'
     id            = Column(Integer, primary_key=True)
     addr          = Column(Unicode)
     requests      = relationship("Request", backref="server")
