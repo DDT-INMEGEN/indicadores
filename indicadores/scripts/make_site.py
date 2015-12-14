@@ -22,6 +22,9 @@ reportes = [
     { 'reporte': 'rspi_proyectos_por_linea.html',  'template': 'dashboard_investigacion.html' },
     { 'reporte': 'rspi_publicaciones_por_autor.html',  'template': 'dashboard_investigacion.html' },    
 
+
+    { 'reporte': 'ded_estancias_por_carrera.html', 'template': 'dashboard_ded.html' },
+
     { 'reporte': "tg_categorias.html", 'template': 'dashboard_tg.html' },
     { 'reporte': "tg_estados.html", 'template': 'dashboard_tg.html' },
     { 'reporte': "tg_internos_externos.html", 'template': 'dashboard_tg.html' },
@@ -32,6 +35,7 @@ reportes = [
     { 'reporte': 'ti_tipos.html',  'template': 'dashboard_ti.html' },
     { 'reporte': 'ti_personas.html',  'template': 'dashboard_ti.html' },
     { 'reporte': 'ti_dinamica.html',  'template': 'dashboard_ti.html' },
+    { 'reporte': 'ti_actividad.html',  'template': 'dashboard_ti.html' },
     { 'reporte': 'ti_proxy_servers.html',  'template': 'dashboard_ti_proxy.html' },
     { 'reporte': 'ti_proxy_clients.html',  'template': 'dashboard_ti_proxy.html' },
     { 'reporte': 'ti_proxy_dinamica.html',  'template': 'dashboard_ti_proxy.html' },
