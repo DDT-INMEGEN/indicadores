@@ -1,0 +1,44 @@
+<h1 class="page-header">Actividad en la Mesa de Ayuda</h1>
+
+Este panel indica la actividad de la mesa de ayuda a través del conteo de mensajes en el sistema de tickets al paso del tiempo.
+
+    <div style="width: 800px; height: 350px;"
+	 data-widget="chart"
+	 data-type="line"
+	 data-yint="true"
+         data-show-title="false"
+	 data-htsql="/hesk_replies{epa:=date(dt)}^epa {epa- :as 'fecha', count(hesk_replies) :as 'mensajes'}.limit(50)">
+    </div>
+
+
+
+
+<h2>Por persona que comenta</h2>
+<select id="name"
+        data-htsql="/hesk_replies{name}^name">
+ </select>
+
+
+
+    <div style="width: 800px; height: 350px;"
+	 data-widget="chart"
+	 data-type="line"
+	 data-yint="true"
+	 data-title="Volumen de Impresión"
+         data-show-title="false"
+	 data-htsql="/hesk_replies{epa:=date(dt)}?name=$name^epa  {epa- :as 'fecha', count(hesk_replies) :as 'mensajes'}"
+         data-ref="name">
+    </div>
+
+
+
+
+<h2>Usuarios que más comentan</h2>
+    <div style="width: 800px; height: 550px;"
+	 data-htsql="/hesk_replies^name {name,count(hesk_replies) :as mensajes}?count(hesk_replies)>2"
+	 data-widget="chart"
+	 data-type="bar"
+	 data-x-vertical="true"
+         data-show-title="false"
+    </div>
+

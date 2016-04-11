@@ -1,0 +1,16 @@
+<h1 class="page-header">Servidores web más consultados</h1>
+
+    <div style="width: 500px; height: 350px;"
+	 data-htsql="/servers{addr :as servidor,count(requests)- :as consultas}.limit(10)"
+	 data-widget="chart"
+	 data-type="pie"
+	 data-title="servidores web más consultados" >
+    </div>
+
+
+<div class="table-responsive">
+  <table class="table table-striped"
+	 data-htsql="/servers{addr :as servidor, count(requests)- :as consultas}.limit(100)">
+  </table>
+</div>
+

@@ -1,0 +1,18 @@
+
+<h1 class="page-header">Estancias temporales por carrera</h1>
+<div style="width: 800px; height: 600px;"
+     data-htsql="/formacion_carrera{nombre,count(formacion_alumnoestanciatemporal) :as carrera-}.limit(30)?count(formacion_alumnoestanciatemporal)>1"
+     data-widget="chart"
+     data-type="bar"
+     data-yint="true"
+     data-x-vertical="true"
+     data-show-title="false">
+</div>
+
+
+
+<div class="table-responsive">
+  <table class="table table-striped"
+	 data-htsql="/formacion_carrera{nombre,count(formacion_alumnoestanciatemporal) :as carrera-}?count(formacion_alumnoestanciatemporal)>1">
+  </table>
+</div>

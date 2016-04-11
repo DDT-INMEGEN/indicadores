@@ -1,0 +1,11 @@
+<h1 class="page-header">Razones de bloqueo más frecuentes</h1>
+
+<div class="table-responsive">
+  <table class="table table-striped"
+	 data-htsql="/requests^comment {head(comment,99) :as razón,
+	 count(requests)- :as 'consultas bloqueadas'}.limit(100)?comment!=''"
+  </table>
+</div>
+
+
+

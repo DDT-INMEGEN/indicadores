@@ -1,0 +1,43 @@
+<h1 class="page-header">Consultas por protocolo</h1>
+
+    <div style="width: 500px; height: 350px;"
+	 data-htsql="/requests^url_scheme {url_scheme :as protocolo,
+                     count(requests)- :as consultas}"
+	 data-widget="chart"
+	 data-type="pie"
+	 data-title="consultas por protocolo" >
+    </div>
+
+
+<div class="table-responsive">
+  <table class="table table-striped"
+	 data-htsql="/requests^url_scheme {url_scheme :as protocolo,
+	 count(requests)- :as consultas}">
+  </table>
+</div>
+
+
+
+<h1 class="page-header">Consultas por método</h1>
+
+    <div style="width: 500px; height: 350px;"
+	 data-htsql="/requests^method {method :as método,
+	 count(requests)- :as consultas}"
+	 data-widget="chart"
+	 data-type="pie"
+	 data-title="consultas por método" >
+    </div>
+
+
+<div class="table-responsive">
+  <table class="table table-striped"
+	 data-htsql="/requests^method {method :as método,
+	 count(requests)- :as consultas}">
+  </table>
+</div>
+
+
+
+
+
+
