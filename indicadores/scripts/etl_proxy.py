@@ -37,8 +37,8 @@ class Request(Base):
 
     comment       = Column(Unicode)
 
-    client_id     = Column(Integer, ForeignKey('clients.id'))
-    server_id     = Column(Integer, ForeignKey('servers.id'))    
+    client_id     = Column(Integer, ForeignKey('webclients.id'))
+    server_id     = Column(Integer, ForeignKey('webservers.id'))    
 
     
 
