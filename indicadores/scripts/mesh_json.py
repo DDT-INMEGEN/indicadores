@@ -46,6 +46,13 @@ for r in records:
                 w =1
             g.add_edge(*edge, w=w)
 
-data = json_graph.node_link_data(g)
+
+h = nx.Graph()
+
+for e in g.edges():
+    if g.get_edge_data(*e)['w']>4:
+	h.add_edge(*e)
+
+data = json_graph.node_link_data(h)
 s = json.dumps(data)
 args.json_out.write(s)

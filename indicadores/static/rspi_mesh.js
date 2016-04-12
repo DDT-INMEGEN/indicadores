@@ -1,4 +1,4 @@
-var width = "800", height = "800";
+var width = "900", height = "1000";
 
 var color = d3.scale.category20c();
 
@@ -8,7 +8,7 @@ var jin_scale = d3.scale.linear()
 
 var degree_scale = d3.scale.linear()
     .domain([1, 30])
-    .range([5,15]);
+    .range([50,250]);
 
 var citations_scale = d3.scale.linear()
     .domain([1, 30])
@@ -16,10 +16,10 @@ var citations_scale = d3.scale.linear()
 
 var force = d3.layout.force()
     .size([width, height])
-    .friction(0.9)
-    .gravity(0.09)
-    .charge(-200)
-    .linkDistance(190);
+    .friction(0.01)
+    .gravity(0.002)
+    .charge(-300)
+    .linkDistance(289);
 
 function dragstart(d) {
     d.fixed = true;
@@ -45,7 +45,7 @@ svg.append("svg:defs").selectAll("marker")
     .append("svg:circle")
     .attr("cx", 6)
     .attr("cy", 6)
-    .attr("r", 10)
+    .attr("r", 140)
     .attr("fill", d3.rgb(20,200,200))
 
 
@@ -72,12 +72,12 @@ d3.json("rspi_mesh.json", function(error, graph) {
 
     var node = gnodes.append("circle")
         .attr("class", "node")
-        .attr("r", function(d) { return degree_scale(d.degree); } )
+        .attr("r", 10 )
         .call(force.drag);
 
     var labels = gnodes.append("text")
-        .text( function(d) { return d.name; })
-        .attr("font-size", "0.76em")
+        .text( function(d) { return d.id; })
+        .attr("font-size", "1em")
         .attr("text-align", "right");
 
 

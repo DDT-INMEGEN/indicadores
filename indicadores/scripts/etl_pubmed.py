@@ -2,6 +2,7 @@ from urllib2 import Request, urlopen,URLError
 import json
 from pprint import pprint
 from Bio import Entrez
+Entrez.email="rgarcia@inmegen.gob.mx"
 
 # get list of author IDs from API
 author_ids = []
